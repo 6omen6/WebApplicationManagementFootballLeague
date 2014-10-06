@@ -1,0 +1,59 @@
+﻿@model WebApplicationManagementFootballLeague.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Landing.cshtml";
+}
+
+<div class="row">
+    <div class="alert alert-info">
+        <a class="close" data-dismiss="alert" href="#">&times;</a>
+        Press enter key or click the Registry button
+    </div>
+    <div class="bootstrap-admin-login-form">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+
+            <fieldset>
+                <h1>Register</h1>
+                <h3>Create a new account.</h3>
+                <ol>
+                    <li>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.UserName)
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password)
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.ConfirmPassword)
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                        </div>
+                    </li>
+                </ol>
+                <input type="submit" value="Register" />
+            </fieldset>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(function () {
+            // Setting focus
+            $('input[name="UserName"]').focus();
+            // Setting width of the alert box
+            var formWidth = $('.bootstrap-admin-login-form').innerWidth();
+            var alertPadding = parseInt($('.alert').css('padding'));
+            $('.alert').width(formWidth - 2 * alertPadding);
+        });
+    </script>
+}
