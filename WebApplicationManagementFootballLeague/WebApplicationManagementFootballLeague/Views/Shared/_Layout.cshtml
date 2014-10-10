@@ -9,7 +9,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 
-<body style="margin: 0px">
+<body style="margin: 0px; background-image: url('@Url.Content("~/Images/tlo.jpg")')";>
     <div class="header-menu">
         @Html.Partial("_HeaderMenuPartial")
     </div>
@@ -31,7 +31,6 @@
             </div>
         </div>
         <div class="content">
-            @RenderSection("featured", required: false)
             <div class="content-left">
                 @RenderBody()
             </div>
@@ -41,7 +40,7 @@
         </div>
     </div>
     <div class="footer">
-        a
+        @Html.Partial("_FooterPartial")
     </div>
 </body>
 </html>

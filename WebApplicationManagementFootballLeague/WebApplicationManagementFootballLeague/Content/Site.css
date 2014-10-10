@@ -2,27 +2,30 @@
     font-size: 24px;
     margin: 0px 15px 0px 15px;
 }
-.body {
-    margin: 0px;
 
+.bodyy {
+    margin: 0px;
+    background-image: url('@Url.Content("~/Images/tlo.jpg")');
 }
+
 .header-menu {
     height: 50px;
 }
 
 .top {
     background-color: gold;
-    height:160px;
+    height: 160px;
 }
 
 .top-left {
-    float:left;
+    float: left;
     background-color: black;
-    width:70%;
+    width: 70%;
     height: 100%;
 }
+
 .top-right {
-    float:right;
+    float: right;
     background-color: #b6ff00;
     height: 100%;
     width: 30%;
@@ -31,13 +34,12 @@
 .content {
     height: auto;
     width: 100%;
-    overflow:auto;
+    overflow: auto;
 }
 
 .content-left {
     float: left;
-    background-color: #DDD;
-    width:70%;
+    width: 70%;
     min-height: 702px;
 }
 
@@ -53,4 +55,26 @@
     clear: both;
     background-color: gold;
     text-align: center;
+    opacity: 0.8;
+}
+
+.textbox-in-login {
+    width: 200px;
+}
+
+.content-login {
+    -webkit-border-radius: 25px;
+-moz-border-radius: 25px;
+border-radius: 25px;
+    height: 100%;
+    width: 500px;
+    overflow: auto;
+    margin: 150px auto;
+    background-color: #f1f1f1;
+    font-size: 24px;
+    padding: 10px;
+    opacity: 0.99;
+}
+.roww {
+    width:100%;
 }

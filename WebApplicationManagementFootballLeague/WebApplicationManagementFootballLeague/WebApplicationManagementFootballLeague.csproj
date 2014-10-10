@@ -256,6 +256,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Images\tlo.jpg" />
     <Content Include="Images\user_top.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -315,6 +316,8 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_HeaderMenuPartial.cshtml" />
     <Content Include="Views\Shared\_LogoPartial.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Shared\_FooterPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
