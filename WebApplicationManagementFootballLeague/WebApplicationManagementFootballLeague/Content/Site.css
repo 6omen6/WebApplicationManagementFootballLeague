@@ -6,6 +6,7 @@
 .bodyy {
     margin: 0px;
     background-image: url('@Url.Content("~/Images/tlo.jpg")');
+    min-height: 500px;
 }
 
 .header-menu {
@@ -35,6 +36,7 @@
     height: auto;
     width: 100%;
     overflow: auto;
+    min-height: 704px;
 }
 
 .content-left {
@@ -49,32 +51,55 @@
     width: 30%;
     min-height: 702px;
     min-width: 250px;
+    opacity: 0.8;
 }
 
 .footer {
     clear: both;
-    background-color: gold;
     text-align: center;
     opacity: 0.8;
 }
 
 .textbox-in-login {
-    width: 200px;
+    width: 102%;
 }
 
 .content-login {
-    -webkit-border-radius: 25px;
--moz-border-radius: 25px;
-border-radius: 25px;
-    height: 100%;
-    width: 500px;
-    overflow: auto;
-    margin: 150px auto;
-    background-color: #f1f1f1;
+    width: 100%;
+    height: 704px;
+    background: none no-repeat 50% 0;
+    background-size: cover;
     font-size: 24px;
-    padding: 10px;
     opacity: 0.99;
 }
+
+.box-sigin {
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: #f1f1f1;
+    margin: 100px auto;
+    height: auto;
+    width: 500px;
+    padding: 20px 29px 15px 29px;
+}
+
+.box-registry {
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: #f1f1f1;
+    margin: 100px auto;
+    height: auto;
+    width: 500px;
+    padding: 1px 15px 15px 25px;
+}
+
+
 .roww {
-    width:100%;
+    width: 105.5%;
+}
+
+.main {
+    padding-top: 150px;
 }
