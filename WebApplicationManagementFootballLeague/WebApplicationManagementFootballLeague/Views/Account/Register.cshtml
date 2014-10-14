@@ -1,0 +1,149 @@
+﻿@model WebApplicationManagementFootballLeague.Models.RegisterModel
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    ViewBag.Title = "Rejestracja";
+}
+<div class="box-registry">
+    <form style="width:98.9%;">
+        <div class="page-header">
+            <h1 style="text-align: center">Rejestracja</h1>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+    
+            <div class="row roww">
+                <div class="col-xs-6">
+                    <div class="input-group textbox-in-registry">
+                        <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-user"></span></span>
+                        @Html.TextBoxFor(m => m.UserName, new { @type = "text", @class = "form-control", @placeholder = "E-mail" })
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                </div>
+            </div>
+            <div class="row roww">
+                <div class="col-xs-6">
+                </div>
+                <div class="col-xs-6">
+                    <div class="input-group textbox-in-registry">
+                        <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-lock"></span></span>
+                        @Html.PasswordFor(m => m.Password, new { @type = "text", @class = "form-control", @placeholder = "Hasło" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+            </div>
+            <div class="row roww">
+                <div class="col-xs-6">
+                </div>
+                <div class="col-xs-6">
+                    <div class="input-group textbox-in-registry">
+                        <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-lock"></span></span>
+                        @Html.PasswordFor(m => m.Password, new { @type = "text", @class = "form-control", @placeholder = "Powtórz Hasło" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+            </div>
+            <div class="row roww">
+                <div class="col-xs-6">
+                    <div class="input-group textbox-in-registry">
+                        <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-user"></span></span>
+                        @Html.TextBoxFor(m => m.UserName, new { @type = "text", @class = "form-control", @placeholder = "Imie" })
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                </div>
+            </div>
+            <div class="row roww">
+                <div class="col-xs-6">
+                    <div class="input-group textbox-in-registry">
+                        <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-user"></span></span>
+                        @Html.PasswordFor(m => m.Password, new { @type = "text", @class = "form-control", @placeholder = "Nazwisko" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+            </div>
+            <div class="row roww">
+                <div class="col-xs-6">
+                </div>
+                <div class="col-xs-6">
+                    <div class="input-group textbox-in-registry">
+                        <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-home"></span></span>
+                        @Html.PasswordFor(m => m.Password, new { @type = "text", @class = "form-control", @placeholder = "Miasto" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+            </div>
+            <div class="row roww">
+                <div class="col-xs-6">
+                </div>
+                <div class="col-xs-6">
+                    <div class="input-group textbox-in-registry">
+                        <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-barcode"></span></span>
+                        @Html.PasswordFor(m => m.Password, new { @type = "text", @class = "form-control", @placeholder = "Kod Pocztowy" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+            </div>
+            <div class="row roww">
+                <div class="col-xs-6">
+                </div>
+                <div class="col-xs-6">
+                    <div class="input-group textbox-in-registry">
+                        <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-flag"></span></span>
+                        <select class="form-control">
+                            <option selected="selected" value="Wybierz Kraj">Wybierz Kraj</option>
+
+                            <option value="0">Action</option>
+
+                            <option value="1">Drama</option>
+
+                            <option value="2">Comedy</option>
+
+                            <option value="3">Science Fiction</option>
+
+                        </select>
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+            </div>
+            <div class="row roww">
+                <div class="col-xs-6">
+                    <div class="input-group textbox-in-registry">
+                        <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-user"></span></span>
+                        @Html.TextBoxFor(m => m.UserName, new { @type = "text", @class = "form-control", @placeholder = "Data Urodzenia" })
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                </div>
+            </div>
+            <div class="row roww">
+                <div class="col-xs-6">
+                    <div class="input-group textbox-in-registry">
+                        <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-user"></span></span>
+                        <select class="form-control">
+                            <option selected="selected" value="Wybierz Kraj">Wybierz Pleć</option>
+
+                            <option value="0">Kobieta</option>
+
+                            <option value="1">Mężczyzna</option>
+
+                        </select>
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                </div>
+            </div>
+
+  
+    
+            <br />
+            <input type="button" class="btn btn-lg btn-primary btn-block" value="Register" onclick="location.href='@Url.Action("Register", "Account")    '" />
+
+        }
+    </form>
+</div>
