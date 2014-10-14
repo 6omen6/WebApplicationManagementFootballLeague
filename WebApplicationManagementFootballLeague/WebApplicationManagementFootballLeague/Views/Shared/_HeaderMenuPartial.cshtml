@@ -33,7 +33,7 @@
                 @if (Request.IsAuthenticated)
                 {
                     <text>
-                    @Html.ActionLink("Hello, " + User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", title = "Manage" })
+                    @Html.ActionLink("Cześć, " + User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", title = "Manage" })
                     @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                     {
                         @Html.AntiForgeryToken()
@@ -44,8 +44,8 @@
                 }
                 else
                 {             
-                        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link" })</li>
-                        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link" })</li>   
+                        <li>@Html.ActionLink("Zarejestruj się", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: green"})</li>
+                        <li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link",@style = "color: blue" })</li>   
                 }
             </ul>
         </div>

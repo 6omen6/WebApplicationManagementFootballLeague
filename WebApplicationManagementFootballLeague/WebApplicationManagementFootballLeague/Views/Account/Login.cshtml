@@ -5,7 +5,9 @@
 }
 <div class="box-sigin">
     <section class="form-signin" style="margin-right: 0px">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <div class="page-header">
+            <h1 style="text-align: center">Logowanie</h1>
+        </div>
         @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
         {
             @Html.AntiForgeryToken()
@@ -34,7 +36,7 @@
 
             <div class="row roww">
                 <div class="col-xs-6">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj</button>
                 </div>
                 <div class="col-xs-6">
                 </div>

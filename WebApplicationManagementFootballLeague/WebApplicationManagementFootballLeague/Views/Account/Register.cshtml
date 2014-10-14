@@ -4,7 +4,7 @@
     ViewBag.Title = "Rejestracja";
 }
 <div class="box-registry">
-    <form style="width:98.9%;">
+    <form style="width: 98.9%;">
         <div class="page-header">
             <h1 style="text-align: center">Rejestracja</h1>
         </div>
@@ -113,8 +113,10 @@
                 <div class="col-xs-6">
                     <div class="input-group textbox-in-registry">
                         <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-user"></span></span>
-                        @Html.TextBoxFor(m => m.UserName, new { @type = "text", @class = "form-control", @placeholder = "Data Urodzenia" })
-                        @Html.ValidationMessageFor(m => m.UserName)
+                        <div class="input-append date">
+                            @Html.TextBoxFor(m => m.UserName, new { @type = "text", @class = "form-control data", @placeholder = "Data Urodzenia" })
+                            @Html.ValidationMessageFor(m => m.UserName)
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-5">
@@ -142,8 +144,13 @@
   
     
             <br />
-            <input type="button" class="btn btn-lg btn-primary btn-block" value="Register" onclick="location.href='@Url.Action("Register", "Account")    '" />
-
+            <div class="row roww">
+                <div class="col-xs-6">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Rejestruj</button>
+                </div>
+                <div class="col-xs-6">
+                </div>
+            </div>
         }
     </form>
 </div>
