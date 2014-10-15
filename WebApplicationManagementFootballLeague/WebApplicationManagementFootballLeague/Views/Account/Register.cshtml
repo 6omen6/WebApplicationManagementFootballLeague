@@ -114,7 +114,7 @@
                     <div class="input-group textbox-in-registry">
                         <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-user"></span></span>
                         <div class="input-append date">
-                            @Html.TextBoxFor(m => m.UserName, new { @type = "text", @class = "form-control data", @placeholder = "Data Urodzenia" })
+                            @Html.TextBoxFor(m => m.UserName, new { @type = "text", @class = "form-control", @id="form_datetime", @placeholder = "Data Urodzenia" })
                             @Html.ValidationMessageFor(m => m.UserName)
                         </div>
                     </div>

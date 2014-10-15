@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
 </head>
 
 <body style="margin: 0px; background-image: url('@Url.Content("~/Images/tlo.jpg")'); background-attachment: fixed;">
@@ -44,3 +45,13 @@
     </div>
 </body>
 </html>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+<script src="~/Scripts/locales/bootstrap-datepicker.pl.js"></script>
+<script type="text/javascript">
+    $('.form_datetime').datepicker({
+        language: "pl"
+    })
+</script>
