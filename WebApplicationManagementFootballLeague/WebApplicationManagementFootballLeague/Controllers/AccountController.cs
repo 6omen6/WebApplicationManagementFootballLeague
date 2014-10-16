@@ -39,10 +39,11 @@ namespace WebApplicationManagementFootballLeague.Controllers
             {
                 return RedirectToLocal(returnUrl);
             }
-
-            // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", "The user name or password provided is incorrect.");
-            return View(model);
+            else
+            {
+                ViewBag.ErrorMessage = "Nieprawidłowy E-mial lub hasło";
+            }
+            return View();
         }
 
         //

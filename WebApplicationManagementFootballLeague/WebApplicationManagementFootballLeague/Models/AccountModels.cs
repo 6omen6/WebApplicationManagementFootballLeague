@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
+using System.Web.Mvc;
 using System.Data.Entity;
 using System.Globalization;
 using System.Web.Security;
+
 
 namespace WebApplicationManagementFootballLeague.Models
 {
@@ -24,12 +27,13 @@ namespace WebApplicationManagementFootballLeague.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
+        [Required(ErrorMessage = "Pole nie może być puste")]
         public string UserName { get; set; }
     }
 
     public class RegisterExternalLoginModel
     {
-        [Required]
+        [Required(ErrorMessage = "Pole nie może być puste")]
         [Display(Name = "User name")]
         public string UserName { get; set; }
 
@@ -51,14 +55,14 @@ namespace WebApplicationManagementFootballLeague.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        //[Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class LoginModel
     {
-        [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "UserName")]
+        [Required(ErrorMessage = "Pole nie może być puste")]
         public string UserName { get; set; }
 
         [Required]
@@ -72,8 +76,8 @@ namespace WebApplicationManagementFootballLeague.Models
 
     public class RegisterModel
     {
-        [Required]
-        [Display(Name = "User name")]
+        [Required(ErrorMessage = "Pole nie może być puste")]
+        [Display(Name = "UserName")]
         public string UserName { get; set; }
 
         [Required]
@@ -84,7 +88,7 @@ namespace WebApplicationManagementFootballLeague.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 

@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/jquery.qtip.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="~/Scripts/jquery.qtip.js"></script>
     <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
 </head>
 
@@ -23,9 +28,6 @@
 
 </body>
 
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/jqueryval")
-<script src="~/Scripts/jquery.validate.bootstrap.popover.min.js"></script>
 <script src="~/Scripts/bootstrap-datepicker.js"></script>
 <script src="~/Scripts/locales/bootstrap-datepicker.pl.js"></script>
 <script type="text/javascript">
@@ -35,10 +37,6 @@
         endDate: "01-01-2007",
         language: "pl",
         orientation: "top left"
-    })
+    });
 </script>
-<script type="text/javascript">
-    $('#signin-form').validate_popover({ popoverPosition: 'right' });
-</script>
-
 </html>

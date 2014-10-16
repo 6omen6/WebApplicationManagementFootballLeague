@@ -189,6 +189,12 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Content\jquery.qtip.css" />
+    <Content Include="Content\jquery.qtip.min.css" />
+    <Content Include="Scripts\imagesloaded.pkg.min.js" />
+    <Content Include="Scripts\jquery.qtip.js" />
+    <Content Include="Scripts\jquery.qtip.min.js" />
+    <Content Include="Scripts\jquery.qtip.validation.js" />
     <Content Include="Scripts\jquery.validate.bootstrap.popover.min.js" />
   </ItemGroup>
   <ItemGroup>
