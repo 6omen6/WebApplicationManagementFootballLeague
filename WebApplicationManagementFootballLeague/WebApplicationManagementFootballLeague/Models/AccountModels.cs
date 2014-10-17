@@ -14,7 +14,7 @@ namespace WebApplicationManagementFootballLeague.Models
     public class UsersContext : DbContext
     {
         public UsersContext()
-            : base("DefaultConnection")
+            : base("baza")
         {
         }
 
@@ -29,6 +29,8 @@ namespace WebApplicationManagementFootballLeague.Models
         public int UserId { get; set; }
         [Required(ErrorMessage = "Pole nie może być puste")]
         public string UserName { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
     }
 
     public class RegisterExternalLoginModel
@@ -85,6 +87,8 @@ namespace WebApplicationManagementFootballLeague.Models
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
