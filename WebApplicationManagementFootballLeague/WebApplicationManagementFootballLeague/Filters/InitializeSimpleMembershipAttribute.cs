@@ -38,7 +38,7 @@ namespace WebApplicationManagementFootballLeague.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("Baza", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: false);
                 }
                 catch (Exception ex)
                 {

@@ -14,7 +14,7 @@ namespace WebApplicationManagementFootballLeague.Models
     public class UsersContext : DbContext
     {
         public UsersContext()
-            : base("baza")
+            : base("DefaultConnection")
         {
         }
 
