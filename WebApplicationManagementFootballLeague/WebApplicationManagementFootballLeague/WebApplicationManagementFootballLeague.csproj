@@ -189,10 +189,7 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="App_Data\BaseSZLP.mdf" />
-    <Content Include="App_Data\BaseSZLP_log.ldf">
-      <DependentUpon>BaseSZLP.mdf</DependentUpon>
-    </Content>
+    <Content Include="Scripts\DialogForm.js" />
     <Content Include="Content\jquery.qtip.css" />
     <Content Include="Content\jquery.qtip.min.css" />
     <Content Include="Scripts\imagesloaded.pkg.min.js" />
@@ -384,7 +381,9 @@
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

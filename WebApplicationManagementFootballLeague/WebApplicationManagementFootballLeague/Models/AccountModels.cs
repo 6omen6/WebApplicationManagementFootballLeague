@@ -36,7 +36,7 @@ namespace WebApplicationManagementFootballLeague.Models
     public class RegisterExternalLoginModel
     {
         [Required(ErrorMessage = "Pole nie może być puste")]
-        [Display(Name = "User name")]
+        [Display(Name = "UserName")]
         public string UserName { get; set; }
 
         public string ExternalLoginData { get; set; }

@@ -17,20 +17,19 @@
             <p>@ViewBag.ErrorMessage</p>
         </div>
         }
-
         <form class="form-signin" id="signin-form" style="margin-right: 0px">
             <div class="row roww">
                 <div class="col-sm-12">
                     <div class="input-group textbox-in-login">
                         <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-user"></span></span>
-                        @Html.TextBoxFor(m => m.UserName, new { @type = "text", @name = "UserName", @class = "form-control UserName", @placeholder = "E-mail" })
+                        @Html.TextBoxFor(m => m.UserName, new { @type = "text", @name = "UserName", @class = "form-control Lewa", @placeholder = "E-mail" })
                         @Html.ValidationMessageFor(m => m.UserName)
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="input-group textbox-in-login">
                         <span class="input-group-addon" style="background-color: white;"><span class="glyphicon glyphicon-lock"></span></span>
-                        @Html.PasswordFor(m => m.Password, new { @type = "text", @class = "form-control", @placeholder = "Hasło" })
+                        @Html.PasswordFor(m => m.Password, new { @type = "text", @class = "form-control Lewa", @placeholder = "Hasło" })
                         @Html.ValidationMessageFor(m => m.Password)
                     </div>
                 </div>
@@ -50,4 +49,5 @@
         </form>
     }
 </div>
+
 <script src="~/Scripts/jquery.qtip.validation.js"></script>
