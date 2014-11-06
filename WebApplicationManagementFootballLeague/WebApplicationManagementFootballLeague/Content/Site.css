@@ -1,5 +1,5 @@
 ﻿.wraper {
-    margin: 0px 15px 0px 15px;
+    margin: 0px 10% 0px 10%;
 }
 
 .bodyy {
@@ -14,14 +14,14 @@
 
 .top {
     background-color: none;
-    height: 263px;
+    height: auto;
     margin-bottom: 5px;
 }
 
 .top-left {
     float: left;
     background-color: none;
-    width: 44%;
+    width: 55%;
     height: 100%;
     opacity: 0.97;
 }
@@ -30,8 +30,8 @@
     float: right;
     background-color: none;
     height: 100%;
-    width: 55%;
-    opacity: 0.58;
+    width: 44%;
+    opacity: 0.97;
 }
 
 .content {
@@ -43,14 +43,14 @@
 
 .content-left {
     float: left;
-    width: 70%;
+    width: 55%;
     min-height: 702px;
 }
 
 .content-right {
     float: right;
     background-color: #EEE;
-    width: 30%;
+    width: 44%;
     min-height: 702px;
     min-width: 250px;
     opacity: 0.8;
