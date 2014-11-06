@@ -383,17 +383,17 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Partial\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\_HeaderMenuPartial.cshtml" />
-    <Content Include="Views\Shared\_TablePartial.cshtml" />
+    <Content Include="Views\Partial\_HeaderMenuPartial.cshtml" />
+    <Content Include="Views\Partial\_TablePartial.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\Shared\_FooterPartial.cshtml" />
-    <Content Include="Views\Shared\_NavigationLogoPartial.cshtml" />
+    <Content Include="Views\Partial\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
-    <Content Include="Views\Shared\_NewsPartial.cshtml" />
+    <Content Include="Views\Partial\_NewsPartial.cshtml" />
+    <Content Include="Views\Partial\_InfoTeamPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

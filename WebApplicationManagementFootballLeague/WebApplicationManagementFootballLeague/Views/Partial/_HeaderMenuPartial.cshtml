@@ -3,6 +3,15 @@
         margin-bottom: 5px;
     }
 
+    .navbar-right {
+        margin-top: 25px;
+        width: 250px;
+    }
+
+    .navbar-text {
+        margin-top: 0px;
+    }
+
     .navbar-default {
         border-color: #428bca;
         border: 2px solid #428bca;
@@ -56,17 +65,16 @@
                 @if (Request.IsAuthenticated)
                 {
                     <text>
-                    @Html.ActionLink("Cześć, " + User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-text", title = "Manage" })
                     @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                     {
                         @Html.AntiForgeryToken()
-<a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                        <text>Cześć, @User.Identity.Name </text><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
                     }
-
+                @Html.ActionLink("Manage " + @User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-text", title = "Manage" })
                     </text>
                 }
                 else
-                {             
+                {
                     <li>@Html.ActionLink("Zarejestruj się", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: green" })</li>
                     <li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: blue" })</li>   
                 }

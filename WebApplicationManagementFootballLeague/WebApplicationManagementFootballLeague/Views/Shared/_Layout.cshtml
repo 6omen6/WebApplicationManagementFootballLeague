@@ -12,17 +12,17 @@
 
 <body style="margin: 0px; background-image: url('@Url.Content("~/Images/tlo.jpg")'); background-attachment: fixed;">
     <div class="header-menu">
-        @Html.Partial("_HeaderMenuPartial")
+        @Html.Partial("~/Views/Partial/_HeaderMenuPartial.cshtml")
     </div>
     <div class="wraper">
         <div class="top">
             <div class="top-left">
                 <section id="login">
-
+                    @Html.Partial("~/Views/Partial/_InfoTeamPartial.cshtml")
                 </section>
             </div>
             <div class="top-right">
-                @Html.Partial("_TablePartial")
+                @Html.Partial("~/Views/Partial/_TablePartial.cshtml")
             </div>
         </div>
         <div class="content">
@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="footer">
-        @Html.Partial("_FooterPartial")
+        @Html.Partial("~/Views/Partial/_FooterPartial.cshtml")
     </div>
 </body>
 </html>
