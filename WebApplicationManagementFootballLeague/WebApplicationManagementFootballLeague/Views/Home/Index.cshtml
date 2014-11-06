@@ -1,5 +1,21 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";  
 }
+@*<style>
+.panell {
+        background:none;
+        border:none;
+        padding: 0px
+        }
+    .headPanel {
+        border: 2px solid;
+        border-color:#428bca;
+    }
+</style>
 
-@Html.Partial("_NewsPartial")
+<div class="panel panel-default panell">
+    <div class="panel-heading headPanel">Panel heading without title</div>
+    <div class="panel-body">*@
+        @Html.Partial("_NewsPartial")
+ @*   </div>
+</div>*@

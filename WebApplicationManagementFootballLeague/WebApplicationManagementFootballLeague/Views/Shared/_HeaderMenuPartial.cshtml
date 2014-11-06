@@ -2,15 +2,23 @@
     .navbar {
         margin-bottom: 5px;
     }
+
     .navbar-default {
         border-color: #428bca;
         border: 2px solid #428bca;
     }
-     .navbar-nav > li > a {
+
+    .navbar-nav > li > a {
         padding-top: 0px;
         padding-bottom: 0px;
     }
 
+    .navbar-default .navbar-nav > .open > a,
+    .navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .open > a:focus {
+        color: #555;
+        background-color: #428bca;
+    }
 </style>
 
 <nav class="navbar navbar-default" role="navigation">
