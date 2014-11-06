@@ -1,5 +1,4 @@
 ﻿.wraper {
-    font-size: 24px;
     margin: 0px 15px 0px 15px;
 }
 
@@ -10,27 +9,29 @@
 }
 
 .header-menu {
-    height: 50px;
+    height: auto;
 }
 
 .top {
-    background-color: gold;
-    height: 160px;
-
+    background-color: none;
+    height: 263px;
+    margin-bottom: 5px;
 }
 
 .top-left {
     float: left;
-    background-color: black;
-    width: 70%;
+    background-color: none;
+    width: 44%;
     height: 100%;
+    opacity: 0.97;
 }
 
 .top-right {
     float: right;
-    background-color: #b6ff00;
+    background-color: none;
     height: 100%;
-    width: 30%;
+    width: 55%;
+    opacity: 0.58;
 }
 
 .content {

@@ -1,31 +1,39 @@
-﻿<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
-        </div>
+﻿<style>
+     .navbar-nav > li > a {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
+</style>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                <li class="dropdown" style="width: 90px">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="~/Images/herby/herbOlimpiaWolaZalezna.jpg" />
+                        <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li style="text-align: center; font-weight: 700;">LKS Olimpia Wola Zależna</li>
                         <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">Aktualności</a></li>
+                        <li><a href="#">Kadra</a></li>
+                        <li><a href="#">Terminarz</a></li>
+                        <li><a href="#">Statystyki</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" style="width: 90px">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="~/Images/herby/herbCzarnocin.jpg" />
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li style="text-align: center; font-weight: 700;">LKS Czarnocin</li>
                         <li class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="#">Aktualności</a></li>
+                        <li><a href="#">Kadra</a></li>
+                        <li><a href="#">Terminarz</a></li>
+                        <li><a href="#">Statystyki</a></li>
                     </ul>
                 </li>
             </ul>
@@ -33,19 +41,19 @@
                 @if (Request.IsAuthenticated)
                 {
                     <text>
-                    @Html.ActionLink("Cześć, " + User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", title = "Manage" })
+                    @Html.ActionLink("Cześć, " + User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-text", title = "Manage" })
                     @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                     {
                         @Html.AntiForgeryToken()
-                        <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+<a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
                     }
 
                     </text>
                 }
                 else
                 {             
-                        <li>@Html.ActionLink("Zarejestruj się", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: green"})</li>
-                        <li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link",@style = "color: blue" })</li>   
+                    <li>@Html.ActionLink("Zarejestruj się", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: green" })</li>
+                    <li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: blue" })</li>   
                 }
             </ul>
         </div>

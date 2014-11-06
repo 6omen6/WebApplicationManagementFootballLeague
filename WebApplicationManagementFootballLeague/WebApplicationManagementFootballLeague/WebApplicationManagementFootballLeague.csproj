@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GridMvc">
+      <HintPath>..\packages\Grid.Mvc.3.0.0\lib\net40\GridMvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -189,9 +192,15 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Content\Gridmvc.css" />
+    <Content Include="Images\herby\herbCzarnocin.jpg" />
+    <Content Include="Images\herby\herbOlimpiaWolaZalezna.jpg" />
     <Content Include="Scripts\DialogForm.js" />
     <Content Include="Content\jquery.qtip.css" />
     <Content Include="Content\jquery.qtip.min.css" />
+    <Content Include="Scripts\gridmvc.js" />
+    <Content Include="Scripts\gridmvc.lang.ru.js" />
+    <Content Include="Scripts\gridmvc.min.js" />
     <Content Include="Scripts\imagesloaded.pkg.min.js" />
     <Content Include="Scripts\jquery.qtip.js" />
     <Content Include="Scripts\jquery.qtip.min.js" />
@@ -265,6 +274,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Grid.mvc.readme" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Images\tlo.jpg" />
     <Content Include="Images\user_top.jpg" />
@@ -377,9 +387,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_HeaderMenuPartial.cshtml" />
-    <Content Include="Views\Shared\_LogoPartial.cshtml" />
+    <Content Include="Views\Shared\_TablePartial.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
+    <Content Include="Views\Shared\_NavigationLogoPartial.cshtml" />
+    <Content Include="Views\Shared\_GridPager.cshtml" />
+    <Content Include="Views\Shared\_Grid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

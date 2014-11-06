@@ -18,17 +18,11 @@
         <div class="top">
             <div class="top-left">
                 <section id="login">
-                    @Html.Partial("_LogoPartial")
+                    @Html.Partial("_TablePartial")
                 </section>
             </div>
             <div class="top-right">
-                <nav>
-                    <ul id="menu">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    </ul>
-                </nav>
+@*                    @Html.Partial("_NavigationLogoPartial")*@
             </div>
         </div>
         <div class="content">
@@ -48,8 +42,7 @@
 
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/jqueryval")
-<script src="~/Scripts/bootstrap-datepicker.js"></script>
-<script src="~/Scripts/locales/bootstrap-datepicker.pl.js"></script>
+@Scripts.Render("~/bundles/bootstrap")
 <script type="text/javascript">
     $('.form_datetime').datepicker({
         language: "pl"
