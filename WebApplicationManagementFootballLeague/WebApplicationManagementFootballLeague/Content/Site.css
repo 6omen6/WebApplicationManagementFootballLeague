@@ -1,5 +1,6 @@
 ﻿.wraper {
-    margin: 0px 15% 0px 15%;
+    margin: 0px 10% 0px 10%;
+        background-color: rgba(0,0,0, 0.6);
 }
 
 .bodyy {
@@ -49,7 +50,7 @@
 
 .content-right {
     float: right;
-    background-color: #EEE;
+    background-color: none;
     width: 30%;
     min-height: 702px;
     min-width: 250px;
