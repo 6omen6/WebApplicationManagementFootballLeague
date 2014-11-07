@@ -21,7 +21,8 @@ namespace WebApplicationManagementFootballLeague
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/bootstrap-datepicker.js",
-                        "~/Scripts/locales/bootstrap-datepicker.pl.js"));
+                        "~/Scripts/locales/bootstrap-datepicker.pl.js",
+                        "~/Scripts/locales/bootstrap-select.min.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -31,6 +32,7 @@ namespace WebApplicationManagementFootballLeague
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/site.css",
                         "~/Content/bootstrap.css",
+                        "~/Content/bootstrap-select.css",
                         "~/Content/bootstrap-theme.css"));
         }
     }
