@@ -17,13 +17,13 @@
 
 <body style="margin: 0px; min-height: 915px; max-height: 915px; background-image: url('@Url.Content("~/Images/tlo.jpg")')";>
     <div class="header-menu">
-        @Html.Partial("_HeaderMenuPartial")
+        @Html.Partial("~/Views/Partial/_HeaderMenuPartial.cshtml")
     </div>
     <div class="content-login">
         @RenderBody()
     </div>
     <div class="footer">
-        @Html.Partial("_FooterPartial")
+        @Html.Partial("~/Views/Partial/_FooterPartial.cshtml")
     </div>
 
 </body>
