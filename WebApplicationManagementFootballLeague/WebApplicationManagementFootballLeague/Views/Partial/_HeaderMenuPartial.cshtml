@@ -77,7 +77,7 @@
                                 @Html.AntiForgeryToken()
                                 <text>Cześć, @User.Identity.Name </text><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
                             }
-                            @Html.ActionLink("Manage " + @User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-text", title = "Manage" })
+                            <li>@Html.ActionLink("Manage ", "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", title = "Manage" })</li>
                             </text>
                         }
                         else
