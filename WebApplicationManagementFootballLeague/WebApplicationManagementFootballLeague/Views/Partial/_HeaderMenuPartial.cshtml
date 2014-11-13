@@ -4,8 +4,8 @@
     }
 
     .navbar-right {
-        margin-top: 25px;
-        width: 250px;
+        margin-top: 0px;
+        width: 75px;
     }
 
     .navbar-text {
@@ -62,22 +62,31 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                @if (Request.IsAuthenticated)
-                {
-                    <text>
-                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>Cześć, @User.Identity.Name </text><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-                    }
-                @Html.ActionLink("Manage " + @User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-text", title = "Manage" })
-                    </text>
-                }
-                else
-                {
-                    <li>@Html.ActionLink("Zarejestruj się", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: green" })</li>
-                    <li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: blue" })</li>   
-                }
+                <li class="dropdown" style="width: 80px">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span style="font-size: 3.2em; padding-top: 5px" class="glyphicon glyphicon-user"></span>
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li style="text-align: center; font-weight: 700;">Moje konto</li>
+                        <li class="divider"></li>
+                        @if (Request.IsAuthenticated)
+                        {
+                            <text>
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <text>Cześć, @User.Identity.Name </text><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                            }
+                            @Html.ActionLink("Manage " + @User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-text", title = "Manage" })
+                            </text>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Zarejestruj się", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: green" })</li>
+                            <li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: blue" })</li>   
+                        }
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

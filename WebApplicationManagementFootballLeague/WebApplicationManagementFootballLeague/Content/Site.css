@@ -1,6 +1,6 @@
 ﻿.wraper {
     margin: 0px 10% 0px 10%;
-        background-color: rgba(0,0,0, 0.6);
+    background-color: rgba(0,0,0, 0.6);
 }
 
 .bodyy {
@@ -11,6 +11,7 @@
 
 .header-menu {
     height: auto;
+    top: 0px;
 }
 
 .top {
@@ -19,23 +20,16 @@
     margin-bottom: 5px;
 }
 
-.top-left {
-    float: left;
-    background-color: none;
-    width: 55%;
-    height: 100%;
-    opacity: 0.97;
-}
-
 .top-right {
     float: right;
     background-color: none;
     height: 100%;
-    width: 44%;
+    /*width: 30%;*/
     opacity: 0.97;
 }
 
 .content {
+    /*margin: 85px auto;*/
     height: auto;
     width: 100%;
     overflow: auto;
@@ -44,8 +38,18 @@
 
 .content-left {
     float: left;
-    width: 68%;
+    width: 48%;
     min-height: 702px;
+}
+
+.content-mid {
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    width: 20%;
+    min-height: 702px;
+    background-color: white;
+    opacity: 0.6;
 }
 
 .content-right {

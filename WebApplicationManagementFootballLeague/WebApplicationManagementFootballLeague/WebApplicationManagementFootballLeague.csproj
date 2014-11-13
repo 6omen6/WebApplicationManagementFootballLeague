@@ -197,6 +197,7 @@
     <Content Include="Content\Gridmvc.css" />
     <Content Include="Images\herby\herbCzarnocin.jpg" />
     <Content Include="Images\herby\herbOlimpiaWolaZalezna.jpg" />
+    <Content Include="Images\naglowek-niebieski.jpg" />
     <Content Include="Scripts\bootstrap-select.js" />
     <Content Include="Scripts\bootstrap-select.min.js" />
     <Content Include="Scripts\DialogForm.js" />
@@ -431,6 +432,7 @@
     <Content Include="Views\Partial\_NewsPartial.cshtml" />
     <Content Include="Views\Partial\_InfoTeamPartial.cshtml" />
     <Content Include="Views\Partial\_StatisticPartial.cshtml" />
+    <Content Include="Views\Partial\_TableMiniPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

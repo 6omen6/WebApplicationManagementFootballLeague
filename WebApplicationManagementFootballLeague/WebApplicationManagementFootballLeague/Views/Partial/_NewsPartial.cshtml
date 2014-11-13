@@ -11,6 +11,9 @@
         padding-left: 20px;
         padding-right: 20px;
     }
+    .panel-primary > .panel-heading {
+  background-image: url(~/Images/naglowek-niebieski.jpg);
+}
 </style>
 
 <ul class="nav nav-tabs" role="tablist" style="background-color: white;">
@@ -23,7 +26,7 @@
             @for (int i = 1; i <= 8; i++)
         { 
             <div class="panel panel-primary">
-                <div class="panel-heading">Panel heading without title</div>
+                <div class="panel-heading" style="background-image:url(~/Images/naglowek-niebieski.jpg)" >Panel heading without title</div>
                 <div class="panel-body">
                     Panel content
                 </div>

@@ -15,21 +15,32 @@
         @Html.Partial("~/Views/Partial/_HeaderMenuPartial.cshtml")
     </div>
     <div class="wraper">
-        <div class="top">
+        @*        <div class="top">
             <div class="top-left">
                 <section id="login">
                     @Html.Partial("~/Views/Partial/_InfoTeamPartial.cshtml")
                 </section>
             </div>
             <div class="top-right">
-                @Html.Partial("~/Views/Partial/_TablePartial.cshtml")
+                @Html.Partial("~/Views/Partial/_TableMiniPartial.cshtml")
             </div>
-        </div>
+        </div>*@
         <div class="content">
             <div class="content-left">
+                <div class="top">
+                    @Html.Partial("~/Views/Partial/_InfoTeamPartial.cshtml")
+                </div>
                 @RenderBody()
             </div>
+            <div class="content-mid">
+                <div class="top">
+                    Miejsce na reklame.
+                </div>
+            </div>
             <div class="content-right">
+                <div class="top">
+                    @Html.Partial("~/Views/Partial/_TableMiniPartial.cshtml")
+                </div>
                 @Html.Partial("~/Views/Partial/_StatisticPartial.cshtml")
             </div>
         </div>
