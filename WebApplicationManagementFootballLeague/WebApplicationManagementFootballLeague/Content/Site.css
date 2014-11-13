@@ -43,10 +43,9 @@
 }
 
 .content-mid {
-    margin-left: 10px;
-    margin-right: 10px;
+        margin-left: 6px;
     float: left;
-    width: 20%;
+    width: 21%;
     min-height: 702px;
     background-color: white;
     opacity: 0.6;
