@@ -1,48 +1,26 @@
-﻿<style>
-    .panel-primary > .panel-headingStatistic {
-        color: black;
-        text-align: center;
-        background-color: white;
-        border-bottom-color: red;
-    }
-
-    .panel-body {
-        padding: 0px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-</style>
-
-<ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active" style="width: 100%;">
-        <select id="basic" class="selectpicker show-tick form-control" data-live-search="true" style="text-align: center; color: white; background-color: #428bca; border-color: #428bca;">
-            <option>Najlepsi Strzelcy</option>
-            <option>Najlepej Asystujący</option>
-            <option>Najlepej Asystujący</option>
-        </select>
-    </li>
-</ul>
-<div>
+﻿<div>
     <div class="panel panel-primary">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Lp.</th>
-                    <th>Imie i Nazwisko</th>
-                    <th>Rezultat</th>
-                </tr>
-            </thead>
-            @for (int i = 1; i < 10; i++)
-            {
-                <tr>
-                    <td>@i</td>
-                    <td class="Lp">Konrad Rożenek</td>
-                    <td>8</td>
-                </tr>
-            }
-        </table>
+        <div class="panel-heading">
+            <div class="panel-heading">
+                <select class="panel-heading" style="direction: ltr; background: rgba(54, 25, 25, 0); border: 0px solid blue">
+                    <option style="color: black; margin:auto;">Najlepsi Strzelcy</option>
+                    <option style="color: black; margin:auto;">Najlepej Asystujący</option>
+                    <option style="color: black; margin:auto;">Najlepej Asystujący</option>
+                </select>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped">
+                @for (int i = 1; i < 10; i++)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td class="Lp">Konrad Rożenek</td>
+                        <td>8</td>
+                    </tr>
+                }
+            </table>
+        </div>
     </div>
 </div>
 

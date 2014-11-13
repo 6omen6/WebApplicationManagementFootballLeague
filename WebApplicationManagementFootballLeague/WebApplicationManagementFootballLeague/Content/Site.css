@@ -1,17 +1,24 @@
 ﻿.wraper {
     margin: 0px 10% 0px 10%;
-    background-color: rgba(0,0,0, 0.6);
+    background-color: rgba(0,0,0, 0.4);
+}
+
+.wtabeli1 {
+    background-image: url('@Url.Content("~/Images/tlo.jpg")');
 }
 
 .bodyy {
-    margin: 0px;
     background-image: url('@Url.Content("~/Images/tlo.jpg")');
     min-height: 500px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 12px;
+    font-weight: normal;
+    color: #404040;
+    text-align: left;
 }
 
 .header-menu {
     height: auto;
-    top: 0px;
 }
 
 .top {
@@ -43,7 +50,7 @@
 }
 
 .content-mid {
-        margin-left: 6px;
+    margin-left: 6px;
     float: left;
     width: 21%;
     min-height: 702px;
@@ -108,4 +115,48 @@
 
 .main {
     padding-top: 150px;
+}
+
+.table table-hover, th, thead, tr {
+    font-size: 10px;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    padding: 1px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    font-size: 13px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.Lp {
+    font-weight: 700;
+    text-align: center;
+}
+
+tr {
+    font-size: 12px;
+}
+
+.panel-heading {
+    padding: 2px;
+    text-align: center;
+}
+
+.panel {
+    margin-bottom: 5px;
+}
+
+.panel-body {
 }

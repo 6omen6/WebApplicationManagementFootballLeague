@@ -198,6 +198,7 @@
     <Content Include="Images\herby\herbCzarnocin.jpg" />
     <Content Include="Images\herby\herbOlimpiaWolaZalezna.jpg" />
     <Content Include="Images\naglowek-niebieski.jpg" />
+    <Content Include="Images\tabela-h-tlo.gif" />
     <Content Include="Scripts\bootstrap-select.js" />
     <Content Include="Scripts\bootstrap-select.min.js" />
     <Content Include="Scripts\DialogForm.js" />

@@ -30,10 +30,10 @@ namespace WebApplicationManagementFootballLeague
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                        "~/Content/site.css",
                         "~/Content/bootstrap.css",
                         "~/Content/bootstrap-select.css",
-                        "~/Content/bootstrap-theme.css"));
+                        "~/Content/bootstrap-theme.css",
+                        "~/Content/site.css"));
         }
     }
 }
