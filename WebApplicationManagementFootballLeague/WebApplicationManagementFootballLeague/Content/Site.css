@@ -18,7 +18,49 @@
 }
 
 .header-menu {
+    z-index: 1;
     height: auto;
+    position: fixed;
+    width: 100%;
+    opacity: 0.98;
+}
+.center-text {
+    text-align:center;
+}
+
+.navbar {
+    margin-bottom: 5px;
+}
+
+.navbar-top-right {
+    margin-top: 0px;
+    width: 75px;
+}
+
+.navbar-text {
+    margin-top: 0px;
+}
+
+.navbar-default {
+    border-color: #428bca;
+    border: 0px solid #428bca;
+}
+
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #428bca;
+}
+.open > .dropdown-menu {
+  display: block;
+  margin-left: -35px;
+  margin-right: -35px;
 }
 
 .top {
@@ -36,7 +78,8 @@
 }
 
 .content {
-    /*margin: 85px auto;*/
+    z-index: 2;
+    padding-top: 85px;
     height: auto;
     width: 100%;
     overflow: auto;
@@ -152,6 +195,15 @@ tr {
 .panel-heading {
     padding: 2px;
     text-align: center;
+}
+
+
+.panel-primary > .panel-heading {
+    background-image: url(/Images/naglowek-niebieski.jpg);
+}
+
+.panell {
+    background-image: url(/Images/naglowek-niebieski.jpg);
 }
 
 .panel {
