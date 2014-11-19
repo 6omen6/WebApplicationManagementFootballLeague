@@ -1,21 +1,7 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";  
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var Active = ViewData["BodyPage"];
 }
-@*<style>
-.panell {
-        background:none;
-        border:none;
-        padding: 0px
-        }
-    .headPanel {
-        border: 2px solid;
-        border-color:#428bca;
-    }
-</style>
 
-<div class="panel panel-default panell">
-    <div class="panel-heading headPanel">Panel heading without title</div>
-    <div class="panel-body">*@
-        @Html.Partial("~/Views/Partial/_NewsPartial.cshtml")
- @*   </div>
-</div>*@
+@Html.Partial("~/Views/Partial/_SecondMenuPartial.cshtml", new ViewDataDictionary { {"BodyPage", Active} })
+@Html.Partial("~/Views/Partial/_BodyPartial.cshtml", ViewData)

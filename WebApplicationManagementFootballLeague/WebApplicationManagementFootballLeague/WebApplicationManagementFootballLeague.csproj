@@ -434,6 +434,9 @@
     <Content Include="Views\Partial\_InfoTeamPartial.cshtml" />
     <Content Include="Views\Partial\_StatisticPartial.cshtml" />
     <Content Include="Views\Partial\_TableMiniPartial.cshtml" />
+    <Content Include="Views\Partial\_FootballTeamPartial.cshtml" />
+    <Content Include="Views\Partial\_SecondMenuPartial.cshtml" />
+    <Content Include="Views\Partial\_BodyPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
