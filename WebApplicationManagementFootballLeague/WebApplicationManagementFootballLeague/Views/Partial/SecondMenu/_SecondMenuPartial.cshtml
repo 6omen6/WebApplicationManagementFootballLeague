@@ -1,19 +1,53 @@
 ﻿@{
     var active = Convert.ToString(ViewData["BodyPage"]);
 }
-
 <ul class="nav nav-tabs" role="tablist" style="background-color: white;">
-    <li id="News" role="presentation" onclick="activeNews()" class="active">@Ajax.ActionLink("Aktualności", "ShowNews", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
-    <li id="FootballTeam" onclick="activeFootballTeam()" role="presentation">@Ajax.ActionLink("Kadra", "ShowFootballTeam", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
+    <a id="dLabel" data-toggle="dropdown" aria-haspopup="true" role="menu" aria-expanded="false">asa
+    <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <li id="TeamNews" role="presentation" onclick="activeTeamNews()" class="active">@Ajax.ActionLink("Aktualności", "ShowTeamNews", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
+        <li id="TeamFootball" onclick="activeTeamFootball()" role="presentation">@Ajax.ActionLink("Kadra", "ShowTeamFootball", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
+        <li id="TeamTimefootball" onclick="activeTeamTimetable()" role="presentation">@Ajax.ActionLink("Terminarz", "ShowTeamTimetable", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
+        <li id="TeamAbout" onclick="activeTeamAbout()" role="presentation">@Ajax.ActionLink("O Nas", "ShowTeamAbout", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
+        <li id="TeamContact" onclick="activeTeamContact()" role="presentation">@Ajax.ActionLink("Kontakt", "ShowTeamContact", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
+    </ul>
 </ul>
 
 <script type="text/javascript">
-    function activeNews() {
-        $('#News').addClass('active');
-        $('#FootballTeam').removeClass('active');
+    function activeTeamNews() {
+        $('#TeamNews').addClass('active');
+        $('#TeamFootball').removeClass('active');
+        $('#TeamTimefootball').removeClass('active');
+        $('#TeamAbout').removeClass('active');
+        $('#TeamContact').removeClass('active');
     }
-    function activeFootballTeam() {
-        $('#FootballTeam').addClass('active');
-        $('#News').removeClass('active');
+    function activeTeamFootball() {
+        $('#TeamNews').removeClass('active');
+        $('#TeamFootball').addClass('active');
+        $('#TeamTimefootball').removeClass('active');
+        $('#TeamAbout').removeClass('active');
+        $('#TeamContact').removeClass('active');
+    }
+    function activeTeamTimetable() {
+        $('#TeamNews').removeClass('active');
+        $('#TeamFootball').removeClass('active');
+        $('#TeamTimefootball').addClass('active');
+        $('#TeamAbout').removeClass('active');
+        $('#TeamContact').removeClass('active');
+    }
+    function activeTeamAbout() {
+        $('#TeamNews').removeClass('active');
+        $('#TeamFootball').removeClass('active');
+        $('#TeamTimefootball').removeClass('active');
+        $('#TeamAbout').addClass('active');
+        $('#TeamContact').removeClass('active');
+    }
+    function activeTeamContact() {
+        $('#TeamNews').removeClass('active');
+        $('#TeamFootball').removeClass('active');
+        $('#TeamTimefootball').removeClass('active');
+        $('#TeamAbout').removeClass('active');
+        $('#TeamContact').addClass('active');
     }
 </script>

@@ -10,43 +10,32 @@ namespace WebApplicationManagementFootballLeague.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-            if (System.Web.HttpContext.Current.Session["BodyPage"] != null)
-            {
-                ViewData["BodyPage"] = System.Web.HttpContext.Current.Session["BodyPage"];
-            }
-            else
-            {
-                ViewData["BodyPage"] = "News";
-            }
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult ShowTeamNews()
         {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
+            return PartialView("~/Views/Partial/Team/_TeamNewsPartial.cshtml");
         }
 
-        public ActionResult Contact()
+        public ActionResult ShowTeamFootball()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        public ActionResult ShowNews()
-        {
-            System.Web.HttpContext.Current.Session["BodyPage"] = "News";
-            return PartialView("~/Views/Partial/News/_NewsPartial.cshtml");
-        }
-        public ActionResult ShowFootballTeam()
-        {
-            System.Web.HttpContext.Current.Session["BodyPage"] = "FootballTeam";
             return PartialView("~/Views/Partial/Team/_TeamFootballPartial.cshtml");
         }
 
+        public ActionResult ShowTeamTimetable()
+        {
+            return PartialView("~/Views/Partial/Team/_TeamTimetablePartial.cshtml");
+        }
 
+        public ActionResult ShowTeamAbout()
+        {
+            return PartialView("~/Views/Partial/Team/_TeamAboutPartial.cshtml");
+        }
+
+        public ActionResult ShowTeamContact()
+        {
+            return PartialView("~/Views/Partial/Team/_TeamContactPartial.cshtml");
+        }
     }
 }
