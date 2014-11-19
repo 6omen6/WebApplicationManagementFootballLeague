@@ -1,0 +1,19 @@
+﻿@{
+    var active = Convert.ToString(ViewData["BodyPage"]);
+}
+
+<ul class="nav nav-tabs" role="tablist" style="background-color: white;">
+    <li id="News" role="presentation" onclick="activeNews()" class="active">@Ajax.ActionLink("Aktualności", "ShowNews", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
+    <li id="FootballTeam" onclick="activeFootballTeam()" role="presentation">@Ajax.ActionLink("Kadra", "ShowFootballTeam", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
+</ul>
+
+<script type="text/javascript">
+    function activeNews() {
+        $('#News').addClass('active');
+        $('#FootballTeam').removeClass('active');
+    }
+    function activeFootballTeam() {
+        $('#FootballTeam').addClass('active');
+        $('#News').removeClass('active');
+    }
+</script>

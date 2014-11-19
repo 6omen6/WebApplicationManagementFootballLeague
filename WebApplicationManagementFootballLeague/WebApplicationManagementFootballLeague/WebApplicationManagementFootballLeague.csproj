@@ -192,8 +192,8 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Content\bootstrap-select.css" />
-    <Content Include="Content\bootstrap-select.min.css" />
+    <Content Include="Content\BootstrapCss\bootstrap-select.css" />
+    <Content Include="Content\BootstrapCss\bootstrap-select.min.css" />
     <Content Include="Content\Gridmvc.css" />
     <Content Include="Images\herby\herbCzarnocin.jpg" />
     <Content Include="Images\herby\herbOlimpiaWolaZalezna.jpg" />
@@ -244,12 +244,12 @@
     <Content Include="Scripts\jquery.validate.bootstrap.popover.min.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-datepicker.css" />
-    <Content Include="Content\bootstrap-datepicker3.css" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\BootstrapCss\bootstrap-datepicker.css" />
+    <Content Include="Content\BootstrapCss\bootstrap-datepicker3.css" />
+    <Content Include="Content\BootstrapCss\bootstrap-theme.css" />
+    <Content Include="Content\BootstrapCss\bootstrap-theme.min.css" />
+    <Content Include="Content\BootstrapCss\bootstrap.css" />
+    <Content Include="Content\BootstrapCss\bootstrap.min.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -312,7 +312,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Grid.mvc.readme" />
     <Content Include="Scripts\bootstrap-select.js.map" />
-    <Content Include="Content\bootstrap-select.css.map" />
+    <Content Include="Content\BootstrapCss\bootstrap-select.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Images\tlo.jpg" />
     <Content Include="Images\user_top.jpg" />
@@ -421,25 +421,26 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Partial\_LoginPartial.cshtml" />
+    <Content Include="Views\Partial\Login\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Partial\_HeaderMenuPartial.cshtml" />
-    <Content Include="Views\Partial\_TablePartial.cshtml" />
+    <Content Include="Views\Partial\Header\_HeaderMenuPartial.cshtml" />
+    <Content Include="Views\Partial\Table\_TablePartial.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\Partial\_FooterPartial.cshtml" />
+    <Content Include="Views\Partial\Footer\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Shared\_Grid.cshtml" />
-    <Content Include="Views\Partial\_NewsPartial.cshtml" />
-    <Content Include="Views\Partial\_InfoTeamPartial.cshtml" />
-    <Content Include="Views\Partial\_StatisticPartial.cshtml" />
-    <Content Include="Views\Partial\_TableMiniPartial.cshtml" />
-    <Content Include="Views\Partial\_FootballTeamPartial.cshtml" />
-    <Content Include="Views\Partial\_SecondMenuPartial.cshtml" />
+    <Content Include="Views\Partial\News\_NewsPartial.cshtml" />
+    <Content Include="Views\Partial\Team\_TeamInfoPartial.cshtml" />
+    <Content Include="Views\Partial\Statistic\_StatisticPartial.cshtml" />
+    <Content Include="Views\Partial\Table\_TableMiniPartial.cshtml" />
+    <Content Include="Views\Partial\Team\_TeamFootballPartial.cshtml" />
+    <Content Include="Views\Partial\SecondMenu\_SecondMenuPartial.cshtml" />
     <Content Include="Views\Partial\_BodyPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

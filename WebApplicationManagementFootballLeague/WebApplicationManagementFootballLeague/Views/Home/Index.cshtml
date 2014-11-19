@@ -3,5 +3,5 @@
     var Active = ViewData["BodyPage"];
 }
 
-@Html.Partial("~/Views/Partial/_SecondMenuPartial.cshtml", new ViewDataDictionary { {"BodyPage", Active} })
+@Html.Partial("~/Views/Partial/SecondMenu/_SecondMenuPartial.cshtml", new ViewDataDictionary { {"BodyPage", Active} })
 @Html.Partial("~/Views/Partial/_BodyPartial.cshtml", ViewData)

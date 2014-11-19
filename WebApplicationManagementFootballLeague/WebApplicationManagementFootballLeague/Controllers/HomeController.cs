@@ -36,15 +36,15 @@ namespace WebApplicationManagementFootballLeague.Controllers
             return View();
         }
 
-        public ActionResult News()
+        public ActionResult ShowNews()
         {
             System.Web.HttpContext.Current.Session["BodyPage"] = "News";
-            return PartialView("~/Views/Partial/_NewsPartial.cshtml");
+            return PartialView("~/Views/Partial/News/_NewsPartial.cshtml");
         }
-        public ActionResult FootballTeam()
+        public ActionResult ShowFootballTeam()
         {
             System.Web.HttpContext.Current.Session["BodyPage"] = "FootballTeam";
-            return PartialView("~/Views/Partial/_FootballTeamPartial.cshtml");
+            return PartialView("~/Views/Partial/Team/_TeamFootballPartial.cshtml");
         }
 
 

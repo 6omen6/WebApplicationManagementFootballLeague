@@ -1,0 +1,25 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        <select class="panel-heading" style="direction: ltr; background: rgba(54, 25, 25, 0); border: 0px solid blue">
+            <option style="color: black; margin: auto;">Najlepsi Strzelcy</option>
+            <option style="color: black; margin: auto;">Najlepej Asystujący</option>
+            <option style="color: black; margin: auto;">Najlepej Asystujący</option>
+        </select>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            @for (int i = 1; i < 10; i++)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td class="Lp">Konrad Rożenek</td>
+                    <td>8</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.selectpicker').selectpicker();
+</script>

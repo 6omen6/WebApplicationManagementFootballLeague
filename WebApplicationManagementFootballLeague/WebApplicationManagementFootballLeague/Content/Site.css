@@ -1,33 +1,14 @@
-﻿.wraper {
-    margin: 0px 10% 0px 10%;
-    background-color: rgba(0,0,0, 0.4);
-}
-
-.wtabeli1 {
-    background-image: url('@Url.Content("~/Images/tlo.jpg")');
-}
-
-.bodyy {
-    background-image: url('@Url.Content("~/Images/tlo.jpg")');
-    min-height: 500px;
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 12px;
-    font-weight: normal;
-    color: #404040;
-    text-align: left;
-}
-
+﻿/*HEADER*/
 .header-menu {
     z-index: 1;
     height: auto;
     position: fixed;
     width: 100%;
     opacity: 0.98;
-}
-.center-text {
-    text-align:center;
+    min-width: 1280px;
 }
 
+/*NAVBAR W HEADER*/
 .navbar {
     margin-bottom: 5px;
 }
@@ -37,13 +18,24 @@
     width: 75px;
 }
 
-.navbar-text {
-    margin-top: 0px;
-}
-
 .navbar-default {
     border-color: #428bca;
     border: 0px solid #428bca;
+}
+
+    .navbar-default .navbar-nav > .open > a,
+    .navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .open > a:focus {
+        color: #555;
+        background-color: #428bca;
+    }
+
+.navbar-collapse {
+    padding: 0px;
+}
+
+.navbar-text {
+    margin-top: 0px;
 }
 
 .navbar-nav > li > a {
@@ -51,45 +43,36 @@
     padding-bottom: 0px;
 }
 
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-    color: #555;
-    background-color: #428bca;
-}
 .open > .dropdown-menu {
-  display: block;
-  margin-left: -35px;
-  margin-right: -35px;
+    display: block;
+    margin-left: -35px;
+    margin-right: -35px;
 }
 
-.top {
-    background-color: none;
-    height: auto;
-    margin-bottom: 5px;
-}
+/*WRAPER*/
 
-.top-right {
-    float: right;
-    background-color: none;
+.wraper {
+    margin: 0px 10% 0px 10%;
+    background-color: rgba(0,0,0, 0.4);
     height: 100%;
-    /*width: 30%;*/
-    opacity: 0.97;
 }
+
+/*CONTENT IN WRAPPER*/
 
 .content {
     z-index: 2;
     padding-top: 85px;
-    height: auto;
     width: 100%;
-    overflow: auto;
+    height: 100%;
     min-height: 704px;
+    min-width: 1010px;
+    overflow: auto;
 }
 
 .content-left {
+    min-width: 445px;
     float: left;
     width: 48%;
-    min-height: 702px;
 }
 
 .content-mid {
@@ -101,7 +84,6 @@
     height: 100%;
     background-color: white;
     opacity: 0.6;
-
 }
 
 .content-right {
@@ -113,16 +95,36 @@
     opacity: 0.98;
 }
 
+.top-in-left-content {
+    background-color: none;
+    height: auto;
+    margin-bottom: -25px;
+    width:100%;
+}
+
+.top-in-mid-content {
+    background-color: none;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.top-in-left-content {
+    float: right;
+    background-color: none;
+    height: 100%;
+    opacity: 0.97;
+}
+
+/*FOOTER*/
+
 .footer {
     clear: both;
     text-align: center;
     opacity: 0.8;
+    min-width: 1280px;
 }
 
-.textbox-in-login {
-    width: 102%;
-}
-
+/*LOGIN*/
 .content-login {
     width: 100%;
     height: 704px;
@@ -131,6 +133,12 @@
     font-size: 24px;
     opacity: 0.99;
 }
+
+.textbox-in-login {
+    width: 102%;
+}
+
+/*REGISTRY*/
 
 .box-sigin {
     -webkit-border-radius: 25px;
@@ -154,14 +162,7 @@
     padding: 1px 15px 15px 25px;
 }
 
-
-.roww {
-    width: 105.5%;
-}
-
-.main {
-    padding-top: 150px;
-}
+/*TABLE*/
 
 .table table-hover, th, thead, tr {
     font-size: 10px;
@@ -181,6 +182,10 @@
     text-align: center;
 }
 
+tr {
+    font-size: 12px;
+}
+
 th {
     font-size: 13px;
     text-align: center;
@@ -192,28 +197,28 @@ th {
     text-align: center;
 }
 
-tr {
-    font-size: 12px;
-}
+/*PANEL*/
 
+.panel {
+    margin-bottom: 5px;
+    border: 0px solid;
+    width:100%;
+}
 .panel-heading {
     padding: 2px;
     text-align: center;
     border: 0px solid;
 }
 
-
 .panel-primary > .panel-heading {
     background-image: url(/Images/naglowek-niebieski.jpg);
 }
 
-.panell {
-    background-image: url(/Images/naglowek-niebieski.jpg);
+/*OTHERS*/
+.roww {
+    width: 105.5%;
 }
 
-.panel {
-    margin-bottom: 5px;
-}
-
-.panel-body {
+.main {
+    padding-top: 150px;
 }

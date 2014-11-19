@@ -2,6 +2,8 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+                @for(int i=1; i<=1;i++)
+                {
                 <li class="dropdown" style="width: 90px">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="~/Images/herby/herbOlimpiaWolaZalezna.jpg" />
@@ -9,25 +11,14 @@
                     <ul class="dropdown-menu center-text" role="menu">
                         <li style="text-align: center; font-weight: 700;">LKS Olimpia Wola Zależna</li>
                         <li class="divider"></li>
-                        <li><a href="#">Aktualności</a></li>
+                        <li role="presentation" onclick="activeNews()">@Ajax.ActionLink("Aktualności", "ShowNews", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
+                        <li role="presentation" onclick="activeFootballTeam()">@Ajax.ActionLink("Kadra", "ShowFootballTeam", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
                         <li><a href="#">Kadra</a></li>
                         <li><a href="#">Terminarz</a></li>
                         <li><a href="#">Statystyki</a></li>
                     </ul>
                 </li>
-                <li class="dropdown" style="width: 90px">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="~/Images/herby/herbCzarnocin.jpg" />
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu center-text" role="menu">
-                        <li style="font-weight: 700;">LKS Czarnocin</li>
-                        <li class="divider"></li>
-                        <li><a href="#">Aktualności</a></li>
-                        <li><a href="#">Kadra</a></li>
-                        <li><a href="#">Terminarz</a></li>
-                        <li><a href="#">Statystyki</a></li>
-                    </ul>
-                </li>
+                }
             </ul>
             <ul class="nav navbar-nav navbar-right navbar-top-right">
                 <li class="dropdown" style="width: 60px">
