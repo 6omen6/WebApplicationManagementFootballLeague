@@ -313,6 +313,7 @@
     <Content Include="Grid.mvc.readme" />
     <Content Include="Scripts\bootstrap-select.js.map" />
     <Content Include="Content\BootstrapCss\bootstrap-select.css.map" />
+    <Content Include="Content\StyleSheet1.less" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Images\tlo.jpg" />
     <Content Include="Images\user_top.jpg" />
@@ -435,8 +436,7 @@
     <Content Include="Views\Partial\Statistic\_StatisticPartial.cshtml" />
     <Content Include="Views\Partial\Table\_TableMiniPartial.cshtml" />
     <Content Include="Views\Partial\Team\_TeamFootballPartial.cshtml" />
-    <Content Include="Views\Partial\SecondMenu\_SecondMenuPartial.cshtml" />
-    <Content Include="Views\Partial\_BodyPartial.cshtml" />
+    <Content Include="Views\Partial\Menu\_MenuPartial.cshtml" />
     <Content Include="Views\Partial\Team\_TeamTimetablePartial.cshtml" />
     <Content Include="Views\Partial\Team\_TeamAboutPartial.cshtml" />
     <Content Include="Views\Partial\Team\_TeamContactPartial.cshtml" />

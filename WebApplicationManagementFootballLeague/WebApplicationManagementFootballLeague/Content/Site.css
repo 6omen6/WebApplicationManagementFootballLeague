@@ -63,7 +63,6 @@
 /*WRAPER*/
 
 .wraper {
-    column-width: auto;
     margin: 0px 15% 0px 15%;
     background-color: rgba(0,0,0, 0.4);
     height: 100%;
@@ -214,7 +213,7 @@ th {
     text-align: center;
 }
 
-.mid {
+.mid-in-left-content {
     margin-top: 255px;
 }
 

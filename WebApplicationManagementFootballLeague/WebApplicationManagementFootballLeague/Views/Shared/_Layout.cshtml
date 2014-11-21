@@ -16,35 +16,7 @@
     </div>
     <div class="menu"></div>
     <div class="wraper">
-        @*        <div class="top">
-            <div class="top-left">
-                <section id="login">
-                    @Html.Partial("~/Views/Partial/_InfoTeamPartial.cshtml")
-                </section>
-            </div>
-            <div class="top-right">
-                @Html.Partial("~/Views/Partial/_TableMiniPartial.cshtml")
-            </div>
-        </div>*@
-        <div class="content">
-            <div class="content-left">
-                <div class="top-in-left-content">
-                    @Html.Partial("~/Views/Partial/Team/_TeamInfoPartial.cshtml")
-                </div>
-                @RenderBody()
-            </div>
-            <div class="content-mid">
-                <div class="top-in-mid-content">
-                    Miejsce na reklame.
-                </div>
-            </div>
-            <div class="content-right">
-                <div class="top-in-right-content">
-                    @Html.Partial("~/Views/Partial/Table/_TableMiniPartial.cshtml")
-                </div>
-                @Html.Partial("~/Views/Partial/Statistic/_StatisticPartial.cshtml")
-            </div>
-        </div>
+        @RenderBody()
     </div>
     <div class="footer">
         @Html.Partial("~/Views/Partial/Footer/_FooterPartial.cshtml")
