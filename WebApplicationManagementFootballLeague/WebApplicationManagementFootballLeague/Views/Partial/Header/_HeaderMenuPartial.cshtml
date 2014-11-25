@@ -1,54 +1,59 @@
 ﻿<nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                @for(int i=1; i<=1;i++)
-                {
-                <li class="dropdown" style="width: 90px">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="~/Images/herby/herbOlimpiaWolaZalezna.jpg" />
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu center-text" role="menu">
-                        <li style="text-align: center; font-weight: 700;">LKS Olimpia Wola Zależna</li>
-                        <li class="divider"></li>
-                        <li role="presentation" onclick="activeNews()">@Ajax.ActionLink("Aktualności", "ShowNews", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
-                        <li role="presentation" onclick="activeFootballTeam()">@Ajax.ActionLink("Kadra", "ShowFootballTeam", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body" })</li>
-                        <li><a href="#">Kadra</a></li>
-                        <li><a href="#">Terminarz</a></li>
-                        <li><a href="#">Statystyki</a></li>
-                    </ul>
-                </li>
-                }
-            </ul>
+            <a class="menu-button glyph" id="menu-button" onclick="showMenu()"><span class="glyphicon glyphicon-th-large"></span></a>
             <ul class="nav navbar-nav navbar-right navbar-top-right">
-                <li class="dropdown" style="width: 60px">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span style="font-size: 2.2em; padding: 17px 10px 5px 0px" class="glyphicon glyphicon-user"></span>
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu center-text" role="menu">
-                        <li style="text-align: center; font-weight: 700;">Moje konto</li>
-                        <li class="divider"></li>
-                        @if (Request.IsAuthenticated)
+                <a class="user-menu-button glyph" id="menu-user-button" onclick="showMenuUser()"><span class="glyphicon glyphicon-user" style="margin-top:7px"></span></a>            
+                <ul class="dropdown-menu center-text" role="menu">
+                    <li style="text-align: center; font-weight: 700;">Moje konto</li>
+                    <li class="divider"></li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <text>
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                         {
-                            <text>
-                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                            {
-                                @Html.AntiForgeryToken()
-                                <text>Cześć, @User.Identity.Name </text><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-                            }
-                            <li>@Html.ActionLink("Manage ", "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", title = "Manage" })</li>
-                            </text>
+                            @Html.AntiForgeryToken()
+                            <text>Cześć, @User.Identity.Name </text><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
                         }
-                        else
-                        {
-                            <li>@Html.ActionLink("Zarejestruj się", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: green" })</li>
-                            <li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: blue" })</li>   
-                        }
-                    </ul>
-                </li>
+                        <li>@Html.ActionLink("Manage ", "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", title = "Manage" })</li>
+                        </text>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Zarejestruj się", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: green" })</li>
+                        <li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: blue" })</li>   
+                    }
+                </ul>
             </ul>
         </div>
-        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container-fluid -->
 </nav>
+
+<script type="text/javascript">
+    function showMenu() {
+        if (document.getElementById("menu").style.visibility == "visible") {
+            $('#menu-button').removeClass('active');
+            document.getElementById("menu").style.visibility = "hidden";
+            $('#menu-button').removeClass('menu-button-active');
+            document.getElementById('content').style.padding = "58px 0 0 0";
+            document.getElementById('wraper').style.margin = "auto";
+        }
+        else {
+            document.getElementById('content').style.padding = "58px 0 0 174px";
+            document.getElementById('wraper').style.margin = "auto";
+            document.getElementById("menu").style.visibility = "visible";
+            $('#menu-button').addClass('menu-button-active'); 
+        }
+    };
+    function showMenuUser() {
+        if (document.getElementById("menu-user").style.visibility == "visible") {
+            $('#menu-user-button').removeClass('active');
+            document.getElementById("menu-user").style.visibility = "hidden";
+            $('#menu-user-button').removeClass('menu-user-button-active');
+        }
+        else {
+            document.getElementById("menu-user").style.visibility = "visible";
+            $('#menu-user-button').addClass('menu-user-button-active');
+        }
+    };
+</script>
