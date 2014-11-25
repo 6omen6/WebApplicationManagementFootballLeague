@@ -36,9 +36,10 @@
             document.getElementById("menu").style.visibility = "hidden";
             $('#menu-button').removeClass('menu-button-active');
             document.getElementById('content').style.padding = "58px 0 0 0";
-            document.getElementById('wraper').style.margin = "auto";
+            document.getElementById('wraper').style.maxWidth = "1025px";
         }
         else {
+            document.getElementById('wraper').style.maxWidth = "1200px"
             document.getElementById('content').style.padding = "58px 0 0 174px";
             document.getElementById('wraper').style.margin = "auto";
             document.getElementById("menu").style.visibility = "visible";
