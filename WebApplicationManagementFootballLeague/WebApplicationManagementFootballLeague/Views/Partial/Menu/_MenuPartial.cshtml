@@ -1,14 +1,12 @@
-﻿@{
-    var active = Convert.ToString(ViewData["BodyPage"]);
-}
-
-<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-    <li id="TeamNews" role="presentation" onclick="activeTeamNews()" class="active">@Ajax.ActionLink("Aktualności", "ShowTeamNews", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" })</li>
-    <li id="TeamFootball" onclick="activeTeamFootball()" role="presentation">@Ajax.ActionLink("Kadra", "ShowTeamFootball", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" })</li>
-    <li id="TeamTimefootball" onclick="activeTeamTimetable()" role="presentation">@Ajax.ActionLink("Terminarz", "ShowTeamTimetable", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" })</li>
-    <li id="TeamAbout" onclick="activeTeamAbout()" role="presentation">@Ajax.ActionLink("O Nas", "ShowTeamAbout", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" })</li>
-    <li id="TeamContact" onclick="activeTeamContact()" role="presentation">@Ajax.ActionLink("Kontakt", "ShowTeamContact", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" })</li>
-</ul>
+﻿<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li id="TeamNews" role="presentation" onclick="activeTeamNews()" class="active">@*<span class='glyphicon glyphicon-home'></span>*@@Ajax.ActionLink("Aktualności", "ShowTeamNews", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" })</li>
+        <li id="TeamFootball" onclick="activeTeamFootball()" role="presentation">@Ajax.ActionLink("Kadra", "ShowTeamFootball", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" })</li>
+        <li id="TeamTimefootball" onclick="activeTeamTimetable()" role="presentation">@Ajax.ActionLink("Terminarz", "ShowTeamTimetable", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" })</li>
+        <li id="TeamAbout" onclick="activeTeamAbout()" role="presentation">@Ajax.ActionLink("O Nas", "ShowTeamAbout", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" })</li>
+        <li id="TeamContact" onclick="activeTeamContact()" role="presentation">@Ajax.ActionLink("Kontakt", "ShowTeamContact", "Home", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" })</li>
+    </ul>
+</div>
 
 <script type="text/javascript">
     function activeTeamNews() {

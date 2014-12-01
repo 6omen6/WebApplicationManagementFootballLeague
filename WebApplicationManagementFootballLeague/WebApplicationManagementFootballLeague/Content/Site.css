@@ -1,4 +1,10 @@
-﻿/*HEADER*/
+﻿.glyph {
+    font-size: 2.2em;
+    padding: 5px 0px 0px 0px;
+    color: #777;
+}
+
+/*HEADER*/
 .header-menu {
     z-index: 1;
     height: auto;
@@ -7,6 +13,25 @@
     opacity: 0.98;
     min-width: 980px;
     display: block;
+}
+
+.header-content-button {
+    position: relative;
+    margin: auto;
+    max-width: 1025px;
+}
+
+.header-menu-button {
+    float: left;
+    padding-left: 15px;
+}
+
+.header-menu-button-active {
+    color: #428bca;
+}
+
+.header-menu-user-button-active {
+    color: #428bca;
 }
 
 /*NAVBAR W HEADER*/
@@ -53,34 +78,50 @@
 /*MENU*/
 .menu {
     margin-top: 58px;
-    height: 90%;
+    height: 86%;
     width: 169px;
     max-width: 186px;
     position: fixed;
     background: white;
-    opacity: 0.9;
+    opacity: 1;
     display: block;
     visibility: hidden;
-}
-
-.glyph {
-    font-size: 2.2em;
-    padding: 5px 0px 0px 0px;
-    color: #777;
+    z-index: 1;
 }
 
 .menu-button {
-    float: left;
-    padding-left: 390px;
+    -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+    background-color: #ffffff;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    width: 100%;
+    text-align: left;
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    font-family: arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffffff;
 }
+
+    .menu-button:hover {
+        background-color: #f6f6f6;
+        color: black;
+    }
 
 .menu-button-active {
-    color: #428bca;
+    background-color: red;
+    color: white;
+    text-decoration: none;
 }
 
-.menu-user-button-active {
-    color: #428bca;
-}
 
 /*WRAPER*/
 
@@ -164,6 +205,7 @@
     position: relative;
     width: 100%;
     bottom: 0;
+    z-index: 2;
 }
 
 /*LOGIN*/
@@ -273,4 +315,110 @@ th {
 .static {
     position: static;
     display: block;
+}
+
+
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    height: auto;
+    background: white;
+    opacity: 0.9;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 169px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 169px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+}
+
+    .sidebar-nav li {
+        text-indent: 20px;
+        line-height: 40px;
+    }
+
+        .sidebar-nav li a {
+            display: block;
+            text-decoration: none;
+            color: #999999;
+        }
+
+            .sidebar-nav li a:hover {
+                text-decoration: none;
+                color: #fff;
+                background-color: #333;
+            }
+
+            .sidebar-nav li a:active,
+            .sidebar-nav li a:focus {
+                text-decoration: none;
+                color: #fff;
+                background-image: url(/Images/tlo-button.jpg);
+            }
+
+    .sidebar-nav > .sidebar-brand {
+        height: 65px;
+        font-size: 18px;
+        line-height: 60px;
+    }
+
+        .sidebar-nav > .sidebar-brand a {
+            color: #999999;
+        }
+
+            .sidebar-nav > .sidebar-brand a:hover {
+                color: #fff;
+                background: none;
+            }
+
+
+@media(min-width:768px) {
+
+{
+    padding-left: 0px;
+}
+
+#wrapper.toggled {
+    padding-left: 0;
+}
+
+#sidebar-wrapper {
+    width: 169px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 0;
+}
+
+#page-content-wrapper {
+    padding: 0px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+}
 }

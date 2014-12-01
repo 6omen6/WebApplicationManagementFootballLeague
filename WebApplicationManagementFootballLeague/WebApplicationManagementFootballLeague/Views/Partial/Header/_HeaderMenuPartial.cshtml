@@ -1,30 +1,32 @@
 ﻿<nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <a class="menu-button glyph" id="menu-button" onclick="showMenu()"><span class="glyphicon glyphicon-th-large"></span></a>
-            <ul class="nav navbar-nav navbar-right navbar-top-right">
-                <a class="user-menu-button glyph" id="menu-user-button" onclick="showMenuUser()"><span class="glyphicon glyphicon-user" style="margin-top:7px"></span></a>            
-                <ul class="dropdown-menu center-text" role="menu">
-                    <li style="text-align: center; font-weight: 700;">Moje konto</li>
-                    <li class="divider"></li>
-                    @if (Request.IsAuthenticated)
-                    {
-                        <text>
-                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+            <div class="header-content-button">
+                <a class="header-menu-button glyph" id="header-menu-button" onclick="showMenu()"><span class="glyphicon glyphicon-th-large"></span></a>
+                <ul class="nav navbar-nav navbar-right navbar-top-right">
+                    <a class="header-user-menu-button glyph" id="header-menu-user-button" onclick="showMenuUser()"><span class="glyphicon glyphicon-user" style="margin-top: 7px"></span></a>
+                    <ul class="dropdown-menu center-text" role="menu">
+                        <li style="text-align: center; font-weight: 700;">Moje konto</li>
+                        <li class="divider"></li>
+                        @if (Request.IsAuthenticated)
                         {
-                            @Html.AntiForgeryToken()
-                            <text>Cześć, @User.Identity.Name </text><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                            <text>
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <text>Cześć, @User.Identity.Name </text><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                            }
+                            <li>@Html.ActionLink("Manage ", "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", title = "Manage" })</li>
+                            </text>
                         }
-                        <li>@Html.ActionLink("Manage ", "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", title = "Manage" })</li>
-                        </text>
-                    }
-                    else
-                    {
-                        <li>@Html.ActionLink("Zarejestruj się", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: green" })</li>
-                        <li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: blue" })</li>   
-                    }
+                        else
+                        {
+                            <li>@Html.ActionLink("Zarejestruj się", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: green" })</li>
+                            <li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: blue" })</li>   
+                        }
+                    </ul>
                 </ul>
-            </ul>
+            </div>
         </div>
     </div>
 </nav>
@@ -32,9 +34,9 @@
 <script type="text/javascript">
     function showMenu() {
         if (document.getElementById("menu").style.visibility == "visible") {
-            $('#menu-button').removeClass('active');
+            $('#header-menu-button').removeClass('active');
             document.getElementById("menu").style.visibility = "hidden";
-            $('#menu-button').removeClass('menu-button-active');
+            $('#header-menu-button').removeClass('header-menu-button-active');
             document.getElementById('content').style.padding = "58px 0 0 0";
             document.getElementById('wraper').style.maxWidth = "1025px";
         }
@@ -43,7 +45,7 @@
             document.getElementById('content').style.padding = "58px 0 0 174px";
             document.getElementById('wraper').style.margin = "auto";
             document.getElementById("menu").style.visibility = "visible";
-            $('#menu-button').addClass('menu-button-active'); 
+            $('#header-menu-button').addClass('header-menu-button-active');
         }
     };
     function showMenuUser() {
