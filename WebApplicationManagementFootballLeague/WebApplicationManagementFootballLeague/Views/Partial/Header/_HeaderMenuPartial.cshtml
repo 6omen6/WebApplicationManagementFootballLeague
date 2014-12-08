@@ -1,23 +1,31 @@
-﻿<nav class="navbar navbar-inverse" role="navigation">
+﻿@model WebApplicationManagementFootballLeague.Models.ModelsView.TeamModelView
+<nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div class="header-content-button">
-                <a class="header-menu-button glyph" id="header-menu-button" onclick="showMenu()"><span class="glyphicon glyphicon-th-large"></span></a>
-                <ul class="nav navbar-nav navbar-right navbar-top-right">
-                    <a class="header-user-menu-button glyph" id="header-menu-user-button" onclick="showMenuUser()"><span class="glyphicon glyphicon-user" style="margin-top: 7px"></span></a>
+            <ul class="nav navbar-nav" style="padding-top: 6px;">
+                <li><a href="#menu-toggle" class="header-menu-button glyph" id="header-menu-button"><span class="glyphicon glyphicon-th-large"></span></a></li>
+                <li>
+                    @using (Ajax.BeginForm("ShowTeamInfo", "Home", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "top-in-left-content", Url = Url.Action("ShowTeamInfo"), OnSuccess = "onSuccess", },
+                        new { id = 3, role = "form", @class = "form" }))
+                    {
+                        @Html.ValidationSummary(true)
+                        @Html.DropDownList("ID", Model.selectedListOfTeams, new { onchange = "$(this.form).submit();", style = "width: auto; margin-left: 90px;", @class = "form-control", id = "listReports" })
+                    }
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right navbar-top-right">
+                <li>
                     <ul class="dropdown-menu center-text" role="menu">
                         <li style="text-align: center; font-weight: 700;">Moje konto</li>
                         <li class="divider"></li>
                         @if (Request.IsAuthenticated)
                         {
-                            <text>
-                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                             {
-                                @Html.AntiForgeryToken()
-                                <text>Cześć, @User.Identity.Name </text><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                            @Html.AntiForgeryToken()
+                            <li>@User.Identity.Name <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
                             }
                             <li>@Html.ActionLink("Manage ", "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", title = "Manage" })</li>
-                            </text>
                         }
                         else
                         {
@@ -25,38 +33,15 @@
                             <li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: blue" })</li>   
                         }
                     </ul>
-                </ul>
-            </div>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
 
 <script type="text/javascript">
-    function showMenu() {
-        if (document.getElementById("menu").style.visibility == "visible") {
-            $('#header-menu-button').removeClass('active');
-            document.getElementById("menu").style.visibility = "hidden";
-            $('#header-menu-button').removeClass('header-menu-button-active');
-            document.getElementById('content').style.padding = "58px 0 0 0";
-            document.getElementById('wraper').style.maxWidth = "1025px";
-        }
-        else {
-            document.getElementById('wraper').style.maxWidth = "1200px"
-            document.getElementById('content').style.padding = "58px 0 0 174px";
-            document.getElementById('wraper').style.margin = "auto";
-            document.getElementById("menu").style.visibility = "visible";
-            $('#header-menu-button').addClass('header-menu-button-active');
-        }
-    };
-    function showMenuUser() {
-        if (document.getElementById("menu-user").style.visibility == "visible") {
-            $('#menu-user-button').removeClass('active');
-            document.getElementById("menu-user").style.visibility = "hidden";
-            $('#menu-user-button').removeClass('menu-user-button-active');
-        }
-        else {
-            document.getElementById("menu-user").style.visibility = "visible";
-            $('#menu-user-button').addClass('menu-user-button-active');
-        }
-    };
+    $("#header-menu-button").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
 </script>

@@ -1,26 +1,47 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<div class="content" id="content">
-    <div class="content-left">
-        <div class="top-in-left-content">
-            @Html.Partial("~/Views/Partial/Team/_TeamInfoPartial.cshtml")
+<div id="wrapper">
+    <@Html.Partial("~/Views/Partial/Menu/_MenuPartial.cshtml")
+    <div id="page-content-wrapper">
+        <div class="content" id="content">
+            <div class="content-left">
+                <div class="top-in-left-content" id="top-in-left-content">
+                    @{Html.RenderAction("ShowTeamInfo", "Team");}
+                </div>
+                <div class="mid-in-left-content" id="mid-in-left-content" style="min-height: 500px; display: block;">
+                    @Html.Partial("~/Views/Partial/Team/_TeamNewsPartial.cshtml")
+                </div>
+            </div>
+            <div class="content-mid">
+                <div class="top-in-mid-content">
+                    Miejsce na reklame.
+                </div>
+            </div>
+            <div class="content-right">
+                <div class="top-in-right-content">
+                    @Html.Partial("~/Views/Partial/Table/_TableMiniPartial.cshtml")
+                </div>
+                @Html.Partial("~/Views/Partial/Statistic/_StatisticPartial.cshtml")
+            </div>
         </div>
-        <div class="mid-in-left-content" id="mid-in-left-content" style="min-height: 500px; display: block;">
-            @Html.Partial("~/Views/Partial/Team/_TeamNewsPartial.cshtml")
-        </div>
-    </div>
-    <div class="content-mid">
-        <div class="top-in-mid-content">
-            Miejsce na reklame.
-        </div>
-    </div>
-    <div class="content-right">
-        <div class="top-in-right-content">
-            @Html.Partial("~/Views/Partial/Table/_TableMiniPartial.cshtml")
-        </div>
-        @Html.Partial("~/Views/Partial/Statistic/_StatisticPartial.cshtml")
     </div>
 </div>
 
+<div class="footer">
+    @Html.Partial("~/Views/Partial/Footer/_FooterPartial.cshtml")
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(".1").each(function (i, n) {
+            var $n = $(n),
+                url = $n.attr('data-actionurl'),
+                $this = $(this);
+
+            $.get(url, function (data) {
+                $this.html(data);
+            });
+        });
+    });
+</script>

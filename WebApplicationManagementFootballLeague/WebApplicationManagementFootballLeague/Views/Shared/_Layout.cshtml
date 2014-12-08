@@ -8,27 +8,29 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/BootstrapCss/bootstrap-datepicker.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
 </head>
 
-<body style="height: 100%; background-image: url('@Url.Content("~/Images/tlo.jpg")'); background-attachment: fixed;">
-    <div class="header-menu">
-        @Html.Partial("~/Views/Partial/Header/_HeaderMenuPartial.cshtml")
-    </div>
-    <div class="wraper" id="wraper">
-        <div class="menu" id="menu">@Html.Partial("~/Views/Partial/Menu/_MenuPartial.cshtml")</div>
-        @RenderBody()
-    </div>
-    <div class="footer">
-        @Html.Partial("~/Views/Partial/Footer/_FooterPartial.cshtml")
+<body>
+    <div id="body-container">
+        <div id="header">@{Html.RenderAction("ShowHeader", "Team");}</div>
+        @RenderBody();
     </div>
 </body>
 </html>
 
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/jqueryval")
-@Scripts.Render("~/bundles/bootstrap")
 <script type="text/javascript">
     $('.form_datetime').datepicker({
         language: "pl"
     })
 </script>
+
+
+
+
+
+
+
+@*        <div class="menu" id="menu">@Html.Partial("~/Views/Partial/Menu/_MenuPartial.cshtml")</div>*@

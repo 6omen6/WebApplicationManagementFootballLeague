@@ -43,10 +43,15 @@
       <HintPath>..\packages\Grid.Mvc.3.0.0\lib\net40\GridMvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Helpers">
+      <HintPath>..\packages\microsoft-web-helpers.2.1.20710.2\lib\net40\Microsoft.Web.Helpers.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -184,14 +189,82 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bootstrap Html Helpers\BootstrapSelectFor.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\BaseSZLPModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseSZLPModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaseSZLPModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaseSZLPModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseSZLPModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\COMMENTS.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EVENT.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MATCH.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelsView\TeamModelView.cs" />
+    <Compile Include="Models\NEWS.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PLAYER.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STAFF.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STAFF_IN_MATCHES.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\STAFF_IN_TEAMS.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEAM.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEAMS_IN_MATCH.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEAMS_IN_MATCH_PLAYERS_ALLOCATION.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserProfile.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_Membership.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_OAuthMembership.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_Roles.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Content\bootstrap-select.css" />
+    <Content Include="Content\bootstrap-select.min.css" />
     <Content Include="Content\BootstrapCss\bootstrap-select.css" />
     <Content Include="Content\BootstrapCss\bootstrap-select.min.css" />
     <Content Include="Content\Gridmvc.css" />
@@ -312,9 +385,27 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Grid.mvc.readme" />
-    <Content Include="Scripts\bootstrap-select.js.map" />
     <Content Include="Content\BootstrapCss\bootstrap-select.css.map" />
     <Content Include="Content\StyleSheet1.less" />
+    <EntityDeploy Include="Models\BaseSZLPModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BaseSZLPModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BaseSZLPModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaseSZLPModel.edmx</DependentUpon>
+      <LastGenOutput>BaseSZLPModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BaseSZLPModel.edmx.diagram">
+      <DependentUpon>BaseSZLPModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\BaseSZLPModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BaseSZLPModel.edmx</DependentUpon>
+      <LastGenOutput>BaseSZLPModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap-select.js.map" />
+    <Content Include="Content\bootstrap-select.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Images\tlo.jpg" />
     <Content Include="Images\user_top.jpg" />
@@ -441,6 +532,11 @@
     <Content Include="Views\Partial\Team\_TeamTimetablePartial.cshtml" />
     <Content Include="Views\Partial\Team\_TeamAboutPartial.cshtml" />
     <Content Include="Views\Partial\Team\_TeamContactPartial.cshtml" />
+    <Content Include="Views\Team\Index.cshtml" />
+    <Content Include="Views\Team\Details.cshtml" />
+    <Content Include="Views\Team\Create.cshtml" />
+    <Content Include="Views\Team\Edit.cshtml" />
+    <Content Include="Views\Team\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -448,6 +544,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

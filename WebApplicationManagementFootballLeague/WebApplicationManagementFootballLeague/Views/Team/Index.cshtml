@@ -1,0 +1,171 @@
+﻿@model IEnumerable<WebApplicationManagementFootballLeague.Models.TEAM>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_team)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.logo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apartmentNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.zipCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.city)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.region)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.faxNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foundationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ageCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.www)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.points)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numberOfWins)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numberOfDraws)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numberOfLosses)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numberOfGoalsScored)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numberOfGoalsLost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numberOfMatches)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.league)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_staff)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_team)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.logo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apartmentNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zipCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.region)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.faxNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.foundationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ageCategory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.www)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.points)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numberOfWins)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numberOfDraws)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numberOfLosses)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numberOfGoalsScored)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numberOfGoalsLost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numberOfMatches)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.league)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_staff)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

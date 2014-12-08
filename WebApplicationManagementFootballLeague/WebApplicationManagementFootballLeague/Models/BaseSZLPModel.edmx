@@ -1,0 +1,1266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BaseSZLPModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BaseSZLPModelStoreContainer">
+          <EntitySet Name="COMMENTS" EntityType="BaseSZLPModel.Store.COMMENTS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EVENT" EntityType="BaseSZLPModel.Store.EVENT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MATCH" EntityType="BaseSZLPModel.Store.MATCH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NEWS" EntityType="BaseSZLPModel.Store.NEWS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PLAYER" EntityType="BaseSZLPModel.Store.PLAYER" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="STAFF" EntityType="BaseSZLPModel.Store.STAFF" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="STAFF_IN_MATCHES" EntityType="BaseSZLPModel.Store.STAFF_IN_MATCHES" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="STAFF_IN_TEAMS" EntityType="BaseSZLPModel.Store.STAFF_IN_TEAMS" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="BaseSZLPModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TEAM" EntityType="BaseSZLPModel.Store.TEAM" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TEAMS_IN_MATCH" EntityType="BaseSZLPModel.Store.TEAMS_IN_MATCH" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" EntityType="BaseSZLPModel.Store.TEAMS_IN_MATCH_PLAYERS_ALLOCATION" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserProfile" EntityType="BaseSZLPModel.Store.UserProfile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_Membership" EntityType="BaseSZLPModel.Store.webpages_Membership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="BaseSZLPModel.Store.webpages_OAuthMembership" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_Roles" EntityType="BaseSZLPModel.Store.webpages_Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="webpages_UsersInRoles" EntityType="BaseSZLPModel.Store.webpages_UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_MATCH-&gt;EVENT" Association="BaseSZLPModel.Store.FK_MATCH-&gt;EVENT">
+            <End Role="MATCH" EntitySet="MATCH" />
+            <End Role="EVENT" EntitySet="EVENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MATCH-&gt;STAFF_IN_MATCH" Association="BaseSZLPModel.Store.FK_MATCH-&gt;STAFF_IN_MATCH">
+            <End Role="MATCH" EntitySet="MATCH" />
+            <End Role="STAFF_IN_MATCHES" EntitySet="STAFF_IN_MATCHES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MATCH-&gt;TEAM_COMPOSITION" Association="BaseSZLPModel.Store.FK_MATCH-&gt;TEAM_COMPOSITION">
+            <End Role="MATCH" EntitySet="MATCH" />
+            <End Role="TEAMS_IN_MATCH" EntitySet="TEAMS_IN_MATCH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NEWS-&gt;COMMENTS" Association="BaseSZLPModel.Store.FK_NEWS-&gt;COMMENTS">
+            <End Role="NEWS" EntitySet="NEWS" />
+            <End Role="COMMENTS" EntitySet="COMMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLAYER-&gt;EVENT" Association="BaseSZLPModel.Store.FK_PLAYER-&gt;EVENT">
+            <End Role="PLAYER" EntitySet="PLAYER" />
+            <End Role="EVENT" EntitySet="EVENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLAYER-&gt;TEAM_COMPOSITION_ALLOCATION" Association="BaseSZLPModel.Store.FK_PLAYER-&gt;TEAM_COMPOSITION_ALLOCATION">
+            <End Role="PLAYER" EntitySet="PLAYER" />
+            <End Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" EntitySet="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STAFF-&gt;STAFF_IN_MATCH" Association="BaseSZLPModel.Store.FK_STAFF-&gt;STAFF_IN_MATCH">
+            <End Role="STAFF" EntitySet="STAFF" />
+            <End Role="STAFF_IN_MATCHES" EntitySet="STAFF_IN_MATCHES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TEAM_COMPOSITION-&gt;TEAM_COMPOSITION_ALLOCATION" Association="BaseSZLPModel.Store.FK_TEAM_COMPOSITION-&gt;TEAM_COMPOSITION_ALLOCATION">
+            <End Role="TEAMS_IN_MATCH" EntitySet="TEAMS_IN_MATCH" />
+            <End Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" EntitySet="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TEAM-&gt;PLAYER" Association="BaseSZLPModel.Store.FK_TEAM-&gt;PLAYER">
+            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="PLAYER" EntitySet="PLAYER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TEAM-&gt;TEAM_COMPOSITION" Association="BaseSZLPModel.Store.FK_TEAM-&gt;TEAM_COMPOSITION">
+            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="TEAMS_IN_MATCH" EntitySet="TEAMS_IN_MATCH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TEAMS-&gt;NEWS" Association="BaseSZLPModel.Store.FK_TEAMS-&gt;NEWS">
+            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="NEWS" EntitySet="NEWS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProfile-&gt;COMMENTS" Association="BaseSZLPModel.Store.FK_UserProfile-&gt;COMMENTS">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="COMMENTS" EntitySet="COMMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProfile-&gt;NEWS" Association="BaseSZLPModel.Store.FK_UserProfile-&gt;NEWS">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="NEWS" EntitySet="NEWS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProfile-&gt;webpages_UsersInRoles" Association="BaseSZLPModel.Store.FK_UserProfile-&gt;webpages_UsersInRoles">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_webpages_Membership-UserProfile" Association="BaseSZLPModel.Store.FK_webpages_Membership-UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="webpages_Membership" EntitySet="webpages_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_webpages_Roles-&gt;webpages_UsersInRoles" Association="BaseSZLPModel.Store.FK_webpages_Roles-&gt;webpages_UsersInRoles">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="STAFF-&gt;STAFF_IN_TEAMS" Association="BaseSZLPModel.Store.STAFF-&gt;STAFF_IN_TEAMS">
+            <End Role="STAFF" EntitySet="STAFF" />
+            <End Role="STAFF_IN_TEAMS" EntitySet="STAFF_IN_TEAMS" />
+          </AssociationSet>
+          <AssociationSet Name="TEAM-&gt;STAFF_IN_TEAM" Association="BaseSZLPModel.Store.TEAM-&gt;STAFF_IN_TEAM">
+            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="STAFF_IN_TEAMS" EntitySet="STAFF_IN_TEAMS" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="COMMENTS">
+          <Key>
+            <PropertyRef Name="ID_comment" />
+          </Key>
+          <Property Name="ID_comment" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="userIP" Type="varchar" MaxLength="15" />
+          <Property Name="text" Type="varchar(max)" Nullable="false" />
+          <Property Name="date" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="ID_news" Type="int" />
+        </EntityType>
+        <EntityType Name="EVENT">
+          <Key>
+            <PropertyRef Name="ID_event" />
+          </Key>
+          <Property Name="ID_event" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="varchar(max)" Nullable="false" />
+          <Property Name="minute" Type="int" Nullable="false" />
+          <Property Name="ID_player" Type="int" />
+          <Property Name="ID_match" Type="int" />
+        </EntityType>
+        <EntityType Name="MATCH">
+          <Key>
+            <PropertyRef Name="ID_match" />
+          </Key>
+          <Property Name="ID_match" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="int" Nullable="false" />
+          <Property Name="dateOfMatch" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="numberOfPlayers" Type="int" Nullable="false" />
+          <Property Name="round" Type="int" />
+          <Property Name="hostScore" Type="int" />
+          <Property Name="guestScore" Type="int" />
+        </EntityType>
+        <EntityType Name="NEWS">
+          <Key>
+            <PropertyRef Name="ID_news" />
+          </Key>
+          <Property Name="ID_news" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="text" Type="varchar(max)" />
+          <Property Name="ID_user" Type="int" Nullable="false" />
+          <Property Name="ID_team" Type="int" Nullable="false" />
+          <Property Name="title" Type="varchar(max)" Nullable="false" />
+          <Property Name="isLeagueNews" Type="bit" />
+          <Property Name="numberOfComments" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PLAYER">
+          <Key>
+            <PropertyRef Name="ID_player" />
+          </Key>
+          <Property Name="ID_player" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="varchar(max)" Nullable="false" />
+          <Property Name="lastName" Type="varchar(max)" Nullable="false" />
+          <Property Name="dateOfBirth" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="number" Type="int" />
+          <Property Name="position" Type="varchar" MaxLength="100" />
+          <Property Name="dateOfRegistration" Type="varchar" MaxLength="20" />
+          <Property Name="isActivePlayer" Type="bit" />
+          <Property Name="picture" Type="varchar(max)" />
+          <Property Name="numberOfGoals" Type="int" />
+          <Property Name="timeOnThePitch" Type="int" />
+          <Property Name="numberOfYellowCards" Type="int" />
+          <Property Name="numberOfRedCards" Type="int" />
+          <Property Name="numberOfAssists" Type="int" />
+          <Property Name="ID_team" Type="int" />
+        </EntityType>
+        <EntityType Name="STAFF">
+          <Key>
+            <PropertyRef Name="ID_staff" />
+          </Key>
+          <Property Name="ID_staff" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="varchar(max)" Nullable="false" />
+          <Property Name="lastName" Type="varchar(max)" Nullable="false" />
+          <Property Name="isReferee" Type="bit" />
+          <Property Name="role" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="STAFF_IN_MATCHES">
+          <Key>
+            <PropertyRef Name="ID_staff" />
+            <PropertyRef Name="ID_match" />
+          </Key>
+          <Property Name="ID_staff" Type="int" Nullable="false" />
+          <Property Name="ID_match" Type="int" Nullable="false" />
+          <Property Name="role" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="STAFF_IN_TEAMS">
+          <Key>
+            <PropertyRef Name="ID_staff" />
+            <PropertyRef Name="ID_team" />
+          </Key>
+          <Property Name="ID_staff" Type="int" Nullable="false" />
+          <Property Name="ID_team" Type="int" Nullable="false" />
+          <Property Name="role" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TEAM">
+          <Key>
+            <PropertyRef Name="ID_team" />
+          </Key>
+          <Property Name="ID_team" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar(max)" Nullable="false" />
+          <Property Name="logo" Type="varchar(max)" />
+          <Property Name="mail" Type="varchar(max)" Nullable="false" />
+          <Property Name="street" Type="varchar(max)" />
+          <Property Name="apartmentNumber" Type="int" />
+          <Property Name="zipCode" Type="varchar" MaxLength="6" />
+          <Property Name="city" Type="varchar(max)" Nullable="false" />
+          <Property Name="region" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="phoneNumber" Type="varchar" MaxLength="11" />
+          <Property Name="faxNumber" Type="varchar" MaxLength="50" />
+          <Property Name="foundationDate" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ageCategory" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="www" Type="varchar(max)" />
+          <Property Name="points" Type="int" />
+          <Property Name="numberOfWins" Type="int" />
+          <Property Name="numberOfDraws" Type="int" />
+          <Property Name="numberOfLosses" Type="int" />
+          <Property Name="numberOfGoalsScored" Type="int" />
+          <Property Name="numberOfGoalsLost" Type="int" />
+          <Property Name="numberOfMatches" Type="int" />
+          <Property Name="league" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TEAMS_IN_MATCH">
+          <Key>
+            <PropertyRef Name="ID_teamComposition" />
+          </Key>
+          <Property Name="ID_teamComposition" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID_team" Type="int" />
+          <Property Name="ID_match" Type="int" />
+          <Property Name="isHost" Type="bit" />
+        </EntityType>
+        <EntityType Name="TEAMS_IN_MATCH_PLAYERS_ALLOCATION">
+          <Key>
+            <PropertyRef Name="ID_allocation" />
+          </Key>
+          <Property Name="ID_allocation" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID_player" Type="int" />
+          <Property Name="ID_teamComposition" Type="int" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="varchar(max)" />
+          <Property Name="firstName" Type="varchar(max)" />
+          <Property Name="lastName" Type="varchar(max)" />
+          <Property Name="numberOfComments" Type="int" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsConfirmed" Type="bit" />
+          <Property Name="LastPasswordFailureDate" Type="datetime" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordChangedDate" Type="datetime" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="ProviderUserId" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="webpages_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_MATCH-&gt;EVENT">
+          <End Role="MATCH" Type="BaseSZLPModel.Store.MATCH" Multiplicity="1" />
+          <End Role="EVENT" Type="BaseSZLPModel.Store.EVENT" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MATCH">
+              <PropertyRef Name="ID_match" />
+            </Principal>
+            <Dependent Role="EVENT">
+              <PropertyRef Name="ID_event" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MATCH-&gt;STAFF_IN_MATCH">
+          <End Role="MATCH" Type="BaseSZLPModel.Store.MATCH" Multiplicity="1" />
+          <End Role="STAFF_IN_MATCHES" Type="BaseSZLPModel.Store.STAFF_IN_MATCHES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATCH">
+              <PropertyRef Name="ID_match" />
+            </Principal>
+            <Dependent Role="STAFF_IN_MATCHES">
+              <PropertyRef Name="ID_match" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MATCH-&gt;TEAM_COMPOSITION">
+          <End Role="MATCH" Type="BaseSZLPModel.Store.MATCH" Multiplicity="0..1" />
+          <End Role="TEAMS_IN_MATCH" Type="BaseSZLPModel.Store.TEAMS_IN_MATCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATCH">
+              <PropertyRef Name="ID_match" />
+            </Principal>
+            <Dependent Role="TEAMS_IN_MATCH">
+              <PropertyRef Name="ID_match" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NEWS-&gt;COMMENTS">
+          <End Role="NEWS" Type="BaseSZLPModel.Store.NEWS" Multiplicity="0..1" />
+          <End Role="COMMENTS" Type="BaseSZLPModel.Store.COMMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NEWS">
+              <PropertyRef Name="ID_news" />
+            </Principal>
+            <Dependent Role="COMMENTS">
+              <PropertyRef Name="ID_news" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLAYER-&gt;EVENT">
+          <End Role="PLAYER" Type="BaseSZLPModel.Store.PLAYER" Multiplicity="0..1" />
+          <End Role="EVENT" Type="BaseSZLPModel.Store.EVENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLAYER">
+              <PropertyRef Name="ID_player" />
+            </Principal>
+            <Dependent Role="EVENT">
+              <PropertyRef Name="ID_player" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLAYER-&gt;TEAM_COMPOSITION_ALLOCATION">
+          <End Role="PLAYER" Type="BaseSZLPModel.Store.PLAYER" Multiplicity="0..1" />
+          <End Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Type="BaseSZLPModel.Store.TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLAYER">
+              <PropertyRef Name="ID_player" />
+            </Principal>
+            <Dependent Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION">
+              <PropertyRef Name="ID_player" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STAFF-&gt;STAFF_IN_MATCH">
+          <End Role="STAFF" Type="BaseSZLPModel.Store.STAFF" Multiplicity="1" />
+          <End Role="STAFF_IN_MATCHES" Type="BaseSZLPModel.Store.STAFF_IN_MATCHES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STAFF">
+              <PropertyRef Name="ID_staff" />
+            </Principal>
+            <Dependent Role="STAFF_IN_MATCHES">
+              <PropertyRef Name="ID_staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TEAM_COMPOSITION-&gt;TEAM_COMPOSITION_ALLOCATION">
+          <End Role="TEAMS_IN_MATCH" Type="BaseSZLPModel.Store.TEAMS_IN_MATCH" Multiplicity="0..1" />
+          <End Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Type="BaseSZLPModel.Store.TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAMS_IN_MATCH">
+              <PropertyRef Name="ID_teamComposition" />
+            </Principal>
+            <Dependent Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION">
+              <PropertyRef Name="ID_teamComposition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TEAM-&gt;PLAYER">
+          <End Role="TEAM" Type="BaseSZLPModel.Store.TEAM" Multiplicity="0..1" />
+          <End Role="PLAYER" Type="BaseSZLPModel.Store.PLAYER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID_team" />
+            </Principal>
+            <Dependent Role="PLAYER">
+              <PropertyRef Name="ID_team" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TEAM-&gt;TEAM_COMPOSITION">
+          <End Role="TEAM" Type="BaseSZLPModel.Store.TEAM" Multiplicity="0..1" />
+          <End Role="TEAMS_IN_MATCH" Type="BaseSZLPModel.Store.TEAMS_IN_MATCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID_team" />
+            </Principal>
+            <Dependent Role="TEAMS_IN_MATCH">
+              <PropertyRef Name="ID_team" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TEAMS-&gt;NEWS">
+          <End Role="TEAM" Type="BaseSZLPModel.Store.TEAM" Multiplicity="1" />
+          <End Role="NEWS" Type="BaseSZLPModel.Store.NEWS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID_team" />
+            </Principal>
+            <Dependent Role="NEWS">
+              <PropertyRef Name="ID_team" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProfile-&gt;COMMENTS">
+          <End Role="UserProfile" Type="BaseSZLPModel.Store.UserProfile" Multiplicity="0..1" />
+          <End Role="COMMENTS" Type="BaseSZLPModel.Store.COMMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="COMMENTS">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProfile-&gt;NEWS">
+          <End Role="UserProfile" Type="BaseSZLPModel.Store.UserProfile" Multiplicity="1" />
+          <End Role="NEWS" Type="BaseSZLPModel.Store.NEWS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="NEWS">
+              <PropertyRef Name="ID_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProfile-&gt;webpages_UsersInRoles">
+          <End Role="UserProfile" Type="BaseSZLPModel.Store.UserProfile" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="BaseSZLPModel.Store.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_webpages_Membership-UserProfile">
+          <End Role="UserProfile" Type="BaseSZLPModel.Store.UserProfile" Multiplicity="1" />
+          <End Role="webpages_Membership" Type="BaseSZLPModel.Store.webpages_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="webpages_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_webpages_Roles-&gt;webpages_UsersInRoles">
+          <End Role="webpages_Roles" Type="BaseSZLPModel.Store.webpages_Roles" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="BaseSZLPModel.Store.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STAFF-&gt;STAFF_IN_TEAMS">
+          <End Role="STAFF" Type="BaseSZLPModel.Store.STAFF" Multiplicity="1" />
+          <End Role="STAFF_IN_TEAMS" Type="BaseSZLPModel.Store.STAFF_IN_TEAMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STAFF">
+              <PropertyRef Name="ID_staff" />
+            </Principal>
+            <Dependent Role="STAFF_IN_TEAMS">
+              <PropertyRef Name="ID_staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TEAM-&gt;STAFF_IN_TEAM">
+          <End Role="TEAM" Type="BaseSZLPModel.Store.TEAM" Multiplicity="1" />
+          <End Role="STAFF_IN_TEAMS" Type="BaseSZLPModel.Store.STAFF_IN_TEAMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID_team" />
+            </Principal>
+            <Dependent Role="STAFF_IN_TEAMS">
+              <PropertyRef Name="ID_team" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BaseSZLPModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BaseSZLPEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="COMMENTS" EntityType="BaseSZLPModel.COMMENTS" />
+          <EntitySet Name="EVENT" EntityType="BaseSZLPModel.EVENT" />
+          <EntitySet Name="MATCH" EntityType="BaseSZLPModel.MATCH" />
+          <EntitySet Name="NEWS" EntityType="BaseSZLPModel.NEWS" />
+          <EntitySet Name="PLAYER" EntityType="BaseSZLPModel.PLAYER" />
+          <EntitySet Name="STAFF" EntityType="BaseSZLPModel.STAFF" />
+          <EntitySet Name="STAFF_IN_MATCHES" EntityType="BaseSZLPModel.STAFF_IN_MATCHES" />
+          <EntitySet Name="STAFF_IN_TEAMS" EntityType="BaseSZLPModel.STAFF_IN_TEAMS" />
+          <EntitySet Name="sysdiagrams" EntityType="BaseSZLPModel.sysdiagrams" />
+          <EntitySet Name="TEAM" EntityType="BaseSZLPModel.TEAM" />
+          <EntitySet Name="TEAMS_IN_MATCH" EntityType="BaseSZLPModel.TEAMS_IN_MATCH" />
+          <EntitySet Name="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" EntityType="BaseSZLPModel.TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
+          <EntitySet Name="UserProfile" EntityType="BaseSZLPModel.UserProfile" />
+          <EntitySet Name="webpages_Membership" EntityType="BaseSZLPModel.webpages_Membership" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="BaseSZLPModel.webpages_OAuthMembership" />
+          <EntitySet Name="webpages_Roles" EntityType="BaseSZLPModel.webpages_Roles" />
+          <AssociationSet Name="FK_NEWS__COMMENTS" Association="BaseSZLPModel.FK_NEWS__COMMENTS">
+            <End Role="NEWS" EntitySet="NEWS" />
+            <End Role="COMMENTS" EntitySet="COMMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProfile__COMMENTS" Association="BaseSZLPModel.FK_UserProfile__COMMENTS">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="COMMENTS" EntitySet="COMMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MATCH__EVENT" Association="BaseSZLPModel.FK_MATCH__EVENT">
+            <End Role="MATCH" EntitySet="MATCH" />
+            <End Role="EVENT" EntitySet="EVENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLAYER__EVENT" Association="BaseSZLPModel.FK_PLAYER__EVENT">
+            <End Role="PLAYER" EntitySet="PLAYER" />
+            <End Role="EVENT" EntitySet="EVENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MATCH__STAFF_IN_MATCH" Association="BaseSZLPModel.FK_MATCH__STAFF_IN_MATCH">
+            <End Role="MATCH" EntitySet="MATCH" />
+            <End Role="STAFF_IN_MATCHES" EntitySet="STAFF_IN_MATCHES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MATCH__TEAM_COMPOSITION" Association="BaseSZLPModel.FK_MATCH__TEAM_COMPOSITION">
+            <End Role="MATCH" EntitySet="MATCH" />
+            <End Role="TEAMS_IN_MATCH" EntitySet="TEAMS_IN_MATCH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TEAMS__NEWS" Association="BaseSZLPModel.FK_TEAMS__NEWS">
+            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="NEWS" EntitySet="NEWS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserProfile__NEWS" Association="BaseSZLPModel.FK_UserProfile__NEWS">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="NEWS" EntitySet="NEWS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PLAYER__TEAM_COMPOSITION_ALLOCATION" Association="BaseSZLPModel.FK_PLAYER__TEAM_COMPOSITION_ALLOCATION">
+            <End Role="PLAYER" EntitySet="PLAYER" />
+            <End Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" EntitySet="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TEAM__PLAYER" Association="BaseSZLPModel.FK_TEAM__PLAYER">
+            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="PLAYER" EntitySet="PLAYER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STAFF__STAFF_IN_MATCH" Association="BaseSZLPModel.FK_STAFF__STAFF_IN_MATCH">
+            <End Role="STAFF" EntitySet="STAFF" />
+            <End Role="STAFF_IN_MATCHES" EntitySet="STAFF_IN_MATCHES" />
+          </AssociationSet>
+          <AssociationSet Name="STAFF__STAFF_IN_TEAMS" Association="BaseSZLPModel.STAFF__STAFF_IN_TEAMS">
+            <End Role="STAFF" EntitySet="STAFF" />
+            <End Role="STAFF_IN_TEAMS" EntitySet="STAFF_IN_TEAMS" />
+          </AssociationSet>
+          <AssociationSet Name="TEAM__STAFF_IN_TEAM" Association="BaseSZLPModel.TEAM__STAFF_IN_TEAM">
+            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="STAFF_IN_TEAMS" EntitySet="STAFF_IN_TEAMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TEAM__TEAM_COMPOSITION" Association="BaseSZLPModel.FK_TEAM__TEAM_COMPOSITION">
+            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="TEAMS_IN_MATCH" EntitySet="TEAMS_IN_MATCH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TEAM_COMPOSITION__TEAM_COMPOSITION_ALLOCATION" Association="BaseSZLPModel.FK_TEAM_COMPOSITION__TEAM_COMPOSITION_ALLOCATION">
+            <End Role="TEAMS_IN_MATCH" EntitySet="TEAMS_IN_MATCH" />
+            <End Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" EntitySet="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
+          </AssociationSet>
+          <AssociationSet Name="FK_webpages_Membership_UserProfile" Association="BaseSZLPModel.FK_webpages_Membership_UserProfile">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="webpages_Membership" EntitySet="webpages_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="webpages_UsersInRoles" Association="BaseSZLPModel.webpages_UsersInRoles">
+            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="COMMENTS">
+          <Key>
+            <PropertyRef Name="ID_comment" />
+          </Key>
+          <Property Name="ID_comment" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="userIP" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="text" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="date" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="ID_news" Type="Int32" />
+          <NavigationProperty Name="NEWS" Relationship="BaseSZLPModel.FK_NEWS__COMMENTS" FromRole="COMMENTS" ToRole="NEWS" />
+          <NavigationProperty Name="UserProfile" Relationship="BaseSZLPModel.FK_UserProfile__COMMENTS" FromRole="COMMENTS" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="EVENT">
+          <Key>
+            <PropertyRef Name="ID_event" />
+          </Key>
+          <Property Name="ID_event" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="minute" Type="Int32" Nullable="false" />
+          <Property Name="ID_player" Type="Int32" />
+          <Property Name="ID_match" Type="Int32" />
+          <NavigationProperty Name="MATCH" Relationship="BaseSZLPModel.FK_MATCH__EVENT" FromRole="EVENT" ToRole="MATCH" />
+          <NavigationProperty Name="PLAYER" Relationship="BaseSZLPModel.FK_PLAYER__EVENT" FromRole="EVENT" ToRole="PLAYER" />
+        </EntityType>
+        <EntityType Name="MATCH">
+          <Key>
+            <PropertyRef Name="ID_match" />
+          </Key>
+          <Property Name="ID_match" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="time" Type="Int32" Nullable="false" />
+          <Property Name="dateOfMatch" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="numberOfPlayers" Type="Int32" Nullable="false" />
+          <Property Name="round" Type="Int32" />
+          <Property Name="hostScore" Type="Int32" />
+          <Property Name="guestScore" Type="Int32" />
+          <NavigationProperty Name="EVENT" Relationship="BaseSZLPModel.FK_MATCH__EVENT" FromRole="MATCH" ToRole="EVENT" />
+          <NavigationProperty Name="STAFF_IN_MATCHES" Relationship="BaseSZLPModel.FK_MATCH__STAFF_IN_MATCH" FromRole="MATCH" ToRole="STAFF_IN_MATCHES" />
+          <NavigationProperty Name="TEAMS_IN_MATCH" Relationship="BaseSZLPModel.FK_MATCH__TEAM_COMPOSITION" FromRole="MATCH" ToRole="TEAMS_IN_MATCH" />
+        </EntityType>
+        <EntityType Name="NEWS">
+          <Key>
+            <PropertyRef Name="ID_news" />
+          </Key>
+          <Property Name="ID_news" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="text" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ID_user" Type="Int32" Nullable="false" />
+          <Property Name="ID_team" Type="Int32" Nullable="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="isLeagueNews" Type="Boolean" />
+          <Property Name="numberOfComments" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="COMMENTS" Relationship="BaseSZLPModel.FK_NEWS__COMMENTS" FromRole="NEWS" ToRole="COMMENTS" />
+          <NavigationProperty Name="TEAM" Relationship="BaseSZLPModel.FK_TEAMS__NEWS" FromRole="NEWS" ToRole="TEAM" />
+          <NavigationProperty Name="UserProfile" Relationship="BaseSZLPModel.FK_UserProfile__NEWS" FromRole="NEWS" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="PLAYER">
+          <Key>
+            <PropertyRef Name="ID_player" />
+          </Key>
+          <Property Name="ID_player" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="dateOfBirth" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="number" Type="Int32" />
+          <Property Name="position" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="dateOfRegistration" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="isActivePlayer" Type="Boolean" />
+          <Property Name="picture" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="numberOfGoals" Type="Int32" />
+          <Property Name="timeOnThePitch" Type="Int32" />
+          <Property Name="numberOfYellowCards" Type="Int32" />
+          <Property Name="numberOfRedCards" Type="Int32" />
+          <Property Name="numberOfAssists" Type="Int32" />
+          <Property Name="ID_team" Type="Int32" />
+          <NavigationProperty Name="EVENT" Relationship="BaseSZLPModel.FK_PLAYER__EVENT" FromRole="PLAYER" ToRole="EVENT" />
+          <NavigationProperty Name="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Relationship="BaseSZLPModel.FK_PLAYER__TEAM_COMPOSITION_ALLOCATION" FromRole="PLAYER" ToRole="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
+          <NavigationProperty Name="TEAM" Relationship="BaseSZLPModel.FK_TEAM__PLAYER" FromRole="PLAYER" ToRole="TEAM" />
+        </EntityType>
+        <EntityType Name="STAFF">
+          <Key>
+            <PropertyRef Name="ID_staff" />
+          </Key>
+          <Property Name="ID_staff" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="isReferee" Type="Boolean" />
+          <Property Name="role" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="STAFF_IN_MATCHES" Relationship="BaseSZLPModel.FK_STAFF__STAFF_IN_MATCH" FromRole="STAFF" ToRole="STAFF_IN_MATCHES" />
+          <NavigationProperty Name="STAFF_IN_TEAMS" Relationship="BaseSZLPModel.STAFF__STAFF_IN_TEAMS" FromRole="STAFF" ToRole="STAFF_IN_TEAMS" />
+        </EntityType>
+        <EntityType Name="STAFF_IN_MATCHES">
+          <Key>
+            <PropertyRef Name="ID_staff" />
+            <PropertyRef Name="ID_match" />
+          </Key>
+          <Property Name="ID_staff" Type="Int32" Nullable="false" />
+          <Property Name="ID_match" Type="Int32" Nullable="false" />
+          <Property Name="role" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="MATCH" Relationship="BaseSZLPModel.FK_MATCH__STAFF_IN_MATCH" FromRole="STAFF_IN_MATCHES" ToRole="MATCH" />
+          <NavigationProperty Name="STAFF" Relationship="BaseSZLPModel.FK_STAFF__STAFF_IN_MATCH" FromRole="STAFF_IN_MATCHES" ToRole="STAFF" />
+        </EntityType>
+        <EntityType Name="STAFF_IN_TEAMS">
+          <Key>
+            <PropertyRef Name="ID_staff" />
+            <PropertyRef Name="ID_team" />
+          </Key>
+          <Property Name="ID_staff" Type="Int32" Nullable="false" />
+          <Property Name="ID_team" Type="Int32" Nullable="false" />
+          <Property Name="role" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="STAFF" Relationship="BaseSZLPModel.STAFF__STAFF_IN_TEAMS" FromRole="STAFF_IN_TEAMS" ToRole="STAFF" />
+          <NavigationProperty Name="TEAM" Relationship="BaseSZLPModel.TEAM__STAFF_IN_TEAM" FromRole="STAFF_IN_TEAMS" ToRole="TEAM" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TEAM">
+          <Key>
+            <PropertyRef Name="ID_team" />
+          </Key>
+          <Property Name="ID_team" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="logo" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="mail" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="street" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="apartmentNumber" Type="Int32" />
+          <Property Name="zipCode" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="region" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="phoneNumber" Type="String" MaxLength="11" Unicode="false" FixedLength="false" />
+          <Property Name="faxNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="foundationDate" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ageCategory" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="www" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="points" Type="Int32" />
+          <Property Name="numberOfWins" Type="Int32" />
+          <Property Name="numberOfDraws" Type="Int32" />
+          <Property Name="numberOfLosses" Type="Int32" />
+          <Property Name="numberOfGoalsScored" Type="Int32" />
+          <Property Name="numberOfGoalsLost" Type="Int32" />
+          <Property Name="numberOfMatches" Type="Int32" />
+          <Property Name="league" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="NEWS" Relationship="BaseSZLPModel.FK_TEAMS__NEWS" FromRole="TEAM" ToRole="NEWS" />
+          <NavigationProperty Name="PLAYER" Relationship="BaseSZLPModel.FK_TEAM__PLAYER" FromRole="TEAM" ToRole="PLAYER" />
+          <NavigationProperty Name="STAFF_IN_TEAMS" Relationship="BaseSZLPModel.TEAM__STAFF_IN_TEAM" FromRole="TEAM" ToRole="STAFF_IN_TEAMS" />
+          <NavigationProperty Name="TEAMS_IN_MATCH" Relationship="BaseSZLPModel.FK_TEAM__TEAM_COMPOSITION" FromRole="TEAM" ToRole="TEAMS_IN_MATCH" />
+        </EntityType>
+        <EntityType Name="TEAMS_IN_MATCH">
+          <Key>
+            <PropertyRef Name="ID_teamComposition" />
+          </Key>
+          <Property Name="ID_teamComposition" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_team" Type="Int32" />
+          <Property Name="ID_match" Type="Int32" />
+          <Property Name="isHost" Type="Boolean" />
+          <NavigationProperty Name="MATCH" Relationship="BaseSZLPModel.FK_MATCH__TEAM_COMPOSITION" FromRole="TEAMS_IN_MATCH" ToRole="MATCH" />
+          <NavigationProperty Name="TEAM" Relationship="BaseSZLPModel.FK_TEAM__TEAM_COMPOSITION" FromRole="TEAMS_IN_MATCH" ToRole="TEAM" />
+          <NavigationProperty Name="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Relationship="BaseSZLPModel.FK_TEAM_COMPOSITION__TEAM_COMPOSITION_ALLOCATION" FromRole="TEAMS_IN_MATCH" ToRole="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
+        </EntityType>
+        <EntityType Name="TEAMS_IN_MATCH_PLAYERS_ALLOCATION">
+          <Key>
+            <PropertyRef Name="ID_allocation" />
+          </Key>
+          <Property Name="ID_allocation" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_player" Type="Int32" />
+          <Property Name="ID_teamComposition" Type="Int32" />
+          <NavigationProperty Name="PLAYER" Relationship="BaseSZLPModel.FK_PLAYER__TEAM_COMPOSITION_ALLOCATION" FromRole="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" ToRole="PLAYER" />
+          <NavigationProperty Name="TEAMS_IN_MATCH" Relationship="BaseSZLPModel.FK_TEAM_COMPOSITION__TEAM_COMPOSITION_ALLOCATION" FromRole="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" ToRole="TEAMS_IN_MATCH" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="firstName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="lastName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="numberOfComments" Type="Int32" />
+          <NavigationProperty Name="COMMENTS" Relationship="BaseSZLPModel.FK_UserProfile__COMMENTS" FromRole="UserProfile" ToRole="COMMENTS" />
+          <NavigationProperty Name="NEWS" Relationship="BaseSZLPModel.FK_UserProfile__NEWS" FromRole="UserProfile" ToRole="NEWS" />
+          <NavigationProperty Name="webpages_Membership" Relationship="BaseSZLPModel.FK_webpages_Membership_UserProfile" FromRole="UserProfile" ToRole="webpages_Membership" />
+          <NavigationProperty Name="webpages_Roles" Relationship="BaseSZLPModel.webpages_UsersInRoles" FromRole="UserProfile" ToRole="webpages_Roles" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ConfirmationToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsConfirmed" Type="Boolean" />
+          <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="UserProfile" Relationship="BaseSZLPModel.FK_webpages_Membership_UserProfile" FromRole="webpages_Membership" ToRole="UserProfile" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="UserProfile" Relationship="BaseSZLPModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
+        </EntityType>
+        <Association Name="FK_NEWS__COMMENTS">
+          <End Role="NEWS" Type="BaseSZLPModel.NEWS" Multiplicity="0..1" />
+          <End Role="COMMENTS" Type="BaseSZLPModel.COMMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NEWS">
+              <PropertyRef Name="ID_news" />
+            </Principal>
+            <Dependent Role="COMMENTS">
+              <PropertyRef Name="ID_news" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProfile__COMMENTS">
+          <End Role="UserProfile" Type="BaseSZLPModel.UserProfile" Multiplicity="0..1" />
+          <End Role="COMMENTS" Type="BaseSZLPModel.COMMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="COMMENTS">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MATCH__EVENT">
+          <End Role="MATCH" Type="BaseSZLPModel.MATCH" Multiplicity="1" />
+          <End Role="EVENT" Type="BaseSZLPModel.EVENT" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MATCH">
+              <PropertyRef Name="ID_match" />
+            </Principal>
+            <Dependent Role="EVENT">
+              <PropertyRef Name="ID_event" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLAYER__EVENT">
+          <End Role="PLAYER" Type="BaseSZLPModel.PLAYER" Multiplicity="0..1" />
+          <End Role="EVENT" Type="BaseSZLPModel.EVENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLAYER">
+              <PropertyRef Name="ID_player" />
+            </Principal>
+            <Dependent Role="EVENT">
+              <PropertyRef Name="ID_player" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MATCH__STAFF_IN_MATCH">
+          <End Role="MATCH" Type="BaseSZLPModel.MATCH" Multiplicity="1" />
+          <End Role="STAFF_IN_MATCHES" Type="BaseSZLPModel.STAFF_IN_MATCHES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATCH">
+              <PropertyRef Name="ID_match" />
+            </Principal>
+            <Dependent Role="STAFF_IN_MATCHES">
+              <PropertyRef Name="ID_match" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MATCH__TEAM_COMPOSITION">
+          <End Role="MATCH" Type="BaseSZLPModel.MATCH" Multiplicity="0..1" />
+          <End Role="TEAMS_IN_MATCH" Type="BaseSZLPModel.TEAMS_IN_MATCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MATCH">
+              <PropertyRef Name="ID_match" />
+            </Principal>
+            <Dependent Role="TEAMS_IN_MATCH">
+              <PropertyRef Name="ID_match" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TEAMS__NEWS">
+          <End Role="TEAM" Type="BaseSZLPModel.TEAM" Multiplicity="1" />
+          <End Role="NEWS" Type="BaseSZLPModel.NEWS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID_team" />
+            </Principal>
+            <Dependent Role="NEWS">
+              <PropertyRef Name="ID_team" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserProfile__NEWS">
+          <End Role="UserProfile" Type="BaseSZLPModel.UserProfile" Multiplicity="1" />
+          <End Role="NEWS" Type="BaseSZLPModel.NEWS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="NEWS">
+              <PropertyRef Name="ID_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PLAYER__TEAM_COMPOSITION_ALLOCATION">
+          <End Role="PLAYER" Type="BaseSZLPModel.PLAYER" Multiplicity="0..1" />
+          <End Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Type="BaseSZLPModel.TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PLAYER">
+              <PropertyRef Name="ID_player" />
+            </Principal>
+            <Dependent Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION">
+              <PropertyRef Name="ID_player" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TEAM__PLAYER">
+          <End Role="TEAM" Type="BaseSZLPModel.TEAM" Multiplicity="0..1" />
+          <End Role="PLAYER" Type="BaseSZLPModel.PLAYER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID_team" />
+            </Principal>
+            <Dependent Role="PLAYER">
+              <PropertyRef Name="ID_team" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STAFF__STAFF_IN_MATCH">
+          <End Role="STAFF" Type="BaseSZLPModel.STAFF" Multiplicity="1" />
+          <End Role="STAFF_IN_MATCHES" Type="BaseSZLPModel.STAFF_IN_MATCHES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STAFF">
+              <PropertyRef Name="ID_staff" />
+            </Principal>
+            <Dependent Role="STAFF_IN_MATCHES">
+              <PropertyRef Name="ID_staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="STAFF__STAFF_IN_TEAMS">
+          <End Role="STAFF" Type="BaseSZLPModel.STAFF" Multiplicity="1" />
+          <End Role="STAFF_IN_TEAMS" Type="BaseSZLPModel.STAFF_IN_TEAMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STAFF">
+              <PropertyRef Name="ID_staff" />
+            </Principal>
+            <Dependent Role="STAFF_IN_TEAMS">
+              <PropertyRef Name="ID_staff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TEAM__STAFF_IN_TEAM">
+          <End Role="TEAM" Type="BaseSZLPModel.TEAM" Multiplicity="1" />
+          <End Role="STAFF_IN_TEAMS" Type="BaseSZLPModel.STAFF_IN_TEAMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID_team" />
+            </Principal>
+            <Dependent Role="STAFF_IN_TEAMS">
+              <PropertyRef Name="ID_team" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TEAM__TEAM_COMPOSITION">
+          <End Role="TEAM" Type="BaseSZLPModel.TEAM" Multiplicity="0..1" />
+          <End Role="TEAMS_IN_MATCH" Type="BaseSZLPModel.TEAMS_IN_MATCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAM">
+              <PropertyRef Name="ID_team" />
+            </Principal>
+            <Dependent Role="TEAMS_IN_MATCH">
+              <PropertyRef Name="ID_team" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TEAM_COMPOSITION__TEAM_COMPOSITION_ALLOCATION">
+          <End Role="TEAMS_IN_MATCH" Type="BaseSZLPModel.TEAMS_IN_MATCH" Multiplicity="0..1" />
+          <End Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Type="BaseSZLPModel.TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TEAMS_IN_MATCH">
+              <PropertyRef Name="ID_teamComposition" />
+            </Principal>
+            <Dependent Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION">
+              <PropertyRef Name="ID_teamComposition" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_webpages_Membership_UserProfile">
+          <End Role="UserProfile" Type="BaseSZLPModel.UserProfile" Multiplicity="1" />
+          <End Role="webpages_Membership" Type="BaseSZLPModel.webpages_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfile">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="webpages_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="webpages_UsersInRoles">
+          <End Role="UserProfile" Type="BaseSZLPModel.UserProfile" Multiplicity="*" />
+          <End Role="webpages_Roles" Type="BaseSZLPModel.webpages_Roles" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BaseSZLPModelStoreContainer" CdmEntityContainer="BaseSZLPEntities">
+          <EntitySetMapping Name="COMMENTS">
+            <EntityTypeMapping TypeName="BaseSZLPModel.COMMENTS">
+              <MappingFragment StoreEntitySet="COMMENTS">
+                <ScalarProperty Name="ID_comment" ColumnName="ID_comment" />
+                <ScalarProperty Name="userIP" ColumnName="userIP" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ID_news" ColumnName="ID_news" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EVENT">
+            <EntityTypeMapping TypeName="BaseSZLPModel.EVENT">
+              <MappingFragment StoreEntitySet="EVENT">
+                <ScalarProperty Name="ID_event" ColumnName="ID_event" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="minute" ColumnName="minute" />
+                <ScalarProperty Name="ID_player" ColumnName="ID_player" />
+                <ScalarProperty Name="ID_match" ColumnName="ID_match" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MATCH">
+            <EntityTypeMapping TypeName="BaseSZLPModel.MATCH">
+              <MappingFragment StoreEntitySet="MATCH">
+                <ScalarProperty Name="ID_match" ColumnName="ID_match" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="dateOfMatch" ColumnName="dateOfMatch" />
+                <ScalarProperty Name="numberOfPlayers" ColumnName="numberOfPlayers" />
+                <ScalarProperty Name="round" ColumnName="round" />
+                <ScalarProperty Name="hostScore" ColumnName="hostScore" />
+                <ScalarProperty Name="guestScore" ColumnName="guestScore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NEWS">
+            <EntityTypeMapping TypeName="BaseSZLPModel.NEWS">
+              <MappingFragment StoreEntitySet="NEWS">
+                <ScalarProperty Name="ID_news" ColumnName="ID_news" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="ID_user" ColumnName="ID_user" />
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="isLeagueNews" ColumnName="isLeagueNews" />
+                <ScalarProperty Name="numberOfComments" ColumnName="numberOfComments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PLAYER">
+            <EntityTypeMapping TypeName="BaseSZLPModel.PLAYER">
+              <MappingFragment StoreEntitySet="PLAYER">
+                <ScalarProperty Name="ID_player" ColumnName="ID_player" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="dateOfRegistration" ColumnName="dateOfRegistration" />
+                <ScalarProperty Name="isActivePlayer" ColumnName="isActivePlayer" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+                <ScalarProperty Name="numberOfGoals" ColumnName="numberOfGoals" />
+                <ScalarProperty Name="timeOnThePitch" ColumnName="timeOnThePitch" />
+                <ScalarProperty Name="numberOfYellowCards" ColumnName="numberOfYellowCards" />
+                <ScalarProperty Name="numberOfRedCards" ColumnName="numberOfRedCards" />
+                <ScalarProperty Name="numberOfAssists" ColumnName="numberOfAssists" />
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STAFF">
+            <EntityTypeMapping TypeName="BaseSZLPModel.STAFF">
+              <MappingFragment StoreEntitySet="STAFF">
+                <ScalarProperty Name="ID_staff" ColumnName="ID_staff" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="isReferee" ColumnName="isReferee" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STAFF_IN_MATCHES">
+            <EntityTypeMapping TypeName="BaseSZLPModel.STAFF_IN_MATCHES">
+              <MappingFragment StoreEntitySet="STAFF_IN_MATCHES">
+                <ScalarProperty Name="ID_staff" ColumnName="ID_staff" />
+                <ScalarProperty Name="ID_match" ColumnName="ID_match" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STAFF_IN_TEAMS">
+            <EntityTypeMapping TypeName="BaseSZLPModel.STAFF_IN_TEAMS">
+              <MappingFragment StoreEntitySet="STAFF_IN_TEAMS">
+                <ScalarProperty Name="ID_staff" ColumnName="ID_staff" />
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BaseSZLPModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEAM">
+            <EntityTypeMapping TypeName="BaseSZLPModel.TEAM">
+              <MappingFragment StoreEntitySet="TEAM">
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="apartmentNumber" ColumnName="apartmentNumber" />
+                <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="region" ColumnName="region" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="faxNumber" ColumnName="faxNumber" />
+                <ScalarProperty Name="foundationDate" ColumnName="foundationDate" />
+                <ScalarProperty Name="ageCategory" ColumnName="ageCategory" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="www" ColumnName="www" />
+                <ScalarProperty Name="points" ColumnName="points" />
+                <ScalarProperty Name="numberOfWins" ColumnName="numberOfWins" />
+                <ScalarProperty Name="numberOfDraws" ColumnName="numberOfDraws" />
+                <ScalarProperty Name="numberOfLosses" ColumnName="numberOfLosses" />
+                <ScalarProperty Name="numberOfGoalsScored" ColumnName="numberOfGoalsScored" />
+                <ScalarProperty Name="numberOfGoalsLost" ColumnName="numberOfGoalsLost" />
+                <ScalarProperty Name="numberOfMatches" ColumnName="numberOfMatches" />
+                <ScalarProperty Name="league" ColumnName="league" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEAMS_IN_MATCH">
+            <EntityTypeMapping TypeName="BaseSZLPModel.TEAMS_IN_MATCH">
+              <MappingFragment StoreEntitySet="TEAMS_IN_MATCH">
+                <ScalarProperty Name="ID_teamComposition" ColumnName="ID_teamComposition" />
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="ID_match" ColumnName="ID_match" />
+                <ScalarProperty Name="isHost" ColumnName="isHost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEAMS_IN_MATCH_PLAYERS_ALLOCATION">
+            <EntityTypeMapping TypeName="BaseSZLPModel.TEAMS_IN_MATCH_PLAYERS_ALLOCATION">
+              <MappingFragment StoreEntitySet="TEAMS_IN_MATCH_PLAYERS_ALLOCATION">
+                <ScalarProperty Name="ID_allocation" ColumnName="ID_allocation" />
+                <ScalarProperty Name="ID_player" ColumnName="ID_player" />
+                <ScalarProperty Name="ID_teamComposition" ColumnName="ID_teamComposition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfile">
+            <EntityTypeMapping TypeName="BaseSZLPModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="numberOfComments" ColumnName="numberOfComments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Membership">
+            <EntityTypeMapping TypeName="BaseSZLPModel.webpages_Membership">
+              <MappingFragment StoreEntitySet="webpages_Membership">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+                <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+                <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+                <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+                <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_OAuthMembership">
+            <EntityTypeMapping TypeName="BaseSZLPModel.webpages_OAuthMembership">
+              <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+                <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Roles">
+            <EntityTypeMapping TypeName="BaseSZLPModel.webpages_Roles">
+              <MappingFragment StoreEntitySet="webpages_Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="webpages_UsersInRoles" TypeName="BaseSZLPModel.webpages_UsersInRoles" StoreEntitySet="webpages_UsersInRoles">
+            <EndProperty Name="UserProfile">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="webpages_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

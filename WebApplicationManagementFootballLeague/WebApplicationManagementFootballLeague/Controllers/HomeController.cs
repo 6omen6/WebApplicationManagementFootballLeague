@@ -28,9 +28,9 @@ namespace WebApplicationManagementFootballLeague.Controllers
             return PartialView("~/Views/Partial/Team/_TeamTimetablePartial.cshtml");
         }
 
-        public ActionResult ShowTeamAbout()
+        public ActionResult ShowTeamInfo()
         {
-            return PartialView("~/Views/Partial/Team/_TeamAboutPartial.cshtml");
+            return RedirectToAction("ShowTeamInfo", "Team");
         }
 
         public ActionResult ShowTeamContact()

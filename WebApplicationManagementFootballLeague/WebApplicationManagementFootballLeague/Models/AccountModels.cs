@@ -18,11 +18,11 @@ namespace WebApplicationManagementFootballLeague.Models
         {
         }
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<UserProfiles> UserProfiles { get; set; }
     }
 
     [Table("UserProfile")]
-    public class UserProfile
+    public class UserProfiles
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]

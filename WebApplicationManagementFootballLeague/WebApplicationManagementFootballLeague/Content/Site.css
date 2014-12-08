@@ -1,4 +1,178 @@
-﻿.glyph {
+﻿html {
+    height: 100%;
+}
+
+body {
+    background-image: url("../images/tlo.jpg");
+    background-attachment: fixed;
+    height: 100%;
+}
+
+    body > #body-container {
+        height: auto;
+        min-height: 100%;
+        opacity: 1;
+    }
+
+#body-container {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#header {
+    height: 52px;
+    background-color:  #428bca;
+    position:fixed;
+        z-index: 1;
+    width: 100%;
+    min-width: 980px;
+    display: block;
+}
+#footer {
+    clear:both;
+    background-color: red;
+    height: 60px;
+}
+/*FOOTER*/
+
+.footer {
+    clear: both;
+    width: 100%;
+    bottom: 0;
+    z-index: 2;
+}
+
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+/* Toggle Styles */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    margin-top: 31px;
+    z-index: 1000;
+    position: fixed;
+    left: 169px;
+    width: 0;
+    height: 100%;
+    margin-left: -173px;
+    overflow-y: auto;
+    background-color: #222;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+        border-right:1px solid;
+    border-right-color:  #428bca;
+            border-top:1px solid;
+    border-top-color: #428bca;
+    opacity:0.9;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 171px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -171px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 169px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:171px) {
+    #wrapper{
+        padding-left: 171px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 171px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+    }
+}
+
+.select{
+    height:20px;
+}
+
+.glyph {
     font-size: 2.2em;
     padding: 5px 0px 0px 0px;
     color: #777;
@@ -82,10 +256,10 @@
     width: 169px;
     max-width: 186px;
     position: fixed;
-    background: white;
-    opacity: 1;
+    background-color: none;
     display: block;
     visibility: hidden;
+    opacity: 0.5;
     z-index: 1;
 }
 
@@ -122,26 +296,15 @@
     text-decoration: none;
 }
 
-
-/*WRAPER*/
-
-.wraper {
-    position: relative;
-    margin: auto;
-    height: initial;
-    min-height: 900px;
-    max-width: 1025px;
-}
-
 /*CONTENT IN WRAPPER*/
 
 .content {
     position: relative;
-    float: left;
     background-color: rgba(0,0,0, 0.4);
     min-height: inherit;
-    padding-top: 58px;
+    padding-top: 35px;
     margin: auto;
+    width:1024px;
 }
 
 .content-left {
@@ -198,15 +361,6 @@
     height: auto;
 }
 
-/*FOOTER*/
-
-.footer {
-    clear: both;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-    z-index: 2;
-}
 
 /*LOGIN*/
 .content-login {
@@ -304,7 +458,7 @@ th {
 }
 
 /*OTHERS*/
-.roww {
+/*.roww {
     width: 105.5%;
 }
 
@@ -315,110 +469,4 @@ th {
 .static {
     position: static;
     display: block;
-}
-
-
-
-#sidebar-wrapper {
-    z-index: 1000;
-    position: fixed;
-    height: auto;
-    background: white;
-    opacity: 0.9;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-    width: 169px;
-}
-
-#page-content-wrapper {
-    width: 100%;
-    padding: 15px;
-}
-
-#wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: -250px;
-}
-
-/* Sidebar Styles */
-
-
-
-.sidebar-nav {
-    position: absolute;
-    top: 0;
-    width: 169px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    font-size: 12px;
-}
-
-    .sidebar-nav li {
-        text-indent: 20px;
-        line-height: 40px;
-    }
-
-        .sidebar-nav li a {
-            display: block;
-            text-decoration: none;
-            color: #999999;
-        }
-
-            .sidebar-nav li a:hover {
-                text-decoration: none;
-                color: #fff;
-                background-color: #333;
-            }
-
-            .sidebar-nav li a:active,
-            .sidebar-nav li a:focus {
-                text-decoration: none;
-                color: #fff;
-                background-image: url(/Images/tlo-button.jpg);
-            }
-
-    .sidebar-nav > .sidebar-brand {
-        height: 65px;
-        font-size: 18px;
-        line-height: 60px;
-    }
-
-        .sidebar-nav > .sidebar-brand a {
-            color: #999999;
-        }
-
-            .sidebar-nav > .sidebar-brand a:hover {
-                color: #fff;
-                background: none;
-            }
-
-
-@media(min-width:768px) {
-
-{
-    padding-left: 0px;
-}
-
-#wrapper.toggled {
-    padding-left: 0;
-}
-
-#sidebar-wrapper {
-    width: 169px;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-    width: 0;
-}
-
-#page-content-wrapper {
-    padding: 0px;
-}
-
-#wrapper.toggled #page-content-wrapper {
-    position: relative;
-    margin-right: 0;
-}
-}
+}*/

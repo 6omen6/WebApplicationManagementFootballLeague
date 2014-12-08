@@ -1,0 +1,220 @@
+﻿@model WebApplicationManagementFootballLeague.Models.TEAM
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TEAM</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ID_team)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ID_team)
+            @Html.ValidationMessageFor(model => model.ID_team)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.logo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.logo)
+            @Html.ValidationMessageFor(model => model.logo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.mail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.mail)
+            @Html.ValidationMessageFor(model => model.mail)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.street)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.street)
+            @Html.ValidationMessageFor(model => model.street)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.apartmentNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.apartmentNumber)
+            @Html.ValidationMessageFor(model => model.apartmentNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.zipCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.zipCode)
+            @Html.ValidationMessageFor(model => model.zipCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.city)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.city)
+            @Html.ValidationMessageFor(model => model.city)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.region)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.region)
+            @Html.ValidationMessageFor(model => model.region)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.phoneNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.phoneNumber)
+            @Html.ValidationMessageFor(model => model.phoneNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.faxNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.faxNumber)
+            @Html.ValidationMessageFor(model => model.faxNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.foundationDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.foundationDate)
+            @Html.ValidationMessageFor(model => model.foundationDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ageCategory)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ageCategory)
+            @Html.ValidationMessageFor(model => model.ageCategory)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.description)
+            @Html.ValidationMessageFor(model => model.description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.www)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.www)
+            @Html.ValidationMessageFor(model => model.www)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.points)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.points)
+            @Html.ValidationMessageFor(model => model.points)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.numberOfWins)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.numberOfWins)
+            @Html.ValidationMessageFor(model => model.numberOfWins)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.numberOfDraws)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.numberOfDraws)
+            @Html.ValidationMessageFor(model => model.numberOfDraws)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.numberOfLosses)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.numberOfLosses)
+            @Html.ValidationMessageFor(model => model.numberOfLosses)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.numberOfGoalsScored)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.numberOfGoalsScored)
+            @Html.ValidationMessageFor(model => model.numberOfGoalsScored)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.numberOfGoalsLost)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.numberOfGoalsLost)
+            @Html.ValidationMessageFor(model => model.numberOfGoalsLost)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.numberOfMatches)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.numberOfMatches)
+            @Html.ValidationMessageFor(model => model.numberOfMatches)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.league)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.league)
+            @Html.ValidationMessageFor(model => model.league)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ID_staff)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ID_staff)
+            @Html.ValidationMessageFor(model => model.ID_staff)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

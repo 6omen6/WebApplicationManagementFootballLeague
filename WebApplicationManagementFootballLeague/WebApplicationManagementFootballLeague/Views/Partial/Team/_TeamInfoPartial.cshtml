@@ -1,40 +1,41 @@
-﻿<div class="panel panel-primary" style="display:block;">
-    <div class="panel-heading">Olimpia Wola Zalężna</div>
+﻿@model WebApplicationManagementFootballLeague.Models.ModelsView.TeamModelView
+<div class="panel panel-primary" style="display:block;">
+    <div class="panel-heading">@Model.team.name</div>
     <div class="panel-body">
         <table class="table table-striped">
             <tr>
                 <td rowspan="8">
                     <img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/73352_527226203986014_462161719_n.png?oh=f5210bbb650574fcf672ce6cfff8cf99&oe=54DA5CE7&__gda__=1425412629_08b7cf6521aa23dbf0d416f93209b23c" /></td>
                 <td>Rok Założenia: </td>
-                <td>2007 </td>
+                <td>@Model.team.foundationDate</td>
             </tr>
             <tr>
                 <td>Barwy: </td>
-                <td>Czarno-Czerwone </td>
+                <td> </td>
             </tr>
             <tr>
                 <td>Adres: </td>
-                <td>Wola </td>
+                <td>@Model.team.street</td>
             </tr>
             <tr>
                 <td>Telefon:</td>
-                <td></td>
+                <td>@Model.team.phoneNumber</td>
             </tr>
             <tr>
                 <td>Prezes:</td>
-                <td>Jarosław Wijata</td>
+                <td></td>
             </tr>
             <tr>
                 <td>Menedżer:</td>
-                <td>Paweł Wijata</td>
+                <td></td>
             </tr>
             <tr>
                 <td>Strona:</td>
-                <td><a href="http://www.olimpiawolazalezna.futbolowo.pl">olimpiawolazalezna.futbolowo.pl</a></td>
+                <td><a href="http://www.olimpiawolazalezna.futbolowo.pl">@Model.team.www</a></td>
             </tr>
             <tr>
                 <td>Trener:</td>
-                <td>Jarosław Krzysztofik</td>
+                <td></td>
             </tr>
         </table>
     </div>
