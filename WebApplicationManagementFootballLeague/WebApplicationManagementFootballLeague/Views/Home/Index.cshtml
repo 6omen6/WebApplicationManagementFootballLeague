@@ -10,26 +10,25 @@
                     @{Html.RenderAction("ShowTeamInfo", "Team");}
                 </div>
                 <div class="mid-in-left-content" id="mid-in-left-content" style="min-height: 500px; display: block;">
-                    @Html.Partial("~/Views/Partial/Team/_TeamNewsPartial.cshtml")
+                    @{Html.RenderAction("ShowTeamNews", "Team");}
                 </div>
             </div>
             <div class="content-mid">
                 <div class="top-in-mid-content">
-                    Miejsce na reklame.
+                    @{Html.RenderAction("ShowTeamMatches", "Team");}
                 </div>
             </div>
             <div class="content-right">
                 <div class="top-in-right-content">
-                    @Html.Partial("~/Views/Partial/Table/_TableMiniPartial.cshtml")
+                    @{Html.RenderAction("ShowTableMini", "Team");}
                 </div>
                 @Html.Partial("~/Views/Partial/Statistic/_StatisticPartial.cshtml")
             </div>
         </div>
     </div>
-</div>
-
-<div class="footer">
-    @Html.Partial("~/Views/Partial/Footer/_FooterPartial.cshtml")
+    <div class="footer">
+        @Html.Partial("~/Views/Partial/Footer/_FooterPartial.cshtml")
+    </div>
 </div>
 
 <script type="text/javascript">

@@ -10,18 +10,12 @@
 namespace WebApplicationManagementFootballLeague.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class COMMENTS
+    public partial class listOfPlayersWithMostNumberOfRedCardsForTheWholeLeague_Result
     {
-        public int ID_comment { get; set; }
-        public string userIP { get; set; }
-        public string text { get; set; }
-        public string date { get; set; }
-        public Nullable<int> UserId { get; set; }
-        public Nullable<int> ID_news { get; set; }
-    
-        public virtual NEWS NEWS { get; set; }
-        public virtual UserProfile UserProfile { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public Nullable<int> number { get; set; }
+        public Nullable<int> numberOfRedCards { get; set; }
     }
 }

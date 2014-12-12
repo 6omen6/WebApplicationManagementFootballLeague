@@ -511,25 +511,140 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="commentsForTheNews" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="newsID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="eventsInMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="matchID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="guestsInMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="hostsInMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="leagueMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="leagueStatistics" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="listOfPlayersInTeam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="listOfPlayersWithLongestTimeOnThePitch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="listOfPlayersWithMostAssists" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="listOfPlayersWithMostAssistsForTheWholeLeague" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="listOfPlayersWithMostGoalsScored" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="listOfPlayersWithMostGoalsScoredForTheWholeLeague" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="listOfPlayersWithMostNumberOfRedCardsForTheWholeLeague" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="listOfPlayersWithMostNumberOfYellowCardsForTheWholeLeague" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="listOfPlayersWithMostRedCards" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="listOfPlayersWithMostTimeOnThePitchForTheWholeLeague" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="listOfPlayersWithMostYellowCards" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="listOfRefereesInMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="listOfStaffInTeam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="listOfTeams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="matchesInRound" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="round" Type="int" Mode="In" />
+        </Function>
+        <Function Name="matchOpponent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="matchID" Type="int" Mode="In" />
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="newsForTheLeague" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="newsForTheTeam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="playerWithLongestTimeOnThePitch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="playerWithMostAssists" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="playerWithMostGoalsScored" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="playerWithMostRedCards" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="playerWithMostYellowCards" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="teamDataByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="teamGoalBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="teamMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="teamScore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="teamsInMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="teamWithMostDraws" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="teamWithMostGoalsLost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="teamWithMostGoalsScored" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="teamWithMostLoses" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="teamWithMostMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="teamWithMostPoints" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="teamWithMostWins" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BaseSZLPModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="BaseSZLPEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="COMMENTS" EntityType="BaseSZLPModel.COMMENTS" />
-          <EntitySet Name="EVENT" EntityType="BaseSZLPModel.EVENT" />
-          <EntitySet Name="MATCH" EntityType="BaseSZLPModel.MATCH" />
+          <EntitySet Name="COMMENTS" EntityType="BaseSZLPModel.COMMENT" />
+          <EntitySet Name="EVENTs" EntityType="BaseSZLPModel.EVENT" />
+          <EntitySet Name="MATCHes" EntityType="BaseSZLPModel.MATCH" />
           <EntitySet Name="NEWS" EntityType="BaseSZLPModel.NEWS" />
-          <EntitySet Name="PLAYER" EntityType="BaseSZLPModel.PLAYER" />
-          <EntitySet Name="STAFF" EntityType="BaseSZLPModel.STAFF" />
+          <EntitySet Name="PLAYERs" EntityType="BaseSZLPModel.PLAYER" />
+          <EntitySet Name="STAFFs" EntityType="BaseSZLPModel.STAFF" />
           <EntitySet Name="STAFF_IN_MATCHES" EntityType="BaseSZLPModel.STAFF_IN_MATCHES" />
           <EntitySet Name="STAFF_IN_TEAMS" EntityType="BaseSZLPModel.STAFF_IN_TEAMS" />
-          <EntitySet Name="sysdiagrams" EntityType="BaseSZLPModel.sysdiagrams" />
-          <EntitySet Name="TEAM" EntityType="BaseSZLPModel.TEAM" />
+          <EntitySet Name="sysdiagrams" EntityType="BaseSZLPModel.sysdiagram" />
+          <EntitySet Name="TEAMs" EntityType="BaseSZLPModel.TEAM" />
           <EntitySet Name="TEAMS_IN_MATCH" EntityType="BaseSZLPModel.TEAMS_IN_MATCH" />
           <EntitySet Name="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" EntityType="BaseSZLPModel.TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
-          <EntitySet Name="UserProfile" EntityType="BaseSZLPModel.UserProfile" />
+          <EntitySet Name="UserProfiles" EntityType="BaseSZLPModel.UserProfile" />
           <EntitySet Name="webpages_Membership" EntityType="BaseSZLPModel.webpages_Membership" />
           <EntitySet Name="webpages_OAuthMembership" EntityType="BaseSZLPModel.webpages_OAuthMembership" />
           <EntitySet Name="webpages_Roles" EntityType="BaseSZLPModel.webpages_Roles" />
@@ -538,55 +653,55 @@
             <End Role="COMMENTS" EntitySet="COMMENTS" />
           </AssociationSet>
           <AssociationSet Name="FK_UserProfile__COMMENTS" Association="BaseSZLPModel.FK_UserProfile__COMMENTS">
-            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
             <End Role="COMMENTS" EntitySet="COMMENTS" />
           </AssociationSet>
           <AssociationSet Name="FK_MATCH__EVENT" Association="BaseSZLPModel.FK_MATCH__EVENT">
-            <End Role="MATCH" EntitySet="MATCH" />
-            <End Role="EVENT" EntitySet="EVENT" />
+            <End Role="MATCH" EntitySet="MATCHes" />
+            <End Role="EVENT" EntitySet="EVENTs" />
           </AssociationSet>
           <AssociationSet Name="FK_PLAYER__EVENT" Association="BaseSZLPModel.FK_PLAYER__EVENT">
-            <End Role="PLAYER" EntitySet="PLAYER" />
-            <End Role="EVENT" EntitySet="EVENT" />
+            <End Role="PLAYER" EntitySet="PLAYERs" />
+            <End Role="EVENT" EntitySet="EVENTs" />
           </AssociationSet>
           <AssociationSet Name="FK_MATCH__STAFF_IN_MATCH" Association="BaseSZLPModel.FK_MATCH__STAFF_IN_MATCH">
-            <End Role="MATCH" EntitySet="MATCH" />
+            <End Role="MATCH" EntitySet="MATCHes" />
             <End Role="STAFF_IN_MATCHES" EntitySet="STAFF_IN_MATCHES" />
           </AssociationSet>
           <AssociationSet Name="FK_MATCH__TEAM_COMPOSITION" Association="BaseSZLPModel.FK_MATCH__TEAM_COMPOSITION">
-            <End Role="MATCH" EntitySet="MATCH" />
+            <End Role="MATCH" EntitySet="MATCHes" />
             <End Role="TEAMS_IN_MATCH" EntitySet="TEAMS_IN_MATCH" />
           </AssociationSet>
           <AssociationSet Name="FK_TEAMS__NEWS" Association="BaseSZLPModel.FK_TEAMS__NEWS">
-            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="TEAM" EntitySet="TEAMs" />
             <End Role="NEWS" EntitySet="NEWS" />
           </AssociationSet>
           <AssociationSet Name="FK_UserProfile__NEWS" Association="BaseSZLPModel.FK_UserProfile__NEWS">
-            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
             <End Role="NEWS" EntitySet="NEWS" />
           </AssociationSet>
           <AssociationSet Name="FK_PLAYER__TEAM_COMPOSITION_ALLOCATION" Association="BaseSZLPModel.FK_PLAYER__TEAM_COMPOSITION_ALLOCATION">
-            <End Role="PLAYER" EntitySet="PLAYER" />
+            <End Role="PLAYER" EntitySet="PLAYERs" />
             <End Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" EntitySet="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
           </AssociationSet>
           <AssociationSet Name="FK_TEAM__PLAYER" Association="BaseSZLPModel.FK_TEAM__PLAYER">
-            <End Role="TEAM" EntitySet="TEAM" />
-            <End Role="PLAYER" EntitySet="PLAYER" />
+            <End Role="TEAM" EntitySet="TEAMs" />
+            <End Role="PLAYER" EntitySet="PLAYERs" />
           </AssociationSet>
           <AssociationSet Name="FK_STAFF__STAFF_IN_MATCH" Association="BaseSZLPModel.FK_STAFF__STAFF_IN_MATCH">
-            <End Role="STAFF" EntitySet="STAFF" />
+            <End Role="STAFF" EntitySet="STAFFs" />
             <End Role="STAFF_IN_MATCHES" EntitySet="STAFF_IN_MATCHES" />
           </AssociationSet>
           <AssociationSet Name="STAFF__STAFF_IN_TEAMS" Association="BaseSZLPModel.STAFF__STAFF_IN_TEAMS">
-            <End Role="STAFF" EntitySet="STAFF" />
+            <End Role="STAFF" EntitySet="STAFFs" />
             <End Role="STAFF_IN_TEAMS" EntitySet="STAFF_IN_TEAMS" />
           </AssociationSet>
           <AssociationSet Name="TEAM__STAFF_IN_TEAM" Association="BaseSZLPModel.TEAM__STAFF_IN_TEAM">
-            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="TEAM" EntitySet="TEAMs" />
             <End Role="STAFF_IN_TEAMS" EntitySet="STAFF_IN_TEAMS" />
           </AssociationSet>
           <AssociationSet Name="FK_TEAM__TEAM_COMPOSITION" Association="BaseSZLPModel.FK_TEAM__TEAM_COMPOSITION">
-            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="TEAM" EntitySet="TEAMs" />
             <End Role="TEAMS_IN_MATCH" EntitySet="TEAMS_IN_MATCH" />
           </AssociationSet>
           <AssociationSet Name="FK_TEAM_COMPOSITION__TEAM_COMPOSITION_ALLOCATION" Association="BaseSZLPModel.FK_TEAM_COMPOSITION__TEAM_COMPOSITION_ALLOCATION">
@@ -594,15 +709,129 @@
             <End Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" EntitySet="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
           </AssociationSet>
           <AssociationSet Name="FK_webpages_Membership_UserProfile" Association="BaseSZLPModel.FK_webpages_Membership_UserProfile">
-            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
             <End Role="webpages_Membership" EntitySet="webpages_Membership" />
           </AssociationSet>
           <AssociationSet Name="webpages_UsersInRoles" Association="BaseSZLPModel.webpages_UsersInRoles">
-            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
             <End Role="webpages_Roles" EntitySet="webpages_Roles" />
           </AssociationSet>
+          <FunctionImport Name="commentsForTheNews" ReturnType="Collection(BaseSZLPModel.commentsForTheNews_Result)">
+            <Parameter Name="newsID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="eventsInMatches" ReturnType="Collection(BaseSZLPModel.eventsInMatches_Result)">
+            <Parameter Name="matchID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="guestsInMatches" ReturnType="Collection(BaseSZLPModel.guestsInMatches_Result)" />
+          <FunctionImport Name="hostsInMatches" ReturnType="Collection(BaseSZLPModel.hostsInMatches_Result)" />
+          <FunctionImport Name="leagueMatches" ReturnType="Collection(BaseSZLPModel.leagueMatches_Result)" />
+          <FunctionImport Name="leagueStatistics" ReturnType="Collection(BaseSZLPModel.leagueStatistics_Result)" />
+          <FunctionImport Name="listOfPlayersInTeam" ReturnType="Collection(BaseSZLPModel.listOfPlayersInTeam_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="listOfPlayersWithLongestTimeOnThePitch" ReturnType="Collection(BaseSZLPModel.listOfPlayersWithLongestTimeOnThePitch_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="listOfPlayersWithMostAssists" ReturnType="Collection(BaseSZLPModel.listOfPlayersWithMostAssists_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="listOfPlayersWithMostAssistsForTheWholeLeague" ReturnType="Collection(BaseSZLPModel.listOfPlayersWithMostAssistsForTheWholeLeague_Result)" />
+          <FunctionImport Name="listOfPlayersWithMostGoalsScored" ReturnType="Collection(BaseSZLPModel.listOfPlayersWithMostGoalsScored_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="listOfPlayersWithMostGoalsScoredForTheWholeLeague" ReturnType="Collection(BaseSZLPModel.listOfPlayersWithMostGoalsScoredForTheWholeLeague_Result)" />
+          <FunctionImport Name="listOfPlayersWithMostNumberOfRedCardsForTheWholeLeague" ReturnType="Collection(BaseSZLPModel.listOfPlayersWithMostNumberOfRedCardsForTheWholeLeague_Result)" />
+          <FunctionImport Name="listOfPlayersWithMostNumberOfYellowCardsForTheWholeLeague" ReturnType="Collection(BaseSZLPModel.listOfPlayersWithMostNumberOfYellowCardsForTheWholeLeague_Result)" />
+          <FunctionImport Name="listOfPlayersWithMostRedCards" ReturnType="Collection(BaseSZLPModel.listOfPlayersWithMostRedCards_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="listOfPlayersWithMostTimeOnThePitchForTheWholeLeague" ReturnType="Collection(BaseSZLPModel.listOfPlayersWithMostTimeOnThePitchForTheWholeLeague_Result)" />
+          <FunctionImport Name="listOfPlayersWithMostYellowCards" ReturnType="Collection(BaseSZLPModel.listOfPlayersWithMostYellowCards_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="listOfRefereesInMatches" ReturnType="Collection(BaseSZLPModel.listOfRefereesInMatches_Result)" />
+          <FunctionImport Name="listOfStaffInTeam" ReturnType="Collection(BaseSZLPModel.listOfStaffInTeam_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="listOfTeams" ReturnType="Collection(String)" />
+          <FunctionImport Name="matchesInRound" ReturnType="Collection(BaseSZLPModel.matchesInRound_Result)">
+            <Parameter Name="round" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="matchOpponent" ReturnType="Collection(BaseSZLPModel.matchOpponent_Result)">
+            <Parameter Name="matchID" Mode="In" Type="Int32" />
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="newsForTheLeague" ReturnType="Collection(BaseSZLPModel.newsForTheLeague_Result)" />
+          <FunctionImport Name="newsForTheTeam" ReturnType="Collection(BaseSZLPModel.newsForTheTeam_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="playerWithLongestTimeOnThePitch" ReturnType="Collection(BaseSZLPModel.playerWithLongestTimeOnThePitch_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="playerWithMostAssists" ReturnType="Collection(BaseSZLPModel.playerWithMostAssists_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="playerWithMostGoalsScored" ReturnType="Collection(BaseSZLPModel.playerWithMostGoalsScored_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="playerWithMostRedCards" ReturnType="Collection(BaseSZLPModel.playerWithMostRedCards_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="playerWithMostYellowCards" ReturnType="Collection(BaseSZLPModel.playerWithMostYellowCards_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(BaseSZLPModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(BaseSZLPModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="teamDataByID" ReturnType="Collection(BaseSZLPModel.teamDataByID_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="teamGoalBalance" ReturnType="Collection(BaseSZLPModel.teamGoalBalance_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="teamMatches" ReturnType="Collection(BaseSZLPModel.teamMatches_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="teamScore" ReturnType="Collection(BaseSZLPModel.teamScore_Result)">
+            <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="teamsInMatches" ReturnType="Collection(BaseSZLPModel.teamsInMatches_Result)" />
+          <FunctionImport Name="teamWithMostDraws" ReturnType="Collection(BaseSZLPModel.teamWithMostDraws_Result)" />
+          <FunctionImport Name="teamWithMostGoalsLost" ReturnType="Collection(BaseSZLPModel.teamWithMostGoalsLost_Result)" />
+          <FunctionImport Name="teamWithMostGoalsScored" ReturnType="Collection(BaseSZLPModel.teamWithMostGoalsScored_Result)" />
+          <FunctionImport Name="teamWithMostLoses" ReturnType="Collection(BaseSZLPModel.teamWithMostLoses_Result)" />
+          <FunctionImport Name="teamWithMostMatches" ReturnType="Collection(BaseSZLPModel.teamWithMostMatches_Result)" />
+          <FunctionImport Name="teamWithMostPoints" ReturnType="Collection(BaseSZLPModel.teamWithMostPoints_Result)" />
+          <FunctionImport Name="teamWithMostWins" ReturnType="Collection(BaseSZLPModel.teamWithMostWins_Result)" />
         </EntityContainer>
-        <EntityType Name="COMMENTS">
+        <EntityType Name="COMMENT">
           <Key>
             <PropertyRef Name="ID_comment" />
           </Key>
@@ -677,7 +906,7 @@
           <Property Name="numberOfRedCards" Type="Int32" />
           <Property Name="numberOfAssists" Type="Int32" />
           <Property Name="ID_team" Type="Int32" />
-          <NavigationProperty Name="EVENT" Relationship="BaseSZLPModel.FK_PLAYER__EVENT" FromRole="PLAYER" ToRole="EVENT" />
+          <NavigationProperty Name="EVENTs" Relationship="BaseSZLPModel.FK_PLAYER__EVENT" FromRole="PLAYER" ToRole="EVENT" />
           <NavigationProperty Name="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Relationship="BaseSZLPModel.FK_PLAYER__TEAM_COMPOSITION_ALLOCATION" FromRole="PLAYER" ToRole="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
           <NavigationProperty Name="TEAM" Relationship="BaseSZLPModel.FK_TEAM__PLAYER" FromRole="PLAYER" ToRole="TEAM" />
         </EntityType>
@@ -715,7 +944,7 @@
           <NavigationProperty Name="STAFF" Relationship="BaseSZLPModel.STAFF__STAFF_IN_TEAMS" FromRole="STAFF_IN_TEAMS" ToRole="STAFF" />
           <NavigationProperty Name="TEAM" Relationship="BaseSZLPModel.TEAM__STAFF_IN_TEAM" FromRole="STAFF_IN_TEAMS" ToRole="TEAM" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
+        <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
@@ -753,7 +982,7 @@
           <Property Name="numberOfMatches" Type="Int32" />
           <Property Name="league" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="NEWS" Relationship="BaseSZLPModel.FK_TEAMS__NEWS" FromRole="TEAM" ToRole="NEWS" />
-          <NavigationProperty Name="PLAYER" Relationship="BaseSZLPModel.FK_TEAM__PLAYER" FromRole="TEAM" ToRole="PLAYER" />
+          <NavigationProperty Name="PLAYERs" Relationship="BaseSZLPModel.FK_TEAM__PLAYER" FromRole="TEAM" ToRole="PLAYER" />
           <NavigationProperty Name="STAFF_IN_TEAMS" Relationship="BaseSZLPModel.TEAM__STAFF_IN_TEAM" FromRole="TEAM" ToRole="STAFF_IN_TEAMS" />
           <NavigationProperty Name="TEAMS_IN_MATCH" Relationship="BaseSZLPModel.FK_TEAM__TEAM_COMPOSITION" FromRole="TEAM" ToRole="TEAMS_IN_MATCH" />
         </EntityType>
@@ -825,11 +1054,11 @@
           </Key>
           <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="UserProfile" Relationship="BaseSZLPModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
+          <NavigationProperty Name="UserProfiles" Relationship="BaseSZLPModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
         </EntityType>
         <Association Name="FK_NEWS__COMMENTS">
           <End Role="NEWS" Type="BaseSZLPModel.NEWS" Multiplicity="0..1" />
-          <End Role="COMMENTS" Type="BaseSZLPModel.COMMENTS" Multiplicity="*" />
+          <End Role="COMMENTS" Type="BaseSZLPModel.COMMENT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NEWS">
               <PropertyRef Name="ID_news" />
@@ -841,7 +1070,7 @@
         </Association>
         <Association Name="FK_UserProfile__COMMENTS">
           <End Role="UserProfile" Type="BaseSZLPModel.UserProfile" Multiplicity="0..1" />
-          <End Role="COMMENTS" Type="BaseSZLPModel.COMMENTS" Multiplicity="*" />
+          <End Role="COMMENTS" Type="BaseSZLPModel.COMMENT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="UserProfile">
               <PropertyRef Name="UserId" />
@@ -1023,6 +1252,303 @@
           <End Role="UserProfile" Type="BaseSZLPModel.UserProfile" Multiplicity="*" />
           <End Role="webpages_Roles" Type="BaseSZLPModel.webpages_Roles" Multiplicity="*" />
         </Association>
+        <ComplexType Name="commentsForTheNews_Result">
+          <Property Type="String" Name="UserName" Nullable="true" />
+          <Property Type="String" Name="date" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="text" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="eventsInMatches_Result">
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="minute" Nullable="false" />
+          <Property Type="String" Name="description" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="guestsInMatches_Result">
+          <Property Type="Int32" Name="round" Nullable="true" />
+          <Property Type="Int32" Name="ID_match" Nullable="false" />
+          <Property Type="String" Name="dateOfMatch" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="guestScore" Nullable="true" />
+          <Property Type="Int32" Name="ID_team" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="hostsInMatches_Result">
+          <Property Type="Int32" Name="round" Nullable="true" />
+          <Property Type="Int32" Name="ID_match" Nullable="false" />
+          <Property Type="String" Name="dateOfMatch" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="hostScore" Nullable="true" />
+          <Property Type="Int32" Name="ID_team" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="leagueMatches_Result">
+          <Property Type="Int32" Name="round" Nullable="true" />
+          <Property Type="Int32" Name="ID_match" Nullable="false" />
+          <Property Type="Int32" Name="ID_team" Nullable="true" />
+          <Property Type="String" Name="dateOfMatch" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="hostScore" Nullable="true" />
+          <Property Type="Int32" Name="guestScore" Nullable="true" />
+          <Property Type="Boolean" Name="isHost" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="leagueStatistics_Result">
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="numberOfMatches" Nullable="true" />
+          <Property Type="Int32" Name="numberOfWins" Nullable="true" />
+          <Property Type="Int32" Name="numberOfLosses" Nullable="true" />
+          <Property Type="Int32" Name="numberOfDraws" Nullable="true" />
+          <Property Type="Int32" Name="Bilans_meczy" Nullable="true" />
+          <Property Type="Int32" Name="numberOfGoalsScored" Nullable="true" />
+          <Property Type="Int32" Name="numberOfGoalsLost" Nullable="true" />
+          <Property Type="Int32" Name="Bilans_bramek" Nullable="true" />
+          <Property Type="Int32" Name="points" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="listOfPlayersInTeam_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="String" Name="position" Nullable="true" MaxLength="100" />
+          <Property Type="Boolean" Name="isActivePlayer" Nullable="true" />
+          <Property Type="Int32" Name="numberOfGoals" Nullable="true" />
+          <Property Type="Int32" Name="numberOfAssists" Nullable="true" />
+          <Property Type="Int32" Name="numberOfYellowCards" Nullable="true" />
+          <Property Type="Int32" Name="numberOfRedCards" Nullable="true" />
+          <Property Type="Int32" Name="timeOnThePitch" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="listOfPlayersWithLongestTimeOnThePitch_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="String" Name="position" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="timeOnThePitch" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="listOfPlayersWithMostAssists_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="String" Name="position" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="numberOfAssists" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="listOfPlayersWithMostAssistsForTheWholeLeague_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="Int32" Name="numberOfAssists" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="listOfPlayersWithMostGoalsScored_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="String" Name="position" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="numberOfGoals" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="listOfPlayersWithMostGoalsScoredForTheWholeLeague_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="Int32" Name="numberOfGoals" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="listOfPlayersWithMostNumberOfRedCardsForTheWholeLeague_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="Int32" Name="numberOfRedCards" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="listOfPlayersWithMostNumberOfYellowCardsForTheWholeLeague_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="Int32" Name="numberOfYellowCards" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="listOfPlayersWithMostRedCards_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="String" Name="position" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="numberOfRedCards" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="listOfPlayersWithMostTimeOnThePitchForTheWholeLeague_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="Int32" Name="timeOnThePitch" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="listOfPlayersWithMostYellowCards_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="String" Name="position" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="numberOfYellowCards" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="listOfRefereesInMatches_Result">
+          <Property Type="Int32" Name="round" Nullable="true" />
+          <Property Type="Int32" Name="ID_match" Nullable="false" />
+          <Property Type="String" Name="dateOfMatch" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="role" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="listOfStaffInTeam_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="String" Name="role" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="matchesInRound_Result">
+          <Property Type="Int32" Name="round" Nullable="true" />
+          <Property Type="Int32" Name="ID_match" Nullable="false" />
+          <Property Type="String" Name="dateOfMatch" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="hostScore" Nullable="true" />
+          <Property Type="Int32" Name="guestScore" Nullable="true" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Boolean" Name="isHost" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="matchOpponent_Result">
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="ID_team" Nullable="true" />
+          <Property Type="Boolean" Name="isHost" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="newsForTheLeague_Result">
+          <Property Type="String" Name="title" Nullable="false" />
+          <Property Type="String" Name="date" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="text" Nullable="true" />
+          <Property Type="String" Name="UserName" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="newsForTheTeam_Result">
+          <Property Type="String" Name="title" Nullable="false" />
+          <Property Type="String" Name="date" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="text" Nullable="true" />
+          <Property Type="String" Name="UserName" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="playerWithLongestTimeOnThePitch_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="String" Name="position" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="timeOnThePitch" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="playerWithMostAssists_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="String" Name="position" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="numberOfAssists" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="playerWithMostGoalsScored_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="String" Name="position" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="numberOfGoals" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="playerWithMostRedCards_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="String" Name="position" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="numberOfRedCards" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="playerWithMostYellowCards_Result">
+          <Property Type="String" Name="firstName" Nullable="false" />
+          <Property Type="String" Name="lastName" Nullable="false" />
+          <Property Type="Int32" Name="number" Nullable="true" />
+          <Property Type="String" Name="position" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="numberOfYellowCards" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="teamDataByID_Result">
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="String" Name="logo" Nullable="true" />
+          <Property Type="String" Name="mail" Nullable="false" />
+          <Property Type="String" Name="street" Nullable="true" />
+          <Property Type="Int32" Name="apartmentNumber" Nullable="true" />
+          <Property Type="String" Name="zipCode" Nullable="true" MaxLength="6" />
+          <Property Type="String" Name="city" Nullable="false" />
+          <Property Type="String" Name="region" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="phoneNumber" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="faxNumber" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="foundationDate" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="ageCategory" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="www" Nullable="true" />
+          <Property Type="String" Name="description" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="teamGoalBalance_Result">
+          <Property Type="Int32" Name="ID_team" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="numberOfGoalsScored" Nullable="true" />
+          <Property Type="Int32" Name="numberOfGoalsLost" Nullable="true" />
+          <Property Type="Int32" Name="Bilans" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="teamMatches_Result">
+          <Property Type="Int32" Name="round" Nullable="true" />
+          <Property Type="Int32" Name="ID_match" Nullable="false" />
+          <Property Type="String" Name="dateOfMatch" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="hostScore" Nullable="true" />
+          <Property Type="Int32" Name="guestScore" Nullable="true" />
+          <Property Type="Boolean" Name="isHost" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="teamScore_Result">
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="points" Nullable="true" />
+          <Property Type="Int32" Name="numberOfMatches" Nullable="true" />
+          <Property Type="Int32" Name="numberOfWins" Nullable="true" />
+          <Property Type="Int32" Name="numberOfLosses" Nullable="true" />
+          <Property Type="Int32" Name="numberOfDraws" Nullable="true" />
+          <Property Type="Int32" Name="numberOfGoalsScored" Nullable="true" />
+          <Property Type="Int32" Name="numberOfGoalsLost" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="teamsInMatches_Result">
+          <Property Type="Int32" Name="round" Nullable="true" />
+          <Property Type="Int32" Name="ID_match" Nullable="false" />
+          <Property Type="String" Name="dateOfMatch" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="hostScore" Nullable="true" />
+          <Property Type="Int32" Name="guestScore" Nullable="true" />
+          <Property Type="Int32" Name="ID_team" Nullable="true" />
+          <Property Type="Boolean" Name="isHost" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="teamWithMostDraws_Result">
+          <Property Type="Int32" Name="ID_team" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="numberOfDraws" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="teamWithMostGoalsLost_Result">
+          <Property Type="Int32" Name="ID_team" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="numberOfGoalsLost" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="teamWithMostGoalsScored_Result">
+          <Property Type="Int32" Name="ID_team" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="numberOfGoalsScored" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="teamWithMostLoses_Result">
+          <Property Type="Int32" Name="ID_team" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="numberOfLosses" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="teamWithMostMatches_Result">
+          <Property Type="Int32" Name="ID_team" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="numberOfMatches" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="teamWithMostPoints_Result">
+          <Property Type="Int32" Name="ID_team" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="points" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="teamWithMostWins_Result">
+          <Property Type="Int32" Name="ID_team" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Int32" Name="numberOfWins" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1030,7 +1556,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="BaseSZLPModelStoreContainer" CdmEntityContainer="BaseSZLPEntities">
           <EntitySetMapping Name="COMMENTS">
-            <EntityTypeMapping TypeName="BaseSZLPModel.COMMENTS">
+            <EntityTypeMapping TypeName="BaseSZLPModel.COMMENT">
               <MappingFragment StoreEntitySet="COMMENTS">
                 <ScalarProperty Name="ID_comment" ColumnName="ID_comment" />
                 <ScalarProperty Name="userIP" ColumnName="userIP" />
@@ -1041,7 +1567,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="EVENT">
+          <EntitySetMapping Name="EVENTs">
             <EntityTypeMapping TypeName="BaseSZLPModel.EVENT">
               <MappingFragment StoreEntitySet="EVENT">
                 <ScalarProperty Name="ID_event" ColumnName="ID_event" />
@@ -1052,7 +1578,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MATCH">
+          <EntitySetMapping Name="MATCHes">
             <EntityTypeMapping TypeName="BaseSZLPModel.MATCH">
               <MappingFragment StoreEntitySet="MATCH">
                 <ScalarProperty Name="ID_match" ColumnName="ID_match" />
@@ -1079,7 +1605,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PLAYER">
+          <EntitySetMapping Name="PLAYERs">
             <EntityTypeMapping TypeName="BaseSZLPModel.PLAYER">
               <MappingFragment StoreEntitySet="PLAYER">
                 <ScalarProperty Name="ID_player" ColumnName="ID_player" />
@@ -1100,7 +1626,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="STAFF">
+          <EntitySetMapping Name="STAFFs">
             <EntityTypeMapping TypeName="BaseSZLPModel.STAFF">
               <MappingFragment StoreEntitySet="STAFF">
                 <ScalarProperty Name="ID_staff" ColumnName="ID_staff" />
@@ -1130,7 +1656,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="BaseSZLPModel.sysdiagrams">
+            <EntityTypeMapping TypeName="BaseSZLPModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -1140,7 +1666,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TEAM">
+          <EntitySetMapping Name="TEAMs">
             <EntityTypeMapping TypeName="BaseSZLPModel.TEAM">
               <MappingFragment StoreEntitySet="TEAM">
                 <ScalarProperty Name="ID_team" ColumnName="ID_team" />
@@ -1188,7 +1714,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="UserProfile">
+          <EntitySetMapping Name="UserProfiles">
             <EntityTypeMapping TypeName="BaseSZLPModel.UserProfile">
               <MappingFragment StoreEntitySet="UserProfile">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -1241,6 +1767,477 @@
               <ScalarProperty Name="RoleId" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="commentsForTheNews" FunctionName="BaseSZLPModel.Store.commentsForTheNews">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.commentsForTheNews_Result">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="text" ColumnName="text" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="eventsInMatches" FunctionName="BaseSZLPModel.Store.eventsInMatches">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.eventsInMatches_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="minute" ColumnName="minute" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="guestsInMatches" FunctionName="BaseSZLPModel.Store.guestsInMatches">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.guestsInMatches_Result">
+                <ScalarProperty Name="round" ColumnName="round" />
+                <ScalarProperty Name="ID_match" ColumnName="ID_match" />
+                <ScalarProperty Name="dateOfMatch" ColumnName="dateOfMatch" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="guestScore" ColumnName="guestScore" />
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="hostsInMatches" FunctionName="BaseSZLPModel.Store.hostsInMatches">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.hostsInMatches_Result">
+                <ScalarProperty Name="round" ColumnName="round" />
+                <ScalarProperty Name="ID_match" ColumnName="ID_match" />
+                <ScalarProperty Name="dateOfMatch" ColumnName="dateOfMatch" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="hostScore" ColumnName="hostScore" />
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="leagueMatches" FunctionName="BaseSZLPModel.Store.leagueMatches">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.leagueMatches_Result">
+                <ScalarProperty Name="round" ColumnName="round" />
+                <ScalarProperty Name="ID_match" ColumnName="ID_match" />
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="dateOfMatch" ColumnName="dateOfMatch" />
+                <ScalarProperty Name="hostScore" ColumnName="hostScore" />
+                <ScalarProperty Name="guestScore" ColumnName="guestScore" />
+                <ScalarProperty Name="isHost" ColumnName="isHost" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="leagueStatistics" FunctionName="BaseSZLPModel.Store.leagueStatistics">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.leagueStatistics_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="numberOfMatches" ColumnName="numberOfMatches" />
+                <ScalarProperty Name="numberOfWins" ColumnName="numberOfWins" />
+                <ScalarProperty Name="numberOfLosses" ColumnName="numberOfLosses" />
+                <ScalarProperty Name="numberOfDraws" ColumnName="numberOfDraws" />
+                <ScalarProperty Name="Bilans_meczy" ColumnName="Bilans_meczy" />
+                <ScalarProperty Name="numberOfGoalsScored" ColumnName="numberOfGoalsScored" />
+                <ScalarProperty Name="numberOfGoalsLost" ColumnName="numberOfGoalsLost" />
+                <ScalarProperty Name="Bilans_bramek" ColumnName="Bilans_bramek" />
+                <ScalarProperty Name="points" ColumnName="points" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfPlayersInTeam" FunctionName="BaseSZLPModel.Store.listOfPlayersInTeam">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfPlayersInTeam_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="isActivePlayer" ColumnName="isActivePlayer" />
+                <ScalarProperty Name="numberOfGoals" ColumnName="numberOfGoals" />
+                <ScalarProperty Name="numberOfAssists" ColumnName="numberOfAssists" />
+                <ScalarProperty Name="numberOfYellowCards" ColumnName="numberOfYellowCards" />
+                <ScalarProperty Name="numberOfRedCards" ColumnName="numberOfRedCards" />
+                <ScalarProperty Name="timeOnThePitch" ColumnName="timeOnThePitch" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfPlayersWithLongestTimeOnThePitch" FunctionName="BaseSZLPModel.Store.listOfPlayersWithLongestTimeOnThePitch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfPlayersWithLongestTimeOnThePitch_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="timeOnThePitch" ColumnName="timeOnThePitch" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfPlayersWithMostAssists" FunctionName="BaseSZLPModel.Store.listOfPlayersWithMostAssists">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfPlayersWithMostAssists_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="numberOfAssists" ColumnName="numberOfAssists" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfPlayersWithMostAssistsForTheWholeLeague" FunctionName="BaseSZLPModel.Store.listOfPlayersWithMostAssistsForTheWholeLeague">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfPlayersWithMostAssistsForTheWholeLeague_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="numberOfAssists" ColumnName="numberOfAssists" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfPlayersWithMostGoalsScored" FunctionName="BaseSZLPModel.Store.listOfPlayersWithMostGoalsScored">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfPlayersWithMostGoalsScored_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="numberOfGoals" ColumnName="numberOfGoals" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfPlayersWithMostGoalsScoredForTheWholeLeague" FunctionName="BaseSZLPModel.Store.listOfPlayersWithMostGoalsScoredForTheWholeLeague">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfPlayersWithMostGoalsScoredForTheWholeLeague_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="numberOfGoals" ColumnName="numberOfGoals" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfPlayersWithMostNumberOfRedCardsForTheWholeLeague" FunctionName="BaseSZLPModel.Store.listOfPlayersWithMostNumberOfRedCardsForTheWholeLeague">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfPlayersWithMostNumberOfRedCardsForTheWholeLeague_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="numberOfRedCards" ColumnName="numberOfRedCards" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfPlayersWithMostNumberOfYellowCardsForTheWholeLeague" FunctionName="BaseSZLPModel.Store.listOfPlayersWithMostNumberOfYellowCardsForTheWholeLeague">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfPlayersWithMostNumberOfYellowCardsForTheWholeLeague_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="numberOfYellowCards" ColumnName="numberOfYellowCards" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfPlayersWithMostRedCards" FunctionName="BaseSZLPModel.Store.listOfPlayersWithMostRedCards">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfPlayersWithMostRedCards_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="numberOfRedCards" ColumnName="numberOfRedCards" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfPlayersWithMostTimeOnThePitchForTheWholeLeague" FunctionName="BaseSZLPModel.Store.listOfPlayersWithMostTimeOnThePitchForTheWholeLeague">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfPlayersWithMostTimeOnThePitchForTheWholeLeague_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="timeOnThePitch" ColumnName="timeOnThePitch" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfPlayersWithMostYellowCards" FunctionName="BaseSZLPModel.Store.listOfPlayersWithMostYellowCards">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfPlayersWithMostYellowCards_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="numberOfYellowCards" ColumnName="numberOfYellowCards" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfRefereesInMatches" FunctionName="BaseSZLPModel.Store.listOfRefereesInMatches">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfRefereesInMatches_Result">
+                <ScalarProperty Name="round" ColumnName="round" />
+                <ScalarProperty Name="ID_match" ColumnName="ID_match" />
+                <ScalarProperty Name="dateOfMatch" ColumnName="dateOfMatch" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfStaffInTeam" FunctionName="BaseSZLPModel.Store.listOfStaffInTeam">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfStaffInTeam_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="listOfTeams" FunctionName="BaseSZLPModel.Store.listOfTeams" />
+          <FunctionImportMapping FunctionImportName="matchesInRound" FunctionName="BaseSZLPModel.Store.matchesInRound">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.matchesInRound_Result">
+                <ScalarProperty Name="round" ColumnName="round" />
+                <ScalarProperty Name="ID_match" ColumnName="ID_match" />
+                <ScalarProperty Name="dateOfMatch" ColumnName="dateOfMatch" />
+                <ScalarProperty Name="hostScore" ColumnName="hostScore" />
+                <ScalarProperty Name="guestScore" ColumnName="guestScore" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="isHost" ColumnName="isHost" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="matchOpponent" FunctionName="BaseSZLPModel.Store.matchOpponent">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.matchOpponent_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="isHost" ColumnName="isHost" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="newsForTheLeague" FunctionName="BaseSZLPModel.Store.newsForTheLeague">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.newsForTheLeague_Result">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="newsForTheTeam" FunctionName="BaseSZLPModel.Store.newsForTheTeam">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.newsForTheTeam_Result">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="playerWithLongestTimeOnThePitch" FunctionName="BaseSZLPModel.Store.playerWithLongestTimeOnThePitch">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.playerWithLongestTimeOnThePitch_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="timeOnThePitch" ColumnName="timeOnThePitch" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="playerWithMostAssists" FunctionName="BaseSZLPModel.Store.playerWithMostAssists">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.playerWithMostAssists_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="numberOfAssists" ColumnName="numberOfAssists" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="playerWithMostGoalsScored" FunctionName="BaseSZLPModel.Store.playerWithMostGoalsScored">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.playerWithMostGoalsScored_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="numberOfGoals" ColumnName="numberOfGoals" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="playerWithMostRedCards" FunctionName="BaseSZLPModel.Store.playerWithMostRedCards">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.playerWithMostRedCards_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="numberOfRedCards" ColumnName="numberOfRedCards" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="playerWithMostYellowCards" FunctionName="BaseSZLPModel.Store.playerWithMostYellowCards">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.playerWithMostYellowCards_Result">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="numberOfYellowCards" ColumnName="numberOfYellowCards" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="BaseSZLPModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="BaseSZLPModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="BaseSZLPModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="BaseSZLPModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="BaseSZLPModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BaseSZLPModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="BaseSZLPModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="teamDataByID" FunctionName="BaseSZLPModel.Store.teamDataByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.teamDataByID_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="apartmentNumber" ColumnName="apartmentNumber" />
+                <ScalarProperty Name="zipCode" ColumnName="zipCode" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="region" ColumnName="region" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="faxNumber" ColumnName="faxNumber" />
+                <ScalarProperty Name="foundationDate" ColumnName="foundationDate" />
+                <ScalarProperty Name="ageCategory" ColumnName="ageCategory" />
+                <ScalarProperty Name="www" ColumnName="www" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="teamGoalBalance" FunctionName="BaseSZLPModel.Store.teamGoalBalance">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.teamGoalBalance_Result">
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="numberOfGoalsScored" ColumnName="numberOfGoalsScored" />
+                <ScalarProperty Name="numberOfGoalsLost" ColumnName="numberOfGoalsLost" />
+                <ScalarProperty Name="Bilans" ColumnName="Bilans" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="teamMatches" FunctionName="BaseSZLPModel.Store.teamMatches">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.teamMatches_Result">
+                <ScalarProperty Name="round" ColumnName="round" />
+                <ScalarProperty Name="ID_match" ColumnName="ID_match" />
+                <ScalarProperty Name="dateOfMatch" ColumnName="dateOfMatch" />
+                <ScalarProperty Name="hostScore" ColumnName="hostScore" />
+                <ScalarProperty Name="guestScore" ColumnName="guestScore" />
+                <ScalarProperty Name="isHost" ColumnName="isHost" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="teamScore" FunctionName="BaseSZLPModel.Store.teamScore">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.teamScore_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="points" ColumnName="points" />
+                <ScalarProperty Name="numberOfMatches" ColumnName="numberOfMatches" />
+                <ScalarProperty Name="numberOfWins" ColumnName="numberOfWins" />
+                <ScalarProperty Name="numberOfLosses" ColumnName="numberOfLosses" />
+                <ScalarProperty Name="numberOfDraws" ColumnName="numberOfDraws" />
+                <ScalarProperty Name="numberOfGoalsScored" ColumnName="numberOfGoalsScored" />
+                <ScalarProperty Name="numberOfGoalsLost" ColumnName="numberOfGoalsLost" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="teamsInMatches" FunctionName="BaseSZLPModel.Store.teamsInMatches">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.teamsInMatches_Result">
+                <ScalarProperty Name="round" ColumnName="round" />
+                <ScalarProperty Name="ID_match" ColumnName="ID_match" />
+                <ScalarProperty Name="dateOfMatch" ColumnName="dateOfMatch" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="hostScore" ColumnName="hostScore" />
+                <ScalarProperty Name="guestScore" ColumnName="guestScore" />
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="isHost" ColumnName="isHost" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="teamWithMostDraws" FunctionName="BaseSZLPModel.Store.teamWithMostDraws">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.teamWithMostDraws_Result">
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="numberOfDraws" ColumnName="numberOfDraws" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="teamWithMostGoalsLost" FunctionName="BaseSZLPModel.Store.teamWithMostGoalsLost">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.teamWithMostGoalsLost_Result">
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="numberOfGoalsLost" ColumnName="numberOfGoalsLost" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="teamWithMostGoalsScored" FunctionName="BaseSZLPModel.Store.teamWithMostGoalsScored">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.teamWithMostGoalsScored_Result">
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="numberOfGoalsScored" ColumnName="numberOfGoalsScored" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="teamWithMostLoses" FunctionName="BaseSZLPModel.Store.teamWithMostLoses">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.teamWithMostLoses_Result">
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="numberOfLosses" ColumnName="numberOfLosses" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="teamWithMostMatches" FunctionName="BaseSZLPModel.Store.teamWithMostMatches">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.teamWithMostMatches_Result">
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="numberOfMatches" ColumnName="numberOfMatches" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="teamWithMostPoints" FunctionName="BaseSZLPModel.Store.teamWithMostPoints">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.teamWithMostPoints_Result">
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="points" ColumnName="points" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="teamWithMostWins" FunctionName="BaseSZLPModel.Store.teamWithMostWins">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.teamWithMostWins_Result">
+                <ScalarProperty Name="ID_team" ColumnName="ID_team" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="numberOfWins" ColumnName="numberOfWins" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

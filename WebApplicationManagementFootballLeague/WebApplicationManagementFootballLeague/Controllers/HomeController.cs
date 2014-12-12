@@ -12,6 +12,11 @@ namespace WebApplicationManagementFootballLeague.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Index(string ID)
+        {
+            return View();
+        }
 
         public ActionResult ShowTeamNews()
         {

@@ -213,20 +213,110 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseSZLPModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\COMMENTS.cs">
+    <Compile Include="Models\COMMENT.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\commentsForTheNews_Result.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EVENT.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\eventsInMatches_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\guestsInMatches_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\hostsInMatches_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\leagueMatches_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\leagueStatistics_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfPlayersInTeam_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfPlayersWithLongestTimeOnThePitch_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfPlayersWithMostAssistsForTheWholeLeague_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfPlayersWithMostAssists_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfPlayersWithMostGoalsScoredForTheWholeLeague_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfPlayersWithMostGoalsScored_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfPlayersWithMostNumberOfRedCardsForTheWholeLeague_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfPlayersWithMostNumberOfYellowCardsForTheWholeLeague_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfPlayersWithMostRedCards_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfPlayersWithMostTimeOnThePitchForTheWholeLeague_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfPlayersWithMostYellowCards_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfRefereesInMatches_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfStaffInTeam_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\MATCH.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\matchesInRound_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\matchOpponent_Result.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelsView\TeamModelView.cs" />
     <Compile Include="Models\NEWS.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\newsForTheLeague_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\newsForTheTeam_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\PLAYER.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\playerWithLongestTimeOnThePitch_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\playerWithMostAssists_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\playerWithMostGoalsScored_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\playerWithMostRedCards_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\playerWithMostYellowCards_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\STAFF.cs">
@@ -238,16 +328,52 @@
     <Compile Include="Models\STAFF_IN_TEAMS.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
+    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TEAM.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teamDataByID_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teamGoalBalance_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teamMatches_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teamScore_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teamsInMatches_Result.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TEAMS_IN_MATCH.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TEAMS_IN_MATCH_PLAYERS_ALLOCATION.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teamWithMostDraws_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teamWithMostGoalsLost_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teamWithMostGoalsScored_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teamWithMostLoses_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teamWithMostMatches_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teamWithMostPoints_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teamWithMostWins_Result.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserProfile.cs">
@@ -386,7 +512,8 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Grid.mvc.readme" />
     <Content Include="Content\BootstrapCss\bootstrap-select.css.map" />
-    <Content Include="Content\StyleSheet1.less" />
+    <Content Include="Scripts\bootstrap-select.js.map" />
+    <Content Include="Content\bootstrap-select.css.map" />
     <EntityDeploy Include="Models\BaseSZLPModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BaseSZLPModel.Designer.cs</LastGenOutput>
@@ -404,8 +531,6 @@
       <DependentUpon>BaseSZLPModel.edmx</DependentUpon>
       <LastGenOutput>BaseSZLPModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\bootstrap-select.js.map" />
-    <Content Include="Content\bootstrap-select.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Images\tlo.jpg" />
     <Content Include="Images\user_top.jpg" />
@@ -537,10 +662,12 @@
     <Content Include="Views\Team\Create.cshtml" />
     <Content Include="Views\Team\Edit.cshtml" />
     <Content Include="Views\Team\Delete.cshtml" />
+    <Content Include="Views\Partial\Team\_TeamMatchesPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Repository\" />
+    <Folder Include="Views\Partial\DlaLigi\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

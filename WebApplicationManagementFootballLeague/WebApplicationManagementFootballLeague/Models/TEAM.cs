@@ -17,7 +17,7 @@ namespace WebApplicationManagementFootballLeague.Models
         public TEAM()
         {
             this.NEWS = new HashSet<NEWS>();
-            this.PLAYER = new HashSet<PLAYER>();
+            this.PLAYERs = new HashSet<PLAYER>();
             this.STAFF_IN_TEAMS = new HashSet<STAFF_IN_TEAMS>();
             this.TEAMS_IN_MATCH = new HashSet<TEAMS_IN_MATCH>();
         }
@@ -47,7 +47,7 @@ namespace WebApplicationManagementFootballLeague.Models
         public string league { get; set; }
     
         public virtual ICollection<NEWS> NEWS { get; set; }
-        public virtual ICollection<PLAYER> PLAYER { get; set; }
+        public virtual ICollection<PLAYER> PLAYERs { get; set; }
         public virtual ICollection<STAFF_IN_TEAMS> STAFF_IN_TEAMS { get; set; }
         public virtual ICollection<TEAMS_IN_MATCH> TEAMS_IN_MATCH { get; set; }
     }

@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="20cffdcb5b4f48c4b526b6afde64cbaa" Name="Diagram1">
-        <EntityTypeShape EntityType="BaseSZLPModel.COMMENTS" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+      <Diagram DiagramId="1d7797b29a854af0a5849ffbddfc44ec" Name="Diagram1">
+        <EntityTypeShape EntityType="BaseSZLPModel.COMMENT" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseSZLPModel.EVENT" Width="1.5" PointX="8.25" PointY="15.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseSZLPModel.MATCH" Width="1.5" PointX="3.75" PointY="22.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseSZLPModel.NEWS" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="BaseSZLPModel.STAFF" Width="1.5" PointX="3.75" PointY="27" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseSZLPModel.STAFF_IN_MATCHES" Width="1.5" PointX="6" PointY="25" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseSZLPModel.STAFF_IN_TEAMS" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.sysdiagram" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseSZLPModel.TEAM" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseSZLPModel.TEAMS_IN_MATCH" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseSZLPModel.TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Width="1.5" PointX="8.25" PointY="12.375" IsExpanded="true" />

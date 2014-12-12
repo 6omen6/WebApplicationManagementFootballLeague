@@ -5,7 +5,13 @@
             <ul class="nav navbar-nav" style="padding-top: 6px;">
                 <li><a href="#menu-toggle" class="header-menu-button glyph" id="header-menu-button"><span class="glyphicon glyphicon-th-large"></span></a></li>
                 <li>
-                    @using (Ajax.BeginForm("ShowTeamInfo", "Home", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "top-in-left-content", Url = Url.Action("ShowTeamInfo"), OnSuccess = "onSuccess", },
+                    @*@using (Ajax.BeginForm("ShowTeamInfo", "Home", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "top-in-left-content", Url = Url.Action("ShowTeamInfo"), OnSuccess = "onSuccess", },
+                        new { id = 3, role = "form", @class = "form" }))
+                    {
+                        @Html.ValidationSummary(true)
+                        @Html.DropDownList("ID", Model.selectedListOfTeams, new { onchange = "$(this.form).submit();", style = "width: auto; margin-left: 90px;", @class = "form-control", id = "listReports" })
+                    }*@
+                    @using (Ajax.BeginForm("Index", "Home", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body-container", Url = Url.Action("Index", "Home"), OnSuccess = "onSuccess", },
                         new { id = 3, role = "form", @class = "form" }))
                     {
                         @Html.ValidationSummary(true)

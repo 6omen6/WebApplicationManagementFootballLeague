@@ -16,7 +16,7 @@ namespace WebApplicationManagementFootballLeague.Models
     {
         public NEWS()
         {
-            this.COMMENTS = new HashSet<COMMENTS>();
+            this.COMMENTS = new HashSet<COMMENT>();
         }
     
         public int ID_news { get; set; }
@@ -28,7 +28,7 @@ namespace WebApplicationManagementFootballLeague.Models
         public Nullable<bool> isLeagueNews { get; set; }
         public int numberOfComments { get; set; }
     
-        public virtual ICollection<COMMENTS> COMMENTS { get; set; }
+        public virtual ICollection<COMMENT> COMMENTS { get; set; }
         public virtual TEAM TEAM { get; set; }
         public virtual UserProfile UserProfile { get; set; }
     }
