@@ -18,6 +18,6 @@ namespace WebApplicationManagementFootballLeague.Models
         public string dateOfMatch { get; set; }
         public string name { get; set; }
         public Nullable<int> guestScore { get; set; }
-        public Nullable<int> ID_team { get; set; }
+        public int ID_team { get; set; }
     }
 }

@@ -14,11 +14,9 @@ namespace WebApplicationManagementFootballLeague.Models
     
     public partial class TEAMS_IN_MATCH_PLAYERS_ALLOCATION
     {
-        public int ID_allocation { get; set; }
-        public Nullable<int> ID_player { get; set; }
-        public Nullable<int> ID_teamComposition { get; set; }
+        public int ID_player { get; set; }
+        public int ID_teamComposition { get; set; }
     
         public virtual PLAYER PLAYER { get; set; }
-        public virtual TEAMS_IN_MATCH TEAMS_IN_MATCH { get; set; }
     }
 }

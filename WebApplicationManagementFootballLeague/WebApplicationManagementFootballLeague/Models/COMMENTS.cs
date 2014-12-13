@@ -12,7 +12,7 @@ namespace WebApplicationManagementFootballLeague.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class COMMENT
+    public partial class COMMENTS
     {
         public int ID_comment { get; set; }
         public string userIP { get; set; }

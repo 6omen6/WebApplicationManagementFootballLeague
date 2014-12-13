@@ -14,18 +14,11 @@ namespace WebApplicationManagementFootballLeague.Models
     
     public partial class TEAMS_IN_MATCH
     {
-        public TEAMS_IN_MATCH()
-        {
-            this.TEAMS_IN_MATCH_PLAYERS_ALLOCATION = new HashSet<TEAMS_IN_MATCH_PLAYERS_ALLOCATION>();
-        }
-    
-        public int ID_teamComposition { get; set; }
-        public Nullable<int> ID_team { get; set; }
-        public Nullable<int> ID_match { get; set; }
+        public int ID_team { get; set; }
+        public int ID_match { get; set; }
         public Nullable<bool> isHost { get; set; }
     
         public virtual MATCH MATCH { get; set; }
         public virtual TEAM TEAM { get; set; }
-        public virtual ICollection<TEAMS_IN_MATCH_PLAYERS_ALLOCATION> TEAMS_IN_MATCH_PLAYERS_ALLOCATION { get; set; }
     }
 }

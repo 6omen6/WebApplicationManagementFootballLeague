@@ -24,7 +24,6 @@ namespace WebApplicationManagementFootballLeague.Models
         public string firstName { get; set; }
         public string lastName { get; set; }
         public Nullable<bool> isReferee { get; set; }
-        public string role { get; set; }
     
         public virtual ICollection<STAFF_IN_MATCHES> STAFF_IN_MATCHES { get; set; }
         public virtual ICollection<STAFF_IN_TEAMS> STAFF_IN_TEAMS { get; set; }

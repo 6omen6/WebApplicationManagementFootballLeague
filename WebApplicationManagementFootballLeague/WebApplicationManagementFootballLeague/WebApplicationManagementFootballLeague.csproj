@@ -184,11 +184,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\AuthConfig.cs" />
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Bootstrap Html Helpers\App_Start\AuthConfig.cs" />
+    <Compile Include="Bootstrap Html Helpers\App_Start\BundleConfig.cs" />
+    <Compile Include="Bootstrap Html Helpers\App_Start\FilterConfig.cs" />
+    <Compile Include="Bootstrap Html Helpers\App_Start\RouteConfig.cs" />
+    <Compile Include="Bootstrap Html Helpers\App_Start\WebApiConfig.cs" />
     <Compile Include="Bootstrap Html Helpers\BootstrapSelectFor.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -213,7 +213,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseSZLPModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\COMMENT.cs">
+    <Compile Include="Models\COMMENTS.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\commentsForTheNews_Result.cs">
@@ -322,13 +322,16 @@
     <Compile Include="Models\STAFF.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\staffInTeamByRole_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\STAFF_IN_MATCHES.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\STAFF_IN_TEAMS.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
+    <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TEAM.cs">

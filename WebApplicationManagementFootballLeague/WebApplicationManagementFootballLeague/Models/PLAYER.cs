@@ -16,7 +16,7 @@ namespace WebApplicationManagementFootballLeague.Models
     {
         public PLAYER()
         {
-            this.EVENTs = new HashSet<EVENT>();
+            this.EVENT = new HashSet<EVENT>();
             this.TEAMS_IN_MATCH_PLAYERS_ALLOCATION = new HashSet<TEAMS_IN_MATCH_PLAYERS_ALLOCATION>();
         }
     
@@ -36,7 +36,7 @@ namespace WebApplicationManagementFootballLeague.Models
         public Nullable<int> numberOfAssists { get; set; }
         public Nullable<int> ID_team { get; set; }
     
-        public virtual ICollection<EVENT> EVENTs { get; set; }
+        public virtual ICollection<EVENT> EVENT { get; set; }
         public virtual ICollection<TEAMS_IN_MATCH_PLAYERS_ALLOCATION> TEAMS_IN_MATCH_PLAYERS_ALLOCATION { get; set; }
         public virtual TEAM TEAM { get; set; }
     }

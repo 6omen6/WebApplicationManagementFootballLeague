@@ -10,16 +10,14 @@
 namespace WebApplicationManagementFootballLeague.Models
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class teamsInMatches_Result
+    public partial class sysdiagrams
     {
-        public Nullable<int> round { get; set; }
-        public int ID_match { get; set; }
-        public string dateOfMatch { get; set; }
         public string name { get; set; }
-        public Nullable<int> hostScore { get; set; }
-        public Nullable<int> guestScore { get; set; }
-        public int ID_team { get; set; }
-        public Nullable<bool> isHost { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

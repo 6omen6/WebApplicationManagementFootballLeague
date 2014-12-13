@@ -14,7 +14,7 @@ namespace WebApplicationManagementFootballLeague.Models
     public partial class matchOpponent_Result
     {
         public string name { get; set; }
-        public Nullable<int> ID_team { get; set; }
+        public int ID_team { get; set; }
         public Nullable<bool> isHost { get; set; }
     }
 }

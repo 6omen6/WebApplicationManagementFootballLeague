@@ -27,5 +27,6 @@ namespace WebApplicationManagementFootballLeague.Models
         public string ageCategory { get; set; }
         public string www { get; set; }
         public string description { get; set; }
+        public string teamColors { get; set; }
     }
 }

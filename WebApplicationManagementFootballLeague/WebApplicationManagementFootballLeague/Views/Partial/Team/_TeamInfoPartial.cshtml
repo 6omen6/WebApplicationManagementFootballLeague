@@ -1,41 +1,99 @@
 ﻿@model WebApplicationManagementFootballLeague.Models.ModelsView.TeamModelView
-<div class="panel panel-primary" style="display:block;">
+<div class="panel panel-primary" style="display: block;">
     <div class="panel-heading">@Model.team.name</div>
     <div class="panel-body">
         <table class="table table-striped">
             <tr>
                 <td rowspan="8">
                     <img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/73352_527226203986014_462161719_n.png?oh=f5210bbb650574fcf672ce6cfff8cf99&oe=54DA5CE7&__gda__=1425412629_08b7cf6521aa23dbf0d416f93209b23c" /></td>
-                <td>Rok Założenia: </td>
-                <td>@Model.team.foundationDate</td>
+                <td>Rok założenia: </td>
+                 @if (@Model.team.foundationDate != null)
+                {
+                     <td>@Model.team.foundationDate</td> 
+                }
+                else
+                {
+                    <td>-</td>
+                }
             </tr>
             <tr>
                 <td>Barwy: </td>
-                <td> </td>
+                 @if (@Model.team.teamColors != null)
+                {
+                     <td>@Model.team.teamColors</td> 
+                }
+                else
+                {
+                    <td>-</td>
+                }
             </tr>
             <tr>
                 <td>Adres: </td>
-                <td>@Model.team.city</td>
+                 @if (@Model.team.city != null)
+                {
+                     <td>@Model.team.city</td> 
+                }
+                else
+                {
+                    <td>-</td>
+                }
             </tr>
             <tr>
                 <td>Telefon:</td>
-                <td>@Model.team.phoneNumber</td>
+                @if (@Model.team.phoneNumber != null)
+                {
+                     <td>@Model.team.phoneNumber</td> 
+                }
+                else
+                {
+                    <td>-</td>
+                }
             </tr>
             <tr>
-                <td>Prezes:</td>
-                <td></td>
+                <td>Prezesa:</td>
+                @if (@Model.listOfPresidents.Count() != 0)
+                {
+                    <td>@Model.listOfPresidents[0].firstName @Model.listOfPresidents[0].lastName</td>
+                }
+                else
+                {
+                    <td>-</td>
+                }
             </tr>
             <tr>
                 <td>Menedżer:</td>
-                <td></td>
+                @if (@Model.listOfManagers.Count() != 0)
+                {
+                    <td>@Model.listOfManagers[0].firstName @Model.listOfManagers[0].lastName</td>
+                }
+                else
+                {
+                    <td>-</td>
+                }
             </tr>
             <tr>
                 <td>Strona:</td>
-                <td><a href="http://www.olimpiawolazalezna.futbolowo.pl">@Model.team.www</a></td>
+                 @if (@Model.team.www != null)
+                {
+                     <td><a href="http://www.olimpiawolazalezna.futbolowo.pl">Przejdź do strony</a></td>
+                }
+                else
+                {
+                    <td>-</td>
+                }
             </tr>
             <tr>
                 <td>Trener:</td>
-                <td></td>
+                @if (@Model.listOfCoaches.Count() != 0)
+                {
+                    <td>@Model.listOfCoaches[0].firstName @Model.listOfCoaches[0].lastName</td>
+                }
+                else
+                {
+                    <td>-</td>
+                }
+
+
             </tr>
         </table>
     </div>

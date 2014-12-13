@@ -28,19 +28,19 @@ namespace WebApplicationManagementFootballLeague.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<COMMENT> COMMENTS { get; set; }
-        public DbSet<EVENT> EVENTs { get; set; }
-        public DbSet<MATCH> MATCHes { get; set; }
+        public DbSet<COMMENTS> COMMENTS { get; set; }
+        public DbSet<EVENT> EVENT { get; set; }
+        public DbSet<MATCH> MATCH { get; set; }
         public DbSet<NEWS> NEWS { get; set; }
-        public DbSet<PLAYER> PLAYERs { get; set; }
-        public DbSet<STAFF> STAFFs { get; set; }
+        public DbSet<PLAYER> PLAYER { get; set; }
+        public DbSet<STAFF> STAFF { get; set; }
         public DbSet<STAFF_IN_MATCHES> STAFF_IN_MATCHES { get; set; }
         public DbSet<STAFF_IN_TEAMS> STAFF_IN_TEAMS { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
-        public DbSet<TEAM> TEAMs { get; set; }
+        public DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public DbSet<TEAM> TEAM { get; set; }
         public DbSet<TEAMS_IN_MATCH> TEAMS_IN_MATCH { get; set; }
         public DbSet<TEAMS_IN_MATCH_PLAYERS_ALLOCATION> TEAMS_IN_MATCH_PLAYERS_ALLOCATION { get; set; }
-        public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<UserProfile> UserProfile { get; set; }
         public DbSet<webpages_Membership> webpages_Membership { get; set; }
         public DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
         public DbSet<webpages_Roles> webpages_Roles { get; set; }
@@ -363,6 +363,19 @@ namespace WebApplicationManagementFootballLeague.Models
         public virtual int sp_upgraddiagrams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+        }
+    
+        public virtual ObjectResult<staffInTeamByRole_Result> staffInTeamByRole(Nullable<int> teamID, string staffRole)
+        {
+            var teamIDParameter = teamID.HasValue ?
+                new ObjectParameter("teamID", teamID) :
+                new ObjectParameter("teamID", typeof(int));
+    
+            var staffRoleParameter = staffRole != null ?
+                new ObjectParameter("staffRole", staffRole) :
+                new ObjectParameter("staffRole", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<staffInTeamByRole_Result>("staffInTeamByRole", teamIDParameter, staffRoleParameter);
         }
     
         public virtual ObjectResult<teamDataByID_Result> teamDataByID(Nullable<int> teamID)

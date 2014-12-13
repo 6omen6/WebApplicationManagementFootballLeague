@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1d7797b29a854af0a5849ffbddfc44ec" Name="Diagram1">
-        <EntityTypeShape EntityType="BaseSZLPModel.COMMENT" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.EVENT" Width="1.5" PointX="8.25" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.MATCH" Width="1.5" PointX="3.75" PointY="22.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.NEWS" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.PLAYER" Width="1.5" PointX="6" PointY="14.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.STAFF" Width="1.5" PointX="3.75" PointY="27" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.STAFF_IN_MATCHES" Width="1.5" PointX="6" PointY="25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.STAFF_IN_TEAMS" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.sysdiagram" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.TEAM" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
+      <Diagram DiagramId="ffb92ffd9b384b509fbb06118762c10f" Name="Diagram1">
+        <EntityTypeShape EntityType="BaseSZLPModel.COMMENTS" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.EVENT" Width="1.5" PointX="8.25" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.MATCH" Width="1.5" PointX="3.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.NEWS" Width="1.5" PointX="6" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.PLAYER" Width="1.5" PointX="6" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.STAFF" Width="1.5" PointX="3.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.STAFF_IN_MATCHES" Width="1.5" PointX="6" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.STAFF_IN_TEAMS" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.TEAM" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseSZLPModel.TEAMS_IN_MATCH" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Width="1.5" PointX="8.25" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.UserProfile" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.webpages_Membership" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.webpages_OAuthMembership" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseSZLPModel.webpages_Roles" Width="1.5" PointX="3" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Width="1.5" PointX="8.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.UserProfile" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.webpages_Membership" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.webpages_OAuthMembership" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseSZLPModel.webpages_Roles" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
         <AssociationConnector Association="BaseSZLPModel.FK_NEWS__COMMENTS" ManuallyRouted="false" />
         <AssociationConnector Association="BaseSZLPModel.FK_UserProfile__COMMENTS" ManuallyRouted="false" />
         <AssociationConnector Association="BaseSZLPModel.FK_MATCH__EVENT" ManuallyRouted="false" />
@@ -35,7 +35,6 @@
         <AssociationConnector Association="BaseSZLPModel.STAFF__STAFF_IN_TEAMS" ManuallyRouted="false" />
         <AssociationConnector Association="BaseSZLPModel.TEAM__STAFF_IN_TEAM" ManuallyRouted="false" />
         <AssociationConnector Association="BaseSZLPModel.FK_TEAM__TEAM_COMPOSITION" ManuallyRouted="false" />
-        <AssociationConnector Association="BaseSZLPModel.FK_TEAM_COMPOSITION__TEAM_COMPOSITION_ALLOCATION" ManuallyRouted="false" />
         <AssociationConnector Association="BaseSZLPModel.FK_webpages_Membership_UserProfile" ManuallyRouted="false" />
         <AssociationConnector Association="BaseSZLPModel.webpages_UsersInRoles" ManuallyRouted="false" />
       </Diagram>
