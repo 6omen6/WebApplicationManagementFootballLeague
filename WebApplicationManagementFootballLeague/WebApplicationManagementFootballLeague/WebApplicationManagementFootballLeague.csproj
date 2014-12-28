@@ -184,11 +184,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrap Html Helpers\App_Start\AuthConfig.cs" />
-    <Compile Include="Bootstrap Html Helpers\App_Start\BundleConfig.cs" />
-    <Compile Include="Bootstrap Html Helpers\App_Start\FilterConfig.cs" />
-    <Compile Include="Bootstrap Html Helpers\App_Start\RouteConfig.cs" />
-    <Compile Include="Bootstrap Html Helpers\App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bootstrap Html Helpers\BootstrapSelectFor.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -392,11 +392,13 @@
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\TeamRepository.cs" />
     <Content Include="Content\bootstrap-select.css" />
     <Content Include="Content\bootstrap-select.min.css" />
     <Content Include="Content\BootstrapCss\bootstrap-select.css" />
     <Content Include="Content\BootstrapCss\bootstrap-select.min.css" />
     <Content Include="Content\Gridmvc.css" />
+    <Content Include="Content\LoginLayout.css" />
     <Content Include="Images\herby\herbCzarnocin.jpg" />
     <Content Include="Images\herby\herbOlimpiaWolaZalezna.jpg" />
     <Content Include="Images\naglowek-niebieski.jpg" />
@@ -666,10 +668,10 @@
     <Content Include="Views\Team\Edit.cshtml" />
     <Content Include="Views\Team\Delete.cshtml" />
     <Content Include="Views\Partial\Team\_TeamMatchesPartial.cshtml" />
+    <Content Include="Views\Partial\Team\_TeamStaffPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Repository\" />
     <Folder Include="Views\Partial\DlaLigi\" />
   </ItemGroup>
   <ItemGroup>

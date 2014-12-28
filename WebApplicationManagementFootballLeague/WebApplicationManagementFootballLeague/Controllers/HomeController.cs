@@ -10,11 +10,13 @@ namespace WebApplicationManagementFootballLeague.Controllers
     {
         public ActionResult Index()
         {
+            Session["ID_team"] = "1";
             return View();
         }
         [HttpPost]
         public ActionResult Index(string ID)
         {
+            Session["ID_team"] = "1";
             return View();
         }
 
@@ -23,9 +25,9 @@ namespace WebApplicationManagementFootballLeague.Controllers
             return PartialView("~/Views/Partial/Team/_TeamNewsPartial.cshtml");
         }
 
-        public ActionResult ShowTeamFootball()
+        public ActionResult ShowTeamStaff()
         {
-            return PartialView("~/Views/Partial/Team/_TeamFootballPartial.cshtml");
+            return RedirectToAction("ShowTeamStaff", "Team");
         }
 
         public ActionResult ShowTeamTimetable()

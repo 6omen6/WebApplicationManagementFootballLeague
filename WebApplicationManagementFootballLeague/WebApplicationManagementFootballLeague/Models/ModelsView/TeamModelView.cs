@@ -19,6 +19,8 @@ namespace WebApplicationManagementFootballLeague.Models.ModelsView
         public List<STAFF> listOfVPresidents { get; set; }
         public List<STAFF> listOfManagers { get; set; }
         public List<STAFF> listOfCoaches { get; set; }
+        public List<PLAYER> listOfPlayers { get; set; }
+
 
         public IEnumerable<SelectListItem> selectedListOfTeams
         {

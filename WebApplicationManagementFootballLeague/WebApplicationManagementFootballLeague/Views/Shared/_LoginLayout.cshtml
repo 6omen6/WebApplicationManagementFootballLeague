@@ -5,7 +5,7 @@
     <title>@ViewBag.Title - My ASP.NET MVC Application</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrap")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/jquery.qtip.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/jquery")
@@ -15,7 +15,7 @@
     <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
 </head>
 
-<body style="margin: 0px; min-height: 915px; max-height: 915px; background-image: url('@Url.Content("~/Images/tlo.jpg")')";>
+<body style="margin: 0px; min-height: 600px; max-height: 600px; background-image: url('@Url.Content("~/Images/tlo.jpg")')";>
 
     <div class="content-login">
         @RenderBody()
@@ -33,6 +33,5 @@
         language: "pl",
         orientation: "top left"
     });
-
 </script>
 </html>

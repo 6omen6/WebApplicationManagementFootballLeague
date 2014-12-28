@@ -7,12 +7,14 @@ using System.Web;
 using System.Web.Mvc;
 using WebApplicationManagementFootballLeague.Models;
 using WebApplicationManagementFootballLeague.Models.ModelsView;
+using WebApplicationManagementFootballLeague.Repository;
 
 namespace WebApplicationManagementFootballLeague.Controllers
 {
     public class TeamController : Controller
     {
         private BaseSZLPEntities db = new BaseSZLPEntities();
+        private TeamRepository teamRepository = new TeamRepository();
 
 
         TeamModelView teamModelView = new TeamModelView();
@@ -42,40 +44,46 @@ namespace WebApplicationManagementFootballLeague.Controllers
             if (ID == null)
             {
                 id = 1;
-                Session["ID_team"] = ID;
+                Session["ID_team"] = "1";
             }
             else
             {
                 id = System.Convert.ToInt16(ID);
                 Session["ID_team"] = ID;
             }
-            teamModelView.listOfPresidents = StaffInTeamByRole(id, "Prezes zarządu");
-            teamModelView.listOfVPresidents = StaffInTeamByRole(id, "Zastępca prezesa");
-            teamModelView.listOfManagers = StaffInTeamByRole(id, "Manager");
-            teamModelView.listOfCoaches = StaffInTeamByRole(id, "Trener");
+            teamModelView.listOfPresidents = teamRepository.StaffInTeamByRole(id, "Prezes zarządu");
+            teamModelView.listOfVPresidents = teamRepository.StaffInTeamByRole(id, "Zastępca prezesa");
+            teamModelView.listOfManagers = teamRepository.StaffInTeamByRole(id, "Manager");
+            teamModelView.listOfCoaches = teamRepository.StaffInTeamByRole(id, "Trener");
             teamModelView.team = db.TEAM.Find(id);
             return PartialView("~/Views/Partial/Team/_TeamInfoPartial.cshtml", teamModelView);
         }
 
-        public List<STAFF> StaffInTeamByRole(int id_team, string role)
+        public PartialViewResult ShowTeamStaff(string ID)
         {
-            List<STAFF> listOfStaffByRole = new List<STAFF>();
-            var result = db.staffInTeamByRole(id_team, role).ToList();
-            foreach (var element in result)
+            int id;
+            if (ID == null)
             {
-                var zz = new STAFF();
-                zz.firstName = element.firstName;
-                zz.lastName = element.lastName;
-                listOfStaffByRole.Add(zz);
+                id = 1;
+                Session["ID_team"] = "1";
             }
-            return listOfStaffByRole;
+            else
+            {
+                id = System.Convert.ToInt16(ID);
+                Session["ID_team"] = ID;
+            }
+            teamModelView.listOfPresidents = teamRepository.StaffInTeamByRole(id, "Prezes zarządu");
+            teamModelView.listOfVPresidents = teamRepository.StaffInTeamByRole(id, "Zastępca prezesa");
+            teamModelView.listOfManagers = teamRepository.StaffInTeamByRole(id, "Manager");
+            teamModelView.listOfCoaches = teamRepository.StaffInTeamByRole(id, "Trener");
+            teamModelView.listOfPlayers = teamRepository.GetPlayersByID(id);
+            teamModelView.team = db.TEAM.Find(id);
+            return PartialView("~/Views/Partial/Team/_TeamStaffPartial.cshtml", teamModelView);
         }
+
         public PartialViewResult ShowTeamNews(string ID)
         {
-            NEWS zz = new NEWS();
-            List<NEWS> list = new List<NEWS>();
             int id;
-            int i = 1;
             if (ID == null)
             {
                 id = 1;
@@ -84,16 +92,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
             {
                 id = Convert.ToInt16(Session["ID_team"]);
             }
-            var result = db.newsForTheTeam(id).ToList();
-            foreach (var x in result)
-            {
-                zz = new NEWS();
-                zz.title = x.title;
-                zz.text = x.text;
-                zz.date = x.date;
-                list.Add(zz);
-            }
-            teamModelView.listOfNews = list;
+            teamModelView.listOfNews = teamRepository.ListOfNews(id);
             //teamModelView.listOfNews = db.newsForTheTeam(id).ToList();
             return PartialView("~/Views/Partial/Team/_TeamNewsPartial.cshtml", teamModelView);
         }

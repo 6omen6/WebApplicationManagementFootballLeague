@@ -34,6 +34,11 @@ namespace WebApplicationManagementFootballLeague
                         "~/Content/BootstrapCss/bootstrap-select.css",
                         "~/Content/BootstrapCss/bootstrap-theme.css",
                         "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
+            "~/Content/BootstrapCss/bootstrap.css",
+            "~/Content/BootstrapCss/bootstrap-select.css",
+            "~/Content/BootstrapCss/bootstrap-theme.css",
+            "~/Content/LoginLayout.css"));
         }
     }
 }
