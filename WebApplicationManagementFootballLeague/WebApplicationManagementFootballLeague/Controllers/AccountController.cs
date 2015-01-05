@@ -10,6 +10,7 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using WebApplicationManagementFootballLeague.Filters;
 using WebApplicationManagementFootballLeague.Models;
+using Facebook;
 
 namespace WebApplicationManagementFootballLeague.Controllers
 {
@@ -17,6 +18,17 @@ namespace WebApplicationManagementFootballLeague.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+        private Uri RedirectUri
+        {
+            get
+            {
+                var uriBuilder = new UriBuilder(Request.Url);
+                uriBuilder.Query = null;
+                uriBuilder.Fragment = null;
+                uriBuilder.Path = Url.Action("FacebookCallback");
+                return uriBuilder.Uri;
+            }
+        }
         //
         // GET: /Account/Login
 
@@ -54,6 +66,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
         public ActionResult LogOff()
         {
             WebSecurity.Logout();
+            FormsAuthentication.SignOut();
 
             return RedirectToAction("Index", "Home");
         }
@@ -204,9 +217,8 @@ namespace WebApplicationManagementFootballLeague.Controllers
         //
         // POST: /Account/ExternalLogin
 
-        [HttpPost]
+
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
             return new ExternalLoginResult(provider, Url.Action("ExternalLoginCallback", new { ReturnUrl = returnUrl }));
@@ -353,12 +365,20 @@ namespace WebApplicationManagementFootballLeague.Controllers
         {
             public ExternalLoginResult(string provider, string returnUrl)
             {
-                Provider = provider;
+                if (provider != null)
+                {
+                    Provider = provider;
+                }
+                else
+                {
+                    Provider = "facebook";
+                }
+
                 ReturnUrl = returnUrl;
             }
-
             public string Provider { get; private set; }
             public string ReturnUrl { get; private set; }
+
 
             public override void ExecuteResult(ControllerContext context)
             {

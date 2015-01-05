@@ -5,63 +5,74 @@
             <ul class="nav navbar-nav" style="padding-top: 6px;">
                 <li><a href="#menu-toggle" class="header-menu-button glyph" id="header-menu-button"><span class="glyphicon glyphicon-th-list"></span></a></li>
                 <li>
-                    @*@using (Ajax.BeginForm("ShowTeamInfo", "Home", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "top-in-left-content", Url = Url.Action("ShowTeamInfo"), OnSuccess = "onSuccess", },
+                    @using (Ajax.BeginForm("Index", "Home",
+                        new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body-container", Url = Url.Action("Index", "Home"), OnSuccess = "onSuccess", },
                         new { id = 3, role = "form", @class = "form" }))
                     {
                         @Html.ValidationSummary(true)
-                        @Html.DropDownList("ID", Model.selectedListOfTeams, new { onchange = "$(this.form).submit();", style = "width: auto; margin-left: 90px;", @class = "form-control", id = "listReports" })
-                    }*@
-                    @using (Ajax.BeginForm("Index", "Home", new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body-container", Url = Url.Action("Index", "Home"), OnSuccess = "onSuccess", },
-                        new { id = 3, role = "form", @class = "form" }))
-                    {
-                        @Html.ValidationSummary(true)
-                        @Html.DropDownList("ID", Model.selectedListOfTeams, new { onchange = "$(this.form).submit();", style = "width: auto; margin-left: 90px;", @class = "form-control", id = "listReports" })
+                        @Html.DropDownList("ID", Model.selectedListOfTeams,
+                        new { onchange = "$(this.form).submit();", style = "width: auto; margin-left: 90px;", @class = "form-control", id = "listReports" })
                     }
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right navbar-top-right" style="padding-top: 10px; width: 100px;">
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Account
                                         <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="navbar-content">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <img src="http://placehold.it/120x120"
-                                            alt="Alternate Text" class="img-responsive" />
-                                        <p class="text-center small">
-                                            <a href="#">Change Photo</a>
-                                        </p>
-                                    </div>
-                                    <div class="col-md-7">
-                                        <span>Bhaumik Patel</span>
-                                        <p class="text-muted small">
-                                            mail@gmail.com
-                                        </p>
-                                        <div class="divider">
-                                        </div>
-                                        <a href="#" class="btn btn-primary btn-sm active">View Profile</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="navbar-footer">
-                                <div class="navbar-footer-content">
+                    <ul class="dropdown-menu" style="margin-top: 20px;">
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li>
+                                <div class="navbar-content">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <a href="#" class="btn btn-default btn-sm">Change Passowrd</a>
+                                        <div class="col-md-5">
+                                            <img src="http://placehold.it/120x120"
+                                                alt="Alternate Text" class="img-responsive" />
+                                            <p class="text-center small">
+                                                <a href="#">Change Photo</a>
+                                            </p>
                                         </div>
-                                        <div class="col-md-6">
-                                            <a href="http://www.jquery2dotnet.com" class="btn btn-default btn-sm pull-right">Sign Out</a>
+                                        <div class="col-md-7">
+                                            <span></span>
+                                            <p class="text-muted small">
+                                                @User.Identity.Name
+                                            </p>
+                                            <div class="divider">
+                                            </div>
+                                            <a href="#" class="btn btn-primary btn-sm active">View Profile</a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
+                                <div class="navbar-footer">
+                                    <div class="navbar-footer-content">
+                                        <div class="row">
+@*                                            <div class="col-md-6">
+                                                <a href="#" class="btn btn-default btn-sm">Change Passowrd</a>
+                                            </div>*@
+                                            <div class="col-md-6">
+                                                @if (Request.IsAuthenticated)
+                                                {
+                                                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                                    {
+                                                    @Html.AntiForgeryToken()
+                                                    <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-default btn-sm">Log off</a>
+                                                    }
+                                                   @* @Html.ActionLink("Manage ", "Manage", "Account", routeValues: null, htmlAttributes: new { @class="btn btn-default btn-sm", title = "Manage" })*@
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Zarejestruj się", "Register", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: green" })</li>
+                            <li>@Html.ActionLink("Zaloguj", "Login", "Account", routeValues: null, htmlAttributes: new { @class = "navbar-link", @style = "color: blue" })</li>   
+                        }
                     </ul>
                 </li>
             </ul>
-       
-        @* <ul class="nav navbar-nav navbar-right navbar-top-right">
+            @* <ul class="nav navbar-nav navbar-right navbar-top-right">
                 <li>
                     <ul class="dropdown-menu center-text" role="menu">
                         <li style="text-align: center; font-weight: 700;">Moje konto</li>
@@ -83,7 +94,7 @@
                     </ul>
                 </li>
             </ul>*@
-    </div>
+        </div>
     </div>
 </nav>
 
@@ -92,4 +103,21 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+</script>
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '834877566554270',
+            xfbml: true,
+            version: 'v2.2'
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 </script>

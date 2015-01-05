@@ -22,6 +22,7 @@ namespace WebApplicationManagementFootballLeague.Models.ModelsView
         public List<PLAYER> listOfPlayers { get; set; }
 
 
+
         public IEnumerable<SelectListItem> selectedListOfTeams
         {
             get { return new SelectList(listOfTeams, "ID_Team", "name"); }

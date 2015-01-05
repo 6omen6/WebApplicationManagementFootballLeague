@@ -620,19 +620,19 @@
     <edmx:ConceptualModels>
       <Schema Namespace="BaseSZLPModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="BaseSZLPEntities" p1:LazyLoadingEnabled="true">
-          <EntitySet Name="COMMENTS" EntityType="BaseSZLPModel.COMMENTS" />
-          <EntitySet Name="EVENT" EntityType="BaseSZLPModel.EVENT" />
-          <EntitySet Name="MATCH" EntityType="BaseSZLPModel.MATCH" />
+          <EntitySet Name="COMMENTS" EntityType="BaseSZLPModel.COMMENT" />
+          <EntitySet Name="EVENTs" EntityType="BaseSZLPModel.EVENT" />
+          <EntitySet Name="MATCHes" EntityType="BaseSZLPModel.MATCH" />
           <EntitySet Name="NEWS" EntityType="BaseSZLPModel.NEWS" />
-          <EntitySet Name="PLAYER" EntityType="BaseSZLPModel.PLAYER" />
-          <EntitySet Name="STAFF" EntityType="BaseSZLPModel.STAFF" />
+          <EntitySet Name="PLAYERs" EntityType="BaseSZLPModel.PLAYER" />
+          <EntitySet Name="STAFFs" EntityType="BaseSZLPModel.STAFF" />
           <EntitySet Name="STAFF_IN_MATCHES" EntityType="BaseSZLPModel.STAFF_IN_MATCHES" />
           <EntitySet Name="STAFF_IN_TEAMS" EntityType="BaseSZLPModel.STAFF_IN_TEAMS" />
-          <EntitySet Name="sysdiagrams" EntityType="BaseSZLPModel.sysdiagrams" />
-          <EntitySet Name="TEAM" EntityType="BaseSZLPModel.TEAM" />
+          <EntitySet Name="sysdiagrams" EntityType="BaseSZLPModel.sysdiagram" />
+          <EntitySet Name="TEAMs" EntityType="BaseSZLPModel.TEAM" />
           <EntitySet Name="TEAMS_IN_MATCH" EntityType="BaseSZLPModel.TEAMS_IN_MATCH" />
           <EntitySet Name="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" EntityType="BaseSZLPModel.TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
-          <EntitySet Name="UserProfile" EntityType="BaseSZLPModel.UserProfile" />
+          <EntitySet Name="UserProfiles" EntityType="BaseSZLPModel.UserProfile" />
           <EntitySet Name="webpages_Membership" EntityType="BaseSZLPModel.webpages_Membership" />
           <EntitySet Name="webpages_OAuthMembership" EntityType="BaseSZLPModel.webpages_OAuthMembership" />
           <EntitySet Name="webpages_Roles" EntityType="BaseSZLPModel.webpages_Roles" />
@@ -641,63 +641,63 @@
             <End Role="COMMENTS" EntitySet="COMMENTS" />
           </AssociationSet>
           <AssociationSet Name="FK_UserProfile__COMMENTS" Association="BaseSZLPModel.FK_UserProfile__COMMENTS">
-            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
             <End Role="COMMENTS" EntitySet="COMMENTS" />
           </AssociationSet>
           <AssociationSet Name="FK_MATCH__EVENT" Association="BaseSZLPModel.FK_MATCH__EVENT">
-            <End Role="MATCH" EntitySet="MATCH" />
-            <End Role="EVENT" EntitySet="EVENT" />
+            <End Role="MATCH" EntitySet="MATCHes" />
+            <End Role="EVENT" EntitySet="EVENTs" />
           </AssociationSet>
           <AssociationSet Name="FK_PLAYER__EVENT" Association="BaseSZLPModel.FK_PLAYER__EVENT">
-            <End Role="PLAYER" EntitySet="PLAYER" />
-            <End Role="EVENT" EntitySet="EVENT" />
+            <End Role="PLAYER" EntitySet="PLAYERs" />
+            <End Role="EVENT" EntitySet="EVENTs" />
           </AssociationSet>
           <AssociationSet Name="FK_MATCH__STAFF_IN_MATCH" Association="BaseSZLPModel.FK_MATCH__STAFF_IN_MATCH">
-            <End Role="MATCH" EntitySet="MATCH" />
+            <End Role="MATCH" EntitySet="MATCHes" />
             <End Role="STAFF_IN_MATCHES" EntitySet="STAFF_IN_MATCHES" />
           </AssociationSet>
           <AssociationSet Name="FK_MATCH__TEAM_COMPOSITION" Association="BaseSZLPModel.FK_MATCH__TEAM_COMPOSITION">
-            <End Role="MATCH" EntitySet="MATCH" />
+            <End Role="MATCH" EntitySet="MATCHes" />
             <End Role="TEAMS_IN_MATCH" EntitySet="TEAMS_IN_MATCH" />
           </AssociationSet>
           <AssociationSet Name="FK_TEAMS__NEWS" Association="BaseSZLPModel.FK_TEAMS__NEWS">
-            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="TEAM" EntitySet="TEAMs" />
             <End Role="NEWS" EntitySet="NEWS" />
           </AssociationSet>
           <AssociationSet Name="FK_UserProfile__NEWS" Association="BaseSZLPModel.FK_UserProfile__NEWS">
-            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
             <End Role="NEWS" EntitySet="NEWS" />
           </AssociationSet>
           <AssociationSet Name="FK_PLAYER__TEAM_COMPOSITION_ALLOCATION" Association="BaseSZLPModel.FK_PLAYER__TEAM_COMPOSITION_ALLOCATION">
-            <End Role="PLAYER" EntitySet="PLAYER" />
+            <End Role="PLAYER" EntitySet="PLAYERs" />
             <End Role="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" EntitySet="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
           </AssociationSet>
           <AssociationSet Name="FK_TEAM__PLAYER" Association="BaseSZLPModel.FK_TEAM__PLAYER">
-            <End Role="TEAM" EntitySet="TEAM" />
-            <End Role="PLAYER" EntitySet="PLAYER" />
+            <End Role="TEAM" EntitySet="TEAMs" />
+            <End Role="PLAYER" EntitySet="PLAYERs" />
           </AssociationSet>
           <AssociationSet Name="FK_STAFF__STAFF_IN_MATCH" Association="BaseSZLPModel.FK_STAFF__STAFF_IN_MATCH">
-            <End Role="STAFF" EntitySet="STAFF" />
+            <End Role="STAFF" EntitySet="STAFFs" />
             <End Role="STAFF_IN_MATCHES" EntitySet="STAFF_IN_MATCHES" />
           </AssociationSet>
           <AssociationSet Name="STAFF__STAFF_IN_TEAMS" Association="BaseSZLPModel.STAFF__STAFF_IN_TEAMS">
-            <End Role="STAFF" EntitySet="STAFF" />
+            <End Role="STAFF" EntitySet="STAFFs" />
             <End Role="STAFF_IN_TEAMS" EntitySet="STAFF_IN_TEAMS" />
           </AssociationSet>
           <AssociationSet Name="TEAM__STAFF_IN_TEAM" Association="BaseSZLPModel.TEAM__STAFF_IN_TEAM">
-            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="TEAM" EntitySet="TEAMs" />
             <End Role="STAFF_IN_TEAMS" EntitySet="STAFF_IN_TEAMS" />
           </AssociationSet>
           <AssociationSet Name="FK_TEAM__TEAM_COMPOSITION" Association="BaseSZLPModel.FK_TEAM__TEAM_COMPOSITION">
-            <End Role="TEAM" EntitySet="TEAM" />
+            <End Role="TEAM" EntitySet="TEAMs" />
             <End Role="TEAMS_IN_MATCH" EntitySet="TEAMS_IN_MATCH" />
           </AssociationSet>
           <AssociationSet Name="FK_webpages_Membership_UserProfile" Association="BaseSZLPModel.FK_webpages_Membership_UserProfile">
-            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
             <End Role="webpages_Membership" EntitySet="webpages_Membership" />
           </AssociationSet>
           <AssociationSet Name="webpages_UsersInRoles" Association="BaseSZLPModel.webpages_UsersInRoles">
-            <End Role="UserProfile" EntitySet="UserProfile" />
+            <End Role="UserProfile" EntitySet="UserProfiles" />
             <End Role="webpages_Roles" EntitySet="webpages_Roles" />
           </AssociationSet>
           <FunctionImport Name="commentsForTheNews" ReturnType="Collection(BaseSZLPModel.commentsForTheNews_Result)">
@@ -819,7 +819,7 @@
           <FunctionImport Name="teamWithMostPoints" ReturnType="Collection(BaseSZLPModel.teamWithMostPoints_Result)" />
           <FunctionImport Name="teamWithMostWins" ReturnType="Collection(BaseSZLPModel.teamWithMostWins_Result)" />
         </EntityContainer>
-        <EntityType Name="COMMENTS">
+        <EntityType Name="COMMENT">
           <Key>
             <PropertyRef Name="ID_comment" />
           </Key>
@@ -894,7 +894,7 @@
           <Property Name="numberOfRedCards" Type="Int32" />
           <Property Name="numberOfAssists" Type="Int32" />
           <Property Name="ID_team" Type="Int32" />
-          <NavigationProperty Name="EVENT" Relationship="BaseSZLPModel.FK_PLAYER__EVENT" FromRole="PLAYER" ToRole="EVENT" />
+          <NavigationProperty Name="EVENTs" Relationship="BaseSZLPModel.FK_PLAYER__EVENT" FromRole="PLAYER" ToRole="EVENT" />
           <NavigationProperty Name="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" Relationship="BaseSZLPModel.FK_PLAYER__TEAM_COMPOSITION_ALLOCATION" FromRole="PLAYER" ToRole="TEAMS_IN_MATCH_PLAYERS_ALLOCATION" />
           <NavigationProperty Name="TEAM" Relationship="BaseSZLPModel.FK_TEAM__PLAYER" FromRole="PLAYER" ToRole="TEAM" />
         </EntityType>
@@ -931,7 +931,7 @@
           <NavigationProperty Name="STAFF" Relationship="BaseSZLPModel.STAFF__STAFF_IN_TEAMS" FromRole="STAFF_IN_TEAMS" ToRole="STAFF" />
           <NavigationProperty Name="TEAM" Relationship="BaseSZLPModel.TEAM__STAFF_IN_TEAM" FromRole="STAFF_IN_TEAMS" ToRole="TEAM" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
+        <EntityType Name="sysdiagram">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
@@ -970,7 +970,7 @@
           <Property Name="league" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="teamColors" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="NEWS" Relationship="BaseSZLPModel.FK_TEAMS__NEWS" FromRole="TEAM" ToRole="NEWS" />
-          <NavigationProperty Name="PLAYER" Relationship="BaseSZLPModel.FK_TEAM__PLAYER" FromRole="TEAM" ToRole="PLAYER" />
+          <NavigationProperty Name="PLAYERs" Relationship="BaseSZLPModel.FK_TEAM__PLAYER" FromRole="TEAM" ToRole="PLAYER" />
           <NavigationProperty Name="STAFF_IN_TEAMS" Relationship="BaseSZLPModel.TEAM__STAFF_IN_TEAM" FromRole="TEAM" ToRole="STAFF_IN_TEAMS" />
           <NavigationProperty Name="TEAMS_IN_MATCH" Relationship="BaseSZLPModel.FK_TEAM__TEAM_COMPOSITION" FromRole="TEAM" ToRole="TEAMS_IN_MATCH" />
         </EntityType>
@@ -1040,11 +1040,11 @@
           </Key>
           <Property Name="RoleId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="UserProfile" Relationship="BaseSZLPModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
+          <NavigationProperty Name="UserProfiles" Relationship="BaseSZLPModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
         </EntityType>
         <Association Name="FK_NEWS__COMMENTS">
           <End Role="NEWS" Type="BaseSZLPModel.NEWS" Multiplicity="0..1" />
-          <End Role="COMMENTS" Type="BaseSZLPModel.COMMENTS" Multiplicity="*" />
+          <End Role="COMMENTS" Type="BaseSZLPModel.COMMENT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NEWS">
               <PropertyRef Name="ID_news" />
@@ -1056,7 +1056,7 @@
         </Association>
         <Association Name="FK_UserProfile__COMMENTS">
           <End Role="UserProfile" Type="BaseSZLPModel.UserProfile" Multiplicity="0..1" />
-          <End Role="COMMENTS" Type="BaseSZLPModel.COMMENTS" Multiplicity="*" />
+          <End Role="COMMENTS" Type="BaseSZLPModel.COMMENT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="UserProfile">
               <PropertyRef Name="UserId" />
@@ -1535,7 +1535,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="BaseSZLPModelStoreContainer" CdmEntityContainer="BaseSZLPEntities">
           <EntitySetMapping Name="COMMENTS">
-            <EntityTypeMapping TypeName="BaseSZLPModel.COMMENTS">
+            <EntityTypeMapping TypeName="BaseSZLPModel.COMMENT">
               <MappingFragment StoreEntitySet="COMMENTS">
                 <ScalarProperty Name="ID_comment" ColumnName="ID_comment" />
                 <ScalarProperty Name="userIP" ColumnName="userIP" />
@@ -1546,7 +1546,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="EVENT">
+          <EntitySetMapping Name="EVENTs">
             <EntityTypeMapping TypeName="BaseSZLPModel.EVENT">
               <MappingFragment StoreEntitySet="EVENT">
                 <ScalarProperty Name="ID_event" ColumnName="ID_event" />
@@ -1557,7 +1557,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MATCH">
+          <EntitySetMapping Name="MATCHes">
             <EntityTypeMapping TypeName="BaseSZLPModel.MATCH">
               <MappingFragment StoreEntitySet="MATCH">
                 <ScalarProperty Name="ID_match" ColumnName="ID_match" />
@@ -1584,7 +1584,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PLAYER">
+          <EntitySetMapping Name="PLAYERs">
             <EntityTypeMapping TypeName="BaseSZLPModel.PLAYER">
               <MappingFragment StoreEntitySet="PLAYER">
                 <ScalarProperty Name="ID_player" ColumnName="ID_player" />
@@ -1605,7 +1605,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="STAFF">
+          <EntitySetMapping Name="STAFFs">
             <EntityTypeMapping TypeName="BaseSZLPModel.STAFF">
               <MappingFragment StoreEntitySet="STAFF">
                 <ScalarProperty Name="ID_staff" ColumnName="ID_staff" />
@@ -1634,7 +1634,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="BaseSZLPModel.sysdiagrams">
+            <EntityTypeMapping TypeName="BaseSZLPModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -1644,7 +1644,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TEAM">
+          <EntitySetMapping Name="TEAMs">
             <EntityTypeMapping TypeName="BaseSZLPModel.TEAM">
               <MappingFragment StoreEntitySet="TEAM">
                 <ScalarProperty Name="ID_team" ColumnName="ID_team" />
@@ -1691,7 +1691,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="UserProfile">
+          <EntitySetMapping Name="UserProfiles">
             <EntityTypeMapping TypeName="BaseSZLPModel.UserProfile">
               <MappingFragment StoreEntitySet="UserProfile">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />

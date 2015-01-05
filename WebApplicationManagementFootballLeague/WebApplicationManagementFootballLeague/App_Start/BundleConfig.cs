@@ -9,7 +9,8 @@ namespace WebApplicationManagementFootballLeague
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/Facebook.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
@@ -35,10 +36,10 @@ namespace WebApplicationManagementFootballLeague
                         "~/Content/BootstrapCss/bootstrap-theme.css",
                         "~/Content/site.css"));
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
-            "~/Content/BootstrapCss/bootstrap.css",
-            "~/Content/BootstrapCss/bootstrap-select.css",
-            "~/Content/BootstrapCss/bootstrap-theme.css",
-            "~/Content/LoginLayout.css"));
+                        "~/Content/BootstrapCss/bootstrap.css",
+                        "~/Content/BootstrapCss/bootstrap-select.css",
+                        "~/Content/BootstrapCss/bootstrap-theme.css",
+                        "~/Content/LoginLayout.css"));
         }
     }
 }

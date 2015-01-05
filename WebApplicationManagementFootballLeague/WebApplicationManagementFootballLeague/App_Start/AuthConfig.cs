@@ -15,18 +15,12 @@ namespace WebApplicationManagementFootballLeague
             // you must update this site. For more information visit http://go.microsoft.com/fwlink/?LinkID=252166
 
             //OAuthWebSecurity.RegisterMicrosoftClient(
-            //    clientId: "",
-            //    clientSecret: "");
+            //   clientId: "962578117004-5erhp7q22q3o90b0erk2heklaj12np4t.apps.googleusercontent.com",
+            //    clientSecret: "hQOdB4QWp6TqG8T2uvmahjjM");
 
             //OAuthWebSecurity.RegisterTwitterClient(
             //    consumerKey: "",
             //    consumerSecret: "");
-
-            //OAuthWebSecurity.RegisterFacebookClient(
-            //    appId: "",
-            //    appSecret: "");
-
-            //OAuthWebSecurity.RegisterGoogleClient();
         }
     }
 }

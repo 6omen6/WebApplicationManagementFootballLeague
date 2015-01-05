@@ -21,6 +21,8 @@ namespace WebApplicationManagementFootballLeague.Models
         public DbSet<UserProfiles> UserProfiles { get; set; }
     }
 
+
+
     [Table("UserProfile")]
     public class UserProfiles
     {

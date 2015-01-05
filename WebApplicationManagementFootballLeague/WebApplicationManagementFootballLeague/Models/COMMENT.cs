@@ -12,12 +12,16 @@ namespace WebApplicationManagementFootballLeague.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class COMMENT
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int ID_comment { get; set; }
+        public string userIP { get; set; }
+        public string text { get; set; }
+        public string date { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public Nullable<int> ID_news { get; set; }
+    
+        public virtual NEWS NEWS { get; set; }
+        public virtual UserProfile UserProfile { get; set; }
     }
 }

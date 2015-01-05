@@ -23,14 +23,14 @@ namespace WebApplicationManagementFootballLeague.Controllers
 
         public ActionResult Index()
         {
-            return View(db.TEAM.ToList());
+            return View(db.TEAMs.ToList());
         }
 
         //
         // GET: /Team/Details/5
         public ActionResult ShowHeader(int id = 1)
         {
-            teamModelView.listOfTeams = db.TEAM.ToList();
+            teamModelView.listOfTeams = db.TEAMs.ToList();
             if (teamModelView.listOfTeams == null)
             {
                 return HttpNotFound();
@@ -55,7 +55,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
             teamModelView.listOfVPresidents = teamRepository.StaffInTeamByRole(id, "Zastępca prezesa");
             teamModelView.listOfManagers = teamRepository.StaffInTeamByRole(id, "Manager");
             teamModelView.listOfCoaches = teamRepository.StaffInTeamByRole(id, "Trener");
-            teamModelView.team = db.TEAM.Find(id);
+            teamModelView.team = db.TEAMs.Find(id);
             return PartialView("~/Views/Partial/Team/_TeamInfoPartial.cshtml", teamModelView);
         }
 
@@ -77,7 +77,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
             teamModelView.listOfManagers = teamRepository.StaffInTeamByRole(id, "Manager");
             teamModelView.listOfCoaches = teamRepository.StaffInTeamByRole(id, "Trener");
             teamModelView.listOfPlayers = teamRepository.GetPlayersByID(id);
-            teamModelView.team = db.TEAM.Find(id);
+            teamModelView.team = db.TEAMs.Find(id);
             return PartialView("~/Views/Partial/Team/_TeamStaffPartial.cshtml", teamModelView);
         }
 
@@ -103,7 +103,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
 
         public PartialViewResult ShowTableMini()
         {
-            teamModelView.listOfTeams = db.TEAM.ToList();
+            teamModelView.listOfTeams = db.TEAMs.ToList();
             return PartialView("~/Views/Partial/Table/_TableMiniPartial.cshtml", teamModelView);
         }
         //
@@ -123,7 +123,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.TEAM.Add(team);
+                db.TEAMs.Add(team);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -136,7 +136,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            TEAM team = db.TEAM.Find(id);
+            TEAM team = db.TEAMs.Find(id);
             if (team == null)
             {
                 return HttpNotFound();
@@ -165,7 +165,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            TEAM team = db.TEAM.Find(id);
+            TEAM team = db.TEAMs.Find(id);
             if (team == null)
             {
                 return HttpNotFound();
@@ -180,8 +180,8 @@ namespace WebApplicationManagementFootballLeague.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TEAM team = db.TEAM.Find(id);
-            db.TEAM.Remove(team);
+            TEAM team = db.TEAMs.Find(id);
+            db.TEAMs.Remove(team);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

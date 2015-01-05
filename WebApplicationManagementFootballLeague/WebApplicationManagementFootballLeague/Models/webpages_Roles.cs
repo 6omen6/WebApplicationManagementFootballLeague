@@ -16,12 +16,12 @@ namespace WebApplicationManagementFootballLeague.Models
     {
         public webpages_Roles()
         {
-            this.UserProfile = new HashSet<UserProfile>();
+            this.UserProfiles = new HashSet<UserProfile>();
         }
     
         public int RoleId { get; set; }
         public string RoleName { get; set; }
     
-        public virtual ICollection<UserProfile> UserProfile { get; set; }
+        public virtual ICollection<UserProfile> UserProfiles { get; set; }
     }
 }

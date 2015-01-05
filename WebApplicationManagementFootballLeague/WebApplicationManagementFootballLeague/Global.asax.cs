@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WebApplicationManagementFootballLeague.App_Start;
 
 namespace WebApplicationManagementFootballLeague
 {
@@ -23,6 +24,7 @@ namespace WebApplicationManagementFootballLeague
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+            OAuthConfig.RegisterProviders();
         }
     }
 }

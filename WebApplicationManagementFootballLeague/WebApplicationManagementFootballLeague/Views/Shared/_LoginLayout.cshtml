@@ -6,21 +6,20 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
     @Styles.Render("~/Content/bootstrap")
-    @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/jquery.qtip.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
     <script src="~/Scripts/jquery.qtip.js"></script>
     <script src="~/Scripts/DialogForm.js"></script>
     <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
 </head>
 
 <body style="margin: 0px; min-height: 600px; max-height: 600px; background-image: url('@Url.Content("~/Images/tlo.jpg")')";>
-
     <div class="content-login">
         @RenderBody()
     </div>
-
 </body>
 
 <script src="~/Scripts/bootstrap-datepicker.js"></script>
