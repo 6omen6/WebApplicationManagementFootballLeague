@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Facebook;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -8,6 +11,7 @@ using System.Web.Mvc;
 using WebApplicationManagementFootballLeague.Models;
 using WebApplicationManagementFootballLeague.Models.ModelsView;
 using WebApplicationManagementFootballLeague.Repository;
+using WebMatrix.WebData;
 
 namespace WebApplicationManagementFootballLeague.Controllers
 {
@@ -30,6 +34,29 @@ namespace WebApplicationManagementFootballLeague.Controllers
         // GET: /Team/Details/5
         public ActionResult ShowHeader(int id = 1)
         {
+            if (Session["Token"] != null)
+            {
+                var idd = WebSecurity.GetUserId(User.Identity.Name);
+                teamModelView.profile = teamRepository.GetUserByID(idd);
+                var client = new FacebookClient(HttpContext.Session["Token"].ToString());
+
+                dynamic fbresult = client.Get("me/picture?fields=url&redirect=false");
+                var data = fbresult["data"];
+                fbresult = client.Get("me?fields=first_name,last_name,location");
+                var first_name = fbresult["first_name"];
+                var last_name = fbresult["last_name"];
+                var location = fbresult["location"];
+
+                teamModelView.profile.firstName = first_name;
+                teamModelView.profile.lastName = last_name;
+                teamModelView.profile.avatar = data["url"];
+            }
+            else if (WebSecurity.IsAuthenticated && Session["Token"] == null)
+            {
+                var idd = WebSecurity.GetUserId(User.Identity.Name);
+                teamModelView.profile = teamRepository.GetUserByID(idd);
+            }
+
             teamModelView.listOfTeams = db.TEAMs.ToList();
             if (teamModelView.listOfTeams == null)
             {

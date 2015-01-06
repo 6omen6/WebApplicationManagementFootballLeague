@@ -236,6 +236,9 @@
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FacebookLoginModels.cs" />
+    <Compile Include="Models\getUserByUserName_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\guestsInMatches_Result.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
@@ -285,6 +288,9 @@
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\listOfStaffInTeam_Result.cs">
+      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\listOfUsers_Result.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MATCH.cs">

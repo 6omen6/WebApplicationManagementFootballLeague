@@ -33,6 +33,7 @@ namespace WebApplicationManagementFootballLeague.Models
         public string UserName { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
+        public string avatar { get; set; }
     }
 
     public class RegisterExternalLoginModel

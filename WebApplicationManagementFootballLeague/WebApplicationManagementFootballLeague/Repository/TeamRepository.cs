@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplicationManagementFootballLeague.Models;
+using WebMatrix.WebData;
 
 namespace WebApplicationManagementFootballLeague.Repository
 {
@@ -11,6 +12,27 @@ namespace WebApplicationManagementFootballLeague.Repository
     {
         private BaseSZLPEntities db = new BaseSZLPEntities();
 
+
+
+        /// <summary>
+        ///     Wyciaga z bazy informacje na temat danej roli w danym klubie 
+        ///     przyjmuje parametr 1 ID i 2 daną role np. 'Trener'
+        /// </summary>
+        public UserProfile GetUserByID(int id)
+        {
+            var context = new UsersContext();
+            var result = context.UserProfiles.SingleOrDefault(u => u.UserId == id);
+
+            var tmp = new UserProfile();
+            tmp.UserId = result.UserId;
+            tmp.UserName = result.UserName;
+            tmp.firstName = result.firstName;
+            tmp.lastName = result.lastName;
+            tmp.avatar = result.avatar;
+            
+
+            return tmp;
+        }
 
         /// <summary>
         ///     Wyciaga z bazy informacje na temat danej roli w danym klubie 
@@ -72,6 +94,21 @@ namespace WebApplicationManagementFootballLeague.Repository
                 listOfNews.Add(tmp);
             }
             return listOfNews;
+        }
+        public List<MATCH> ListOfMatches()
+        {
+            List<MATCH> listOfMatches = new List<MATCH>();
+            var result = db.leagueMatches().ToList();
+            foreach (var element in result)
+            {
+                var tmp = new MATCH();
+                tmp.dateOfMatch = element.dateOfMatch;
+                tmp.round = element.round;
+                tmp.guestScore = element.guestScore;
+                tmp.hostScore = element.hostScore;
+                listOfMatches.Add(tmp);
+            }
+            return listOfMatches;
         }
     }
 }

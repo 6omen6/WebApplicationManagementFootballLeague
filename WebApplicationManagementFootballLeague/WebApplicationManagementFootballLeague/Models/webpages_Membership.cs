@@ -11,14 +11,9 @@ namespace WebApplicationManagementFootballLeague.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data;
     
     public partial class webpages_Membership
     {
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
         public string ConfirmationToken { get; set; }

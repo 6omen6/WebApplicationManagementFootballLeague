@@ -63,6 +63,15 @@ namespace WebApplicationManagementFootballLeague.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<eventsInMatches_Result>("eventsInMatches", matchIDParameter);
         }
     
+        public virtual ObjectResult<getUserByUserName_Result> getUserByUserName(string name)
+        {
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getUserByUserName_Result>("getUserByUserName", nameParameter);
+        }
+    
         public virtual ObjectResult<guestsInMatches_Result> guestsInMatches()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<guestsInMatches_Result>("guestsInMatches");
@@ -179,6 +188,11 @@ namespace WebApplicationManagementFootballLeague.Models
         public virtual ObjectResult<string> listOfTeams()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("listOfTeams");
+        }
+    
+        public virtual ObjectResult<listOfUsers_Result> listOfUsers()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listOfUsers_Result>("listOfUsers");
         }
     
         public virtual ObjectResult<matchesInRound_Result> matchesInRound(Nullable<int> round)

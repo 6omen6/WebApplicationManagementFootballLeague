@@ -118,12 +118,13 @@
             <PropertyRef Name="ID_match" />
           </Key>
           <Property Name="ID_match" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="time" Type="int" Nullable="false" />
+          <Property Name="durationOfMatch" Type="int" Nullable="false" />
           <Property Name="dateOfMatch" Type="varchar" Nullable="false" MaxLength="20" />
           <Property Name="numberOfPlayers" Type="int" Nullable="false" />
           <Property Name="round" Type="int" />
           <Property Name="hostScore" Type="int" />
           <Property Name="guestScore" Type="int" />
+          <Property Name="timeOfMatch" Type="varchar" MaxLength="5" />
         </EntityType>
         <EntityType Name="NEWS">
           <Key>
@@ -250,6 +251,7 @@
           <Property Name="firstName" Type="varchar(max)" />
           <Property Name="lastName" Type="varchar(max)" />
           <Property Name="numberOfComments" Type="int" />
+          <Property Name="avatar" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="webpages_Membership">
           <Key>
@@ -502,6 +504,9 @@
           <Parameter Name="matchID" Type="int" Mode="In" />
         </Function>
         <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="getUserByUserName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar(max)" Mode="In" />
+        </Function>
         <Function Name="guestsInMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="hostsInMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="leagueMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -534,6 +539,7 @@
           <Parameter Name="teamID" Type="int" Mode="In" />
         </Function>
         <Function Name="listOfTeams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="listOfUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="matchesInRound" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="round" Type="int" Mode="In" />
         </Function>
@@ -706,6 +712,9 @@
           <FunctionImport Name="eventsInMatches" ReturnType="Collection(BaseSZLPModel.eventsInMatches_Result)">
             <Parameter Name="matchID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="getUserByUserName" ReturnType="Collection(BaseSZLPModel.getUserByUserName_Result)">
+            <Parameter Name="name" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="guestsInMatches" ReturnType="Collection(BaseSZLPModel.guestsInMatches_Result)" />
           <FunctionImport Name="hostsInMatches" ReturnType="Collection(BaseSZLPModel.hostsInMatches_Result)" />
           <FunctionImport Name="leagueMatches" ReturnType="Collection(BaseSZLPModel.leagueMatches_Result)" />
@@ -738,6 +747,7 @@
             <Parameter Name="teamID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="listOfTeams" ReturnType="Collection(String)" />
+          <FunctionImport Name="listOfUsers" ReturnType="Collection(BaseSZLPModel.listOfUsers_Result)" />
           <FunctionImport Name="matchesInRound" ReturnType="Collection(BaseSZLPModel.matchesInRound_Result)">
             <Parameter Name="round" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -849,12 +859,13 @@
             <PropertyRef Name="ID_match" />
           </Key>
           <Property Name="ID_match" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="time" Type="Int32" Nullable="false" />
+          <Property Name="durationOfMatch" Type="Int32" Nullable="false" />
           <Property Name="dateOfMatch" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="numberOfPlayers" Type="Int32" Nullable="false" />
           <Property Name="round" Type="Int32" />
           <Property Name="hostScore" Type="Int32" />
           <Property Name="guestScore" Type="Int32" />
+          <Property Name="timeOfMatch" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="EVENT" Relationship="BaseSZLPModel.FK_MATCH__EVENT" FromRole="MATCH" ToRole="EVENT" />
           <NavigationProperty Name="STAFF_IN_MATCHES" Relationship="BaseSZLPModel.FK_MATCH__STAFF_IN_MATCH" FromRole="MATCH" ToRole="STAFF_IN_MATCHES" />
           <NavigationProperty Name="TEAMS_IN_MATCH" Relationship="BaseSZLPModel.FK_MATCH__TEAM_COMPOSITION" FromRole="MATCH" ToRole="TEAMS_IN_MATCH" />
@@ -1003,6 +1014,7 @@
           <Property Name="firstName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="lastName" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="numberOfComments" Type="Int32" />
+          <Property Name="avatar" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="COMMENTS" Relationship="BaseSZLPModel.FK_UserProfile__COMMENTS" FromRole="UserProfile" ToRole="COMMENTS" />
           <NavigationProperty Name="NEWS" Relationship="BaseSZLPModel.FK_UserProfile__NEWS" FromRole="UserProfile" ToRole="NEWS" />
           <NavigationProperty Name="webpages_Membership" Relationship="BaseSZLPModel.FK_webpages_Membership_UserProfile" FromRole="UserProfile" ToRole="webpages_Membership" />
@@ -1238,6 +1250,12 @@
           <Property Type="Int32" Name="minute" Nullable="false" />
           <Property Type="String" Name="description" Nullable="false" />
         </ComplexType>
+        <ComplexType Name="getUserByUserName_Result">
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="firstName" Nullable="true" />
+          <Property Type="String" Name="lastName" Nullable="true" />
+          <Property Type="Int32" Name="numberOfComments" Nullable="true" />
+        </ComplexType>
         <ComplexType Name="guestsInMatches_Result">
           <Property Type="Int32" Name="round" Nullable="true" />
           <Property Type="Int32" Name="ID_match" Nullable="false" />
@@ -1364,6 +1382,13 @@
           <Property Type="String" Name="firstName" Nullable="false" />
           <Property Type="String" Name="lastName" Nullable="false" />
           <Property Type="String" Name="role" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="listOfUsers_Result">
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="true" />
+          <Property Type="String" Name="firstName" Nullable="true" />
+          <Property Type="String" Name="lastName" Nullable="true" />
+          <Property Type="Int32" Name="numberOfComments" Nullable="true" />
         </ComplexType>
         <ComplexType Name="matchesInRound_Result">
           <Property Type="Int32" Name="round" Nullable="true" />
@@ -1561,12 +1586,13 @@
             <EntityTypeMapping TypeName="BaseSZLPModel.MATCH">
               <MappingFragment StoreEntitySet="MATCH">
                 <ScalarProperty Name="ID_match" ColumnName="ID_match" />
-                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="durationOfMatch" ColumnName="durationOfMatch" />
                 <ScalarProperty Name="dateOfMatch" ColumnName="dateOfMatch" />
                 <ScalarProperty Name="numberOfPlayers" ColumnName="numberOfPlayers" />
                 <ScalarProperty Name="round" ColumnName="round" />
                 <ScalarProperty Name="hostScore" ColumnName="hostScore" />
                 <ScalarProperty Name="guestScore" ColumnName="guestScore" />
+                <ScalarProperty Name="timeOfMatch" ColumnName="timeOfMatch" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1699,6 +1725,7 @@
                 <ScalarProperty Name="firstName" ColumnName="firstName" />
                 <ScalarProperty Name="lastName" ColumnName="lastName" />
                 <ScalarProperty Name="numberOfComments" ColumnName="numberOfComments" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1761,6 +1788,16 @@
                 <ScalarProperty Name="lastName" ColumnName="lastName" />
                 <ScalarProperty Name="minute" ColumnName="minute" />
                 <ScalarProperty Name="description" ColumnName="description" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="getUserByUserName" FunctionName="BaseSZLPModel.Store.getUserByUserName">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.getUserByUserName_Result">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="numberOfComments" ColumnName="numberOfComments" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1960,6 +1997,17 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="listOfTeams" FunctionName="BaseSZLPModel.Store.listOfTeams" />
+          <FunctionImportMapping FunctionImportName="listOfUsers" FunctionName="BaseSZLPModel.Store.listOfUsers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.listOfUsers_Result">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="numberOfComments" ColumnName="numberOfComments" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="matchesInRound" FunctionName="BaseSZLPModel.Store.matchesInRound">
             <ResultMapping>
               <ComplexTypeMapping TypeName="BaseSZLPModel.matchesInRound_Result">

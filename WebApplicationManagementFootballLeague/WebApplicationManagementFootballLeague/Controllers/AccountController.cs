@@ -67,6 +67,8 @@ namespace WebApplicationManagementFootballLeague.Controllers
         {
             WebSecurity.Logout();
             FormsAuthentication.SignOut();
+            Session.Remove("Token");
+            Session.Remove("accesstoken");
 
             return RedirectToAction("Index", "Home");
         }
@@ -235,6 +237,14 @@ namespace WebApplicationManagementFootballLeague.Controllers
             {
                 return RedirectToAction("ExternalLoginFailure");
             }
+
+            //string accessCode = Request.QueryString["code"].ToString();
+
+            if (result.ExtraData.Keys.Contains("accesstoken"))
+            {
+                Session["Token"] = result.ExtraData["accesstoken"];
+            }
+
 
             if (OAuthWebSecurity.Login(result.Provider, result.ProviderUserId, createPersistentCookie: false))
             {

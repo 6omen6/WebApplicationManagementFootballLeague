@@ -21,12 +21,13 @@ namespace WebApplicationManagementFootballLeague.Models
         }
     
         public int ID_match { get; set; }
-        public int time { get; set; }
+        public int durationOfMatch { get; set; }
         public string dateOfMatch { get; set; }
         public int numberOfPlayers { get; set; }
         public Nullable<int> round { get; set; }
         public Nullable<int> hostScore { get; set; }
         public Nullable<int> guestScore { get; set; }
+        public string timeOfMatch { get; set; }
     
         public virtual EVENT EVENT { get; set; }
         public virtual ICollection<STAFF_IN_MATCHES> STAFF_IN_MATCHES { get; set; }

@@ -8,6 +8,7 @@ namespace WebApplicationManagementFootballLeague.Models.ModelsView
 {
     public class TeamModelView
     {
+        public UserProfile profile { get; set; }
         public TEAM team { get; set; }
         public NEWS news { get; set; }
         public STAFF staff { get; set; }
