@@ -1,63 +1,61 @@
-﻿<div style="background-color: rgba(255, 255, 255, 0.8); height:100%; overflow:auto;">
+﻿@model WebApplicationManagementFootballLeague.Models.ModelsView.TeamModelView
+<div style="background-color: rgba(255, 255, 255, 0.8); height: 100%; overflow: auto;">
     <div class="panel panel-primary">
         <div class="panel-heading panell">Kontakt</div>
         <div class="panel-body">
-            <div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="well well-sm">
-                <form>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="name">
-                                Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">
-                                Email Address</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
-                                </span>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">
-                                Subject</label>
-                            <select id="subject" name="subject" class="form-control" required="required">
-                                <option value="na" selected="">Choose One:</option>
-                                <option value="service">General Customer Service</option>
-                                <option value="suggestions">Suggestions</option>
-                                <option value="product">Product Support</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                </form>
+            <div class="strony-szablony-pl-layout-cell strony-szablony-pl-content clearfix">
+                <fieldset>  
+    <legend>Send Email  
+    </legend>  
+    @using (@Html.BeginForm("ShowTeamContact", "Team", FormMethod.Post, new { @id = "form1", @enctype = "multipart/form-data" }))  
+    {  
+        @Html.ValidationSummary()  
+        <table style="background-color:aliceblue;">  
+            <tr>  
+                <td> To:  
+                </td>  
+                <td>  
+                    @Html.TextBoxFor(m => m.objModelMail.To)  
+                </td>  
+            </tr>  
+            <tr>  
+                <td>Subject:  
+                </td>  
+                <td>  
+                    @Html.TextBoxFor(m => m.objModelMail.Subject)  
+                </td>  
+            </tr>  
+            <tr>  
+                <td>Attachment  
+                </td>  
+                <td>  
+                    <input type="file" name="fileUploader" />  
+                </td>  
+            </tr>  
+            <tr>  
+                <td>Mail Body:  
+                </td>  
+                <td>  
+                    @Html.TextAreaFor(m => m.objModelMail.Body)  
+                </td>  
+            </tr>  
+            <tr>  
+                <td></td>  
+                <td>  
+                    <input type="submit" value="Send" style="width: 100px;" /></td>  
+            </tr>  
+        </table>      
+    }  
+</fieldset>
             </div>
         </div>
-        <div class="col-md-4">
-            <form>
-            <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
-            <address>
-                <strong>Twitter, Inc.</strong><br>
-                795 Folsom Ave, Suite 600<br>
-                San Francisco, CA 94107<br>
-                <abbr title="Phone">
-                    P:</abbr>
-                (123) 456-7890
-            </address>
-            <address>
-                <strong>Full Name</strong><br>
-                <a href="mailto:#">first.last@example.com</a>
-            </address>
-            </form>
-        </div>
     </div>
 </div>
 
-        </div>
-    </div>
-</div>
-
+<script>
+    $(document).ready(function () {
+        if ('@ViewBag.Message' == 'Sent') {
+            alert('Mail has been sent successfully');
+        }
+    });
+</script> 

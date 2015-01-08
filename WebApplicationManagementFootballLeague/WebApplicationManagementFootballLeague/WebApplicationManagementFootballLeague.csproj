@@ -325,6 +325,7 @@
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ModelsView\TeamModelView.cs" />
+    <Compile Include="Models\MyMailModel.cs" />
     <Compile Include="Models\NEWS.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
@@ -429,9 +430,6 @@
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\webpages_Roles.cs">
-      <DependentUpon>BaseSZLPModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\webpages_UsersInRoles.cs">
       <DependentUpon>BaseSZLPModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

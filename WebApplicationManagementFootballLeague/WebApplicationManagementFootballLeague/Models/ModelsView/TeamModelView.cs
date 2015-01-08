@@ -22,6 +22,7 @@ namespace WebApplicationManagementFootballLeague.Models.ModelsView
         public List<STAFF> listOfCoaches { get; set; }
         public List<PLAYER> listOfPlayers { get; set; }
         public List<ScheduleofMatches> listOfScheduleofMatches { get; set; }
+        public MyMailModel objModelMail { get; set; }
 
 
 

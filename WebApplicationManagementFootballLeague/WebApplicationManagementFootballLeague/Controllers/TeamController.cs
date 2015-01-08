@@ -5,7 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using WebApplicationManagementFootballLeague.Models;
@@ -149,6 +152,63 @@ namespace WebApplicationManagementFootballLeague.Controllers
             teamModelView.ID_team = System.Convert.ToInt16(Session["ID_team"]);
             return PartialView("~/Views/Partial/Table/_TablePartial.cshtml", teamModelView);
         }
+
+        public ActionResult ShowTeamContact()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ShowTeamContact(MyMailModel objModelMail, HttpPostedFileBase fileUploader)
+        {
+            if (ModelState.IsValid)
+            {
+                string from = "konrad.omen2@gmail.com"; //any valid GMail ID  
+                using (MailMessage mail = new MailMessage(from, objModelMail.To))
+                {
+                    mail.Subject = objModelMail.Subject;
+                    mail.Body = objModelMail.Body;
+                    if (fileUploader != null)
+                    {
+                        string fileName = Path.GetFileName(fileUploader.FileName);
+                        mail.Attachments.Add(new Attachment(fileUploader.InputStream, fileName));
+                    }
+                    mail.IsBodyHtml = false;
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.EnableSsl = true;
+                    NetworkCredential networkCredential = new NetworkCredential(from, "BEsport500");
+                    smtp.UseDefaultCredentials = true;
+                    smtp.Credentials = networkCredential;
+                    smtp.Port = 587;
+                    smtp.Host = "localhost";
+                    smtp.Send(mail);
+                    ViewBag.Message = "Sent";
+                    teamModelView.objModelMail = objModelMail;
+                    return PartialView("~/Views/Partial/Team/_TeamContactPartial.cshtml", teamModelView);
+                }
+            }
+            else
+            {
+                return PartialView("~/Views/Partial/Team/_TeamContactPartial.cshtml", teamModelView);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //
         // GET: /Team/Create
 

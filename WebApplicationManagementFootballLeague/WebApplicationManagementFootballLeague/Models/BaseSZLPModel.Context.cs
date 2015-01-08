@@ -13,7 +13,6 @@ using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
 namespace WebApplicationManagementFootballLeague.Models
 {
-    
     public partial class BaseSZLPEntities : DbContext
     {
         public BaseSZLPEntities()
@@ -42,7 +41,6 @@ namespace WebApplicationManagementFootballLeague.Models
         public DbSet<webpages_Membership> webpages_Membership { get; set; }
         public DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
         public DbSet<webpages_Roles> webpages_Roles { get; set; }
-        public DbSet<webpages_UsersInRoles> webpages_UsersInRoles { get; set; }
     
         public virtual ObjectResult<commentsForTheNews_Result> commentsForTheNews(Nullable<int> newsID)
         {

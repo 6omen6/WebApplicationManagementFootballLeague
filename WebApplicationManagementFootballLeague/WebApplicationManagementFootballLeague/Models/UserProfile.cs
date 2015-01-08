@@ -14,11 +14,18 @@ namespace WebApplicationManagementFootballLeague.Models
     
     public partial class UserProfile
     {
+        public UserProfile()
+        {
+            this.webpages_Roles = new HashSet<webpages_Roles>();
+        }
+    
         public int UserId { get; set; }
         public string UserName { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public Nullable<int> numberOfComments { get; set; }
         public string avatar { get; set; }
+    
+        public virtual ICollection<webpages_Roles> webpages_Roles { get; set; }
     }
 }

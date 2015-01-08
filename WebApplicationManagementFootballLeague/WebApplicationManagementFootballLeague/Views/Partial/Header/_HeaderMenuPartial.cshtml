@@ -6,7 +6,7 @@
                 <li><a href="#menu-toggle" class="header-menu-button glyph" id="header-menu-button"><span class="glyphicon glyphicon-th-list"></span></a></li>
                 <li>
                     @using (Ajax.BeginForm("Index", "Home",
-                        new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body-container", Url = Url.Action("Index", "Home"), OnSuccess ="onSuccess", },
+                        new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body-container", Url = Url.Action("Index", "Home"), OnSuccess = "onSuccess", },
                         new { id = 3, role = "form", @class = "form" }))
                     {
                         @Html.ValidationSummary(true)
@@ -15,7 +15,7 @@
                     }
                 </li>
             </ul>
-            
+
             <ul class="nav navbar-nav navbar-right navbar-top-right" style="padding-top: 5px; width: 250px;">
                 @if (WebSecurity.IsAuthenticated)
                 {
