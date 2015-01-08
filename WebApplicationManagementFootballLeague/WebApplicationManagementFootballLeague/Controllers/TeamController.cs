@@ -126,6 +126,8 @@ namespace WebApplicationManagementFootballLeague.Controllers
         }
         public PartialViewResult ShowTeamMatches(string ID)
         {
+            teamModelView.listOfScheduleofMatches = teamRepository.schleduleOfMatches();
+            teamModelView.ID_team = System.Convert.ToInt16(Session["ID_team"]);
             return PartialView("~/Views/Partial/Team/_TeamMatchesPartial.cshtml", teamModelView);
         }
         public PartialViewResult ShowTeamTimeTable(string ID)
@@ -138,7 +140,14 @@ namespace WebApplicationManagementFootballLeague.Controllers
         public PartialViewResult ShowTableMini()
         {
             teamModelView.listOfTeams = db.TEAMs.ToList();
+            teamModelView.ID_team = System.Convert.ToInt16(Session["ID_team"]);
             return PartialView("~/Views/Partial/Table/_TableMiniPartial.cshtml", teamModelView);
+        }
+        public PartialViewResult ShowTeamTable()
+        {
+            teamModelView.listOfTeams = db.TEAMs.ToList();
+            teamModelView.ID_team = System.Convert.ToInt16(Session["ID_team"]);
+            return PartialView("~/Views/Partial/Table/_TablePartial.cshtml", teamModelView);
         }
         //
         // GET: /Team/Create

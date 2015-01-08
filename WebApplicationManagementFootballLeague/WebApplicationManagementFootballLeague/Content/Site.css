@@ -423,7 +423,7 @@ overflow: hidden;
     width: 287px;
     min-height: 702px;
     min-width: 250px;
-    opacity: 0.98;
+    display: block;
 }
 
 .top-in-left-content {

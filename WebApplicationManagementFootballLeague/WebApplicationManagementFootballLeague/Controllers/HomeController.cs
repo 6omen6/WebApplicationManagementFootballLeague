@@ -36,6 +36,10 @@ namespace WebApplicationManagementFootballLeague.Controllers
         {
             return RedirectToAction("ShowTeamTimeTable", "Team");
         }
+        public ActionResult ShowTeamtable()
+        {
+            return RedirectToAction("ShowTeamTable", "Team");
+        }
 
         public ActionResult ShowTeamInfo()
         {

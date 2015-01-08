@@ -2,8 +2,8 @@
 <div class="panel panel-primary">
     <div class="panel-heading">Tabela Ligowa</div>
     <div class="panel-body">
-        <table class="table  table-striped">
-@*            <tr class="wtabeli1">
+        <table class="table  table-hover">
+            @*            <tr class="wtabeli1">
                 <td class="Lp" style="width: 10%">1</td>
                 <td style="width: 30%">Olimpia Wola Zalężna</td>
                 <td style="width: 10%">10</td>
@@ -21,16 +21,28 @@
                 <td style="width: 10%">10</td>
                 <td style="width: 10%">28</td>
             </tr>*@
-            @foreach( var team in Model.listOfTeams)
+            @foreach (var team in Model.listOfTeams)
             {
-                <tr>
-                    <td class="Lp" style="width: 5%">@team.ID_team</td>
-                    <td style="width: 70%">@team.name</td>
-                    <td style="width: 10%">@team.numberOfMatches</td>
-                    <td style="width: 10%">@team.points</td>
-                </tr>
+                if (team.ID_team == @Model.ID_team)
+                {
+                    <tr style="background-color: rgb(66, 139, 202); color: white">
+                        <td class="Lp" style="width: 5%">@team.ID_team</td>
+                        <td style="width: 70%">@team.name</td>
+                        <td style="width: 10%">@team.numberOfMatches</td>
+                        <td style="width: 10%">@team.points</td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td class="Lp" style="width: 5%">@team.ID_team</td>
+                        <td style="width: 70%">@team.name</td>
+                        <td style="width: 10%">@team.numberOfMatches</td>
+                        <td style="width: 10%">@team.points</td>
+                    </tr>
+                }
             }
-@*            <tr>
+            @*            <tr>
                 <td class="Lp" style="width: 10%">11</td>
                 <td style="width: 30%">LKS Czarnocin</td>
                 <td style="width: 10%">10</td>
@@ -43,6 +55,87 @@
                 <td style="width: 10%">28</td>
             </tr>*@
         </table>
-        <a style="float: right;">Pokaż całą tabelę</a>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+            Pokaż pełną tabele
+        </button>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table  table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="Lp" style="width: 5%">ID</th>
+                                    <th style="width: 30%">Nazwa</th>
+                                    <th style="width: 10%">M.</th>
+                                    <th style="width: 10%">Pkt.</th>
+                                    <th style="width: 10%">W.</th>
+                                    <th style="width: 10%">R.</th>
+                                    <th style="width: 10%">P.</th>
+                                    <th style="width: 10%">Br+</th>
+                                    <th style="width: 10%">Br-</th>
+                                </tr>
+                            </thead>
+                            @*            <tr class="wtabeli1">
+                <td class="Lp" style="width: 10%">1</td>
+                <td style="width: 30%">Olimpia Wola Zalężna</td>
+                <td style="width: 10%">10</td>
+                <td style="width: 10%">30</td>
+            </tr>
+            <tr>
+                <td class="Lp" style="width: 10%">2</td>
+                <td style="width: 30%">LKS Radzice</td>
+                <td style="width: 10%">10</td>
+                <td style="width: 10%">28</td>
+            </tr>
+            <tr>
+                <td class="Lp" style="width: 10%">3</td>
+                <td style="width: 30%">LKS Czarnocin</td>
+                <td style="width: 10%">10</td>
+                <td style="width: 10%">28</td>
+            </tr>*@
+                            @foreach (var team in Model.listOfTeams)
+                            {
+                                <tr>
+                                    <td class="Lp" style="width: 5%">@team.ID_team</td>
+                                    <td style="width: 30%">@team.name</td>
+                                    <td style="width: 10%">@team.numberOfMatches</td>
+                                    <td style="width: 10%">@team.points</td>
+                                    <td style="width: 10%">@team.numberOfWins</td>
+                                    <td style="width: 10%">@team.numberOfDraws</td>
+                                    <td style="width: 10%">@team.numberOfLosses</td>
+                                    <td style="width: 10%">@team.numberOfGoalsScored</td>
+                                    <td style="width: 10%">@team.numberOfGoalsLost</td>
+                                </tr>
+                            }
+                            @*            <tr>
+                <td class="Lp" style="width: 10%">11</td>
+                <td style="width: 30%">LKS Czarnocin</td>
+                <td style="width: 10%">10</td>
+                <td style="width: 10%">28</td>
+            </tr>
+            <tr>
+                <td class="Lp" style="width: 10%">12</td>
+                <td style="width: 30%">LKS Czarnocin</td>
+                <td style="width: 10%">10</td>
+                <td style="width: 10%">28</td>
+            </tr>*@
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').focus()
+    })
+</script>

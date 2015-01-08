@@ -1,16 +1,64 @@
 ﻿@model WebApplicationManagementFootballLeague.Models.ModelsView.TeamModelView
-<div class="panel panel-primary" style="display:block;">
-    <div class="panel-heading">TeamMatches</div>
+<div class="panel panel-primary" style="display: block;">
+    <div class="panel-heading">Ostatnia Kolejka 13</div>
     <div class="panel-body">
-        <table class="table table-striped">
-            <tr>
-                <td>1.</td>
-                <td> Olimpia </td>
-                <td> 20 </td>
-                <td> - </td>
-                <td> 10 </td>
-                <td> Radzice </td>
-            </tr>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Gospodarze</th>
+                    <th>Wynik</th>
+                    <th>Goście</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int x = 0;
+                  int? tmp = 0;}
+                @foreach (var match in Model.listOfScheduleofMatches)
+                {
+                    x = x + 1;
+                    if (@match.round == 13)
+                    {             
+                    <tr style="">
+                        @if (match.ID_host == @Model.ID_team)
+                        {
+                            <td style="background-color: rgb(66, 139, 202); color: white">@match.nameHost</td>
+                        }
+                        else if (match.ID_host != @Model.ID_team)
+                        {
+                            <td @*style="background-color:red; color:white"*@>@match.nameHost</td>
+                        }
+
+                        @if (match.hostScore > match.guestScore)
+                        {
+                            <td style="background: rgba(147,251,159,1); background: -moz-linear-gradient(left, rgba(147,251,159,1) 0%, rgba(147,251,159,1) 15%, rgba(255,255,255,1) 52%, rgba(255,154,143,1) 87%, rgba(255,154,143,1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(147,251,159,1)), color-stop(15%, rgba(147,251,159,1)), color-stop(52%, rgba(255,255,255,1)), color-stop(87%, rgba(255,154,143,1)), color-stop(100%, rgba(255,154,143,1))); background: -webkit-linear-gradient(left, rgba(147,251,159,1) 0%, rgba(147,251,159,1) 15%, rgba(255,255,255,1) 52%, rgba(255,154,143,1) 87%, rgba(255,154,143,1) 100%); background: -o-linear-gradient(left, rgba(147,251,159,1) 0%, rgba(147,251,159,1) 15%, rgba(255,255,255,1) 52%, rgba(255,154,143,1) 87%, rgba(255,154,143,1) 100%); background: -ms-linear-gradient(left, rgba(147,251,159,1) 0%, rgba(147,251,159,1) 15%, rgba(255,255,255,1) 52%, rgba(255,154,143,1) 87%, rgba(255,154,143,1) 100%); background: linear-gradient(to right, rgba(147,251,159,1) 0%, rgba(147,251,159,1) 15%, rgba(255,255,255,1) 52%, rgba(255,154,143,1) 87%, rgba(255,154,143,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93fb9f', endColorstr='#ff9a8f', GradientType=1 );"><b>@match.hostScore : @match.guestScore </b></td>
+                        }
+                        else if (match.hostScore < match.guestScore)
+                        {
+                            <td style="background: rgba(255,154,143,1); background: -moz-linear-gradient(left, rgba(255,154,143,1) 0%, rgba(255,154,143,1) 13%, rgba(255,255,255,1) 48%, rgba(147,251,159,1) 85%, rgba(147,251,159,1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,154,143,1)), color-stop(13%, rgba(255,154,143,1)), color-stop(48%, rgba(255,255,255,1)), color-stop(85%, rgba(147,251,159,1)), color-stop(100%, rgba(147,251,159,1))); background: -webkit-linear-gradient(left, rgba(255,154,143,1) 0%, rgba(255,154,143,1) 13%, rgba(255,255,255,1) 48%, rgba(147,251,159,1) 85%, rgba(147,251,159,1) 100%); background: -o-linear-gradient(left, rgba(255,154,143,1) 0%, rgba(255,154,143,1) 13%, rgba(255,255,255,1) 48%, rgba(147,251,159,1) 85%, rgba(147,251,159,1) 100%); background: -ms-linear-gradient(left, rgba(255,154,143,1) 0%, rgba(255,154,143,1) 13%, rgba(255,255,255,1) 48%, rgba(147,251,159,1) 85%, rgba(147,251,159,1) 100%); background: linear-gradient(to right, rgba(255,154,143,1) 0%, rgba(255,154,143,1) 13%, rgba(255,255,255,1) 48%, rgba(147,251,159,1) 85%, rgba(147,251,159,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9a8f', endColorstr='#93fb9f', GradientType=1 );"><b>@match.hostScore : @match.guestScore </b></td>
+                        }
+                        else if (match.hostScore == match.guestScore)
+                        {
+                            <td style="background: rgba(255,250,145,1); background: -moz-linear-gradient(left, rgba(255,250,145,1) 0%, rgba(255,250,145,1) 20%, rgba(255,255,255,1) 50%, rgba(255,250,145,1) 80%, rgba(255,250,145,1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,250,145,1)), color-stop(20%, rgba(255,250,145,1)), color-stop(50%, rgba(255,255,255,1)), color-stop(80%, rgba(255,250,145,1)), color-stop(100%, rgba(255,250,145,1))); background: -webkit-linear-gradient(left, rgba(255,250,145,1) 0%, rgba(255,250,145,1) 20%, rgba(255,255,255,1) 50%, rgba(255,250,145,1) 80%, rgba(255,250,145,1) 100%); background: -o-linear-gradient(left, rgba(255,250,145,1) 0%, rgba(255,250,145,1) 20%, rgba(255,255,255,1) 50%, rgba(255,250,145,1) 80%, rgba(255,250,145,1) 100%); background: -ms-linear-gradient(left, rgba(255,250,145,1) 0%, rgba(255,250,145,1) 20%, rgba(255,255,255,1) 50%, rgba(255,250,145,1) 80%, rgba(255,250,145,1) 100%); background: linear-gradient(to right, rgba(255,250,145,1) 0%, rgba(255,250,145,1) 20%, rgba(255,255,255,1) 50%, rgba(255,250,145,1) 80%, rgba(255,250,145,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffa91', endColorstr='#fffa91', GradientType=1 );"><b>@match.hostScore : @match.guestScore </b></td>
+                        }
+                        else if (match.hostScore == null || match.guestScore == null)
+                        {
+                            <td><b>:   </b></td>
+                        }
+
+                        @if (match.ID_guest == @Model.ID_team)
+                        {
+                            <td style="background-color: rgb(66, 139, 202); color: white">@match.nameGuest</td>
+                        }
+                        else if (match.ID_guest != @Model.ID_team)
+                        {
+                            <td @*style="background-color:red; color:white"*@>@match.nameGuest</td>
+                        }
+                        
+                    </tr>
+                        tmp = @match.round;
+                    }
+                }
+            </tbody>
         </table>
     </div>
 </div>

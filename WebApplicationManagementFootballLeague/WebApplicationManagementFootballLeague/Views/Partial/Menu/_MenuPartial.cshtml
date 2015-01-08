@@ -15,6 +15,10 @@
         new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" },
         new { @class = "btn-default" })
         </li>
+        <li id="TeamTable" onclick="activeTeamTimetable()" role="presentation">@Ajax.ActionLink("Tabela", "ShowTeamtable", "Home",
+        new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" },
+        new { @class = "btn-default" })
+        </li>
 
         <li id="TeamAbout" onclick="activeTeamAbout()" role="presentation">@Ajax.ActionLink("O Nas", "ShowTeamAbout", "Home",
         new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" },
