@@ -88,7 +88,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(LoginModel model)
         {
             if (ModelState.IsValid)
             {

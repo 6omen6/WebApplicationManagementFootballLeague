@@ -83,6 +83,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
             teamModelView.listOfManagers = teamRepository.StaffInTeamByRole(id, "Manager");
             teamModelView.listOfCoaches = teamRepository.StaffInTeamByRole(id, "Trener");
             teamModelView.team = db.TEAMs.Find(id);
+            teamModelView.ID_team = id;
             return PartialView("~/Views/Partial/Team/_TeamInfoPartial.cshtml", teamModelView);
         }
 
@@ -126,6 +127,12 @@ namespace WebApplicationManagementFootballLeague.Controllers
         public PartialViewResult ShowTeamMatches(string ID)
         {
             return PartialView("~/Views/Partial/Team/_TeamMatchesPartial.cshtml", teamModelView);
+        }
+        public PartialViewResult ShowTeamTimeTable(string ID)
+        {
+            teamModelView.listOfScheduleofMatches = teamRepository.schleduleOfMatches();
+            teamModelView.ID_team = System.Convert.ToInt16(Session["ID_team"]);
+            return PartialView("~/Views/Partial/Team/_TeamTimeTablePartial.cshtml", teamModelView);
         }
 
         public PartialViewResult ShowTableMini()
@@ -180,7 +187,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(team).State = EntityState.Modified;
+                db.Entry(team).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

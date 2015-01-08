@@ -11,13 +11,16 @@ namespace WebApplicationManagementFootballLeague.Models
 {
     using System;
     
-    public partial class listOfUsers_Result
+    public partial class listOfMatchesOfGuests_Result
     {
-        public int UserId { get; set; }
-        public string UserName { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public Nullable<int> numberOfComments { get; set; }
-        public string avatar { get; set; }
+        public int ID_match { get; set; }
+        public string timeOfMatch { get; set; }
+        public string dateOfMatch { get; set; }
+        public Nullable<int> round { get; set; }
+        public int durationOfMatch { get; set; }
+        public int numberOfPlayers { get; set; }
+        public string name { get; set; }
+        public Nullable<int> guestScore { get; set; }
+        public int ID_team { get; set; }
     }
 }

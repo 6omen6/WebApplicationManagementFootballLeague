@@ -10,14 +10,11 @@
 namespace WebApplicationManagementFootballLeague.Models
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class listOfUsers_Result
+    public partial class webpages_UsersInRoles
     {
         public int UserId { get; set; }
-        public string UserName { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public Nullable<int> numberOfComments { get; set; }
-        public string avatar { get; set; }
+        public int RoleId { get; set; }
     }
 }

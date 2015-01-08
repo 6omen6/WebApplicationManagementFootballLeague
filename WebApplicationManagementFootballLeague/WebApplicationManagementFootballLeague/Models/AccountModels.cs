@@ -77,6 +77,15 @@ namespace WebApplicationManagementFootballLeague.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public string avatar { get; set; }
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm password")]
+        //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; }
     }
 
     public class RegisterModel
@@ -92,6 +101,7 @@ namespace WebApplicationManagementFootballLeague.Models
         public string Password { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
+        public string avatar { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]

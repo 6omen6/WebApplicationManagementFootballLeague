@@ -7,14 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 namespace WebApplicationManagementFootballLeague.Models
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Infrastructure;
-    using System.Data.Objects;
-    using System.Data.Objects.DataClasses;
-    using System.Linq;
     
     public partial class BaseSZLPEntities : DbContext
     {
@@ -44,6 +42,7 @@ namespace WebApplicationManagementFootballLeague.Models
         public DbSet<webpages_Membership> webpages_Membership { get; set; }
         public DbSet<webpages_OAuthMembership> webpages_OAuthMembership { get; set; }
         public DbSet<webpages_Roles> webpages_Roles { get; set; }
+        public DbSet<webpages_UsersInRoles> webpages_UsersInRoles { get; set; }
     
         public virtual ObjectResult<commentsForTheNews_Result> commentsForTheNews(Nullable<int> newsID)
         {
@@ -61,6 +60,15 @@ namespace WebApplicationManagementFootballLeague.Models
                 new ObjectParameter("matchID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<eventsInMatches_Result>("eventsInMatches", matchIDParameter);
+        }
+    
+        public virtual ObjectResult<getOponentOfHostByMatchID_Result> getOponentOfHostByMatchID(Nullable<int> matchID)
+        {
+            var matchIDParameter = matchID.HasValue ?
+                new ObjectParameter("matchID", matchID) :
+                new ObjectParameter("matchID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getOponentOfHostByMatchID_Result>("getOponentOfHostByMatchID", matchIDParameter);
         }
     
         public virtual ObjectResult<getUserByUserName_Result> getUserByUserName(string name)
@@ -90,6 +98,21 @@ namespace WebApplicationManagementFootballLeague.Models
         public virtual ObjectResult<leagueStatistics_Result> leagueStatistics()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<leagueStatistics_Result>("leagueStatistics");
+        }
+    
+        public virtual ObjectResult<listOfMatchesOfGuests_Result> listOfMatchesOfGuests()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listOfMatchesOfGuests_Result>("listOfMatchesOfGuests");
+        }
+    
+        public virtual ObjectResult<listOfMatchesOfHosts_Result> listOfMatchesOfHosts()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listOfMatchesOfHosts_Result>("listOfMatchesOfHosts");
+        }
+    
+        public virtual ObjectResult<listOfMatchesWithTeamNamesAndScores_Result> listOfMatchesWithTeamNamesAndScores()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<listOfMatchesWithTeamNamesAndScores_Result>("listOfMatchesWithTeamNamesAndScores");
         }
     
         public virtual ObjectResult<listOfPlayersInTeam_Result> listOfPlayersInTeam(Nullable<int> teamID)

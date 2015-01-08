@@ -15,6 +15,7 @@ namespace WebApplicationManagementFootballLeague.Models
     {
         public string title { get; set; }
         public string date { get; set; }
+        public int numberOfComments { get; set; }
         public string text { get; set; }
         public string UserName { get; set; }
     }

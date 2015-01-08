@@ -22,6 +22,5 @@ namespace WebApplicationManagementFootballLeague.Models
         public Nullable<int> ID_news { get; set; }
     
         public virtual NEWS NEWS { get; set; }
-        public virtual UserProfile UserProfile { get; set; }
     }
 }

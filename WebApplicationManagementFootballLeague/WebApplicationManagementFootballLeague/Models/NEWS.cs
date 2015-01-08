@@ -27,9 +27,9 @@ namespace WebApplicationManagementFootballLeague.Models
         public string title { get; set; }
         public Nullable<bool> isLeagueNews { get; set; }
         public int numberOfComments { get; set; }
+        public string userName { get; set; }
     
         public virtual ICollection<COMMENT> COMMENTS { get; set; }
         public virtual TEAM TEAM { get; set; }
-        public virtual UserProfile UserProfile { get; set; }
     }
 }

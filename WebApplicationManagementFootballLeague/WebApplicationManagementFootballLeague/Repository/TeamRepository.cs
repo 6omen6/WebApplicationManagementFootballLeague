@@ -91,15 +91,35 @@ namespace WebApplicationManagementFootballLeague.Repository
                 tmp.title = element.title;
                 tmp.text = element.text;
                 tmp.date = element.date;
+                tmp.userName = element.UserName;
+                tmp.numberOfComments = element.numberOfComments;
                 listOfNews.Add(tmp);
             }
             return listOfNews;
         }
-        public List<MATCH> ListOfMatches()
+        public List<ScheduleofMatches> schleduleOfMatches()
         {
+            var host = db.listOfMatchesOfHosts().ToList();
+            var listOfHost = new List<Host>();
+            foreach (var element in host)
+            {
+                var tmp = new Host();
+                tmp.ID_host = element.ID_team;
+                tmp.nameHost= element.name;
+                listOfHost.Add(tmp);
+            }
+            var quest = db.listOfMatchesOfGuests().ToList();
+            var listOfGuest = new List<Guest>();
+            foreach (var element in quest)
+            {
+                var tmp = new Guest();
+                tmp.ID_guest = element.ID_team;
+                tmp.nameGuest = element.name;
+                listOfGuest.Add(tmp);
+            }
             List<MATCH> listOfMatches = new List<MATCH>();
-            var result = db.leagueMatches().ToList();
-            foreach (var element in result)
+            var resultt = db.leagueMatches().ToList();
+            foreach (var element in resultt)
             {
                 var tmp = new MATCH();
                 tmp.dateOfMatch = element.dateOfMatch;
@@ -108,7 +128,22 @@ namespace WebApplicationManagementFootballLeague.Repository
                 tmp.hostScore = element.hostScore;
                 listOfMatches.Add(tmp);
             }
-            return listOfMatches;
+            List<ScheduleofMatches> listScheduleofMatches = new List<ScheduleofMatches>();
+            for (int i = 0; i < 66; i++)
+            {
+                var tmpa = new ScheduleofMatches();
+                tmpa.nameHost = listOfHost[i].nameHost;
+                tmpa.ID_host = listOfHost[i].ID_host;
+                tmpa.nameGuest = listOfGuest[i].nameGuest;
+                tmpa.ID_guest= listOfGuest[i].ID_guest;
+                tmpa.round = listOfMatches[i*2].round;
+                tmpa.dateOfMatch = listOfMatches[i * 2].dateOfMatch;
+                tmpa.hostScore = listOfMatches[i * 2].hostScore;
+                tmpa.guestScore = listOfMatches[i * 2].guestScore;
+                listScheduleofMatches.Add(tmpa);
+            }
+
+            return listScheduleofMatches;
         }
     }
 }

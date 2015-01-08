@@ -34,7 +34,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
 
         public ActionResult ShowTeamTimetable()
         {
-            return PartialView("~/Views/Partial/Team/_TeamTimetablePartial.cshtml");
+            return RedirectToAction("ShowTeamTimeTable", "Team");
         }
 
         public ActionResult ShowTeamInfo()

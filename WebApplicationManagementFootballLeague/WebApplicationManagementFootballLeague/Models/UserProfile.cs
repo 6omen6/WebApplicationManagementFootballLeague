@@ -14,23 +14,11 @@ namespace WebApplicationManagementFootballLeague.Models
     
     public partial class UserProfile
     {
-        public UserProfile()
-        {
-            this.COMMENTS = new HashSet<COMMENT>();
-            this.NEWS = new HashSet<NEWS>();
-            this.webpages_Roles = new HashSet<webpages_Roles>();
-        }
-    
         public int UserId { get; set; }
         public string UserName { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public Nullable<int> numberOfComments { get; set; }
         public string avatar { get; set; }
-    
-        public virtual ICollection<COMMENT> COMMENTS { get; set; }
-        public virtual ICollection<NEWS> NEWS { get; set; }
-        public virtual webpages_Membership webpages_Membership { get; set; }
-        public virtual ICollection<webpages_Roles> webpages_Roles { get; set; }
     }
 }
