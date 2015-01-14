@@ -1,53 +1,50 @@
 ﻿@model WebApplicationManagementFootballLeague.Models.ModelsView.TeamModelView
 <div style="background-color: rgba(255, 255, 255, 0.8); height: 100%; overflow: auto;">
     <div class="panel panel-primary">
-        <div class="panel-heading panell">Kontakt</div>
+        @*<div class="panel-heading panell">Kontakt</div>*@
         <div class="panel-body">
-            <div class="strony-szablony-pl-layout-cell strony-szablony-pl-content clearfix">
-                <fieldset>  
-    <legend>Send Email  
-    </legend>  
-    @using (@Html.BeginForm("ShowTeamContact", "Team", FormMethod.Post, new { @id = "form1", @enctype = "multipart/form-data" }))  
-    {  
-        @Html.ValidationSummary()  
-        <table style="background-color:aliceblue;">  
-            <tr>  
-                <td> To:  
-                </td>  
-                <td>  
-                    @Html.TextBoxFor(m => m.objModelMail.To)  
-                </td>  
-            </tr>  
-            <tr>  
-                <td>Subject:  
-                </td>  
-                <td>  
-                    @Html.TextBoxFor(m => m.objModelMail.Subject)  
-                </td>  
-            </tr>  
-            <tr>  
-                <td>Attachment  
-                </td>  
-                <td>  
-                    <input type="file" name="fileUploader" />  
-                </td>  
-            </tr>  
-            <tr>  
-                <td>Mail Body:  
-                </td>  
-                <td>  
-                    @Html.TextAreaFor(m => m.objModelMail.Body)  
-                </td>  
-            </tr>  
-            <tr>  
-                <td></td>  
-                <td>  
-                    <input type="submit" value="Send" style="width: 100px;" /></td>  
-            </tr>  
-        </table>      
-    }  
-</fieldset>
-            </div>
+            <fieldset>
+                <legend>
+                    <h3 style="font-family: 'cursive';">Wyślij wiadomość</h3>
+                    <h5>Za pomocą forlumalrza możesz skontaktować się z wybranym klubem.</h5>
+                </legend>
+                @using (@Html.BeginForm("ShowTeamContact", "Team", FormMethod.Post, new { @id = "form1", @enctype = "multipart/form-data" }))
+                {  
+                    @Html.ValidationSummary()  
+                    <table style="width: 100%; max-width: 460px;">
+                        <tr>
+                            <td>
+                                @Html.TextBoxFor(m => m.objModelMail.To, new { @class = "form-control Lewa", @placeholder = @Model.team.name,  @readonly="true" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.TextBoxFor(m => m.objModelMail.To, new { @class = "form-control Lewa", @placeholder = "Twój Adres" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.TextBoxFor(m => m.objModelMail.Subject, new { @class = "form-control Lewa", @placeholder = "Tytuł" })
+                            </td>
+                        </tr>
+                        @*<tr>
+                                <td>
+                                    <input type="file" name="fileUploader" />
+                                </td>
+                            </tr>*@
+                        <tr>
+                            <td>
+                                @Html.TextAreaFor(m => m.objModelMail.Body, new { @class = "form-control Lewa", style = "height:200px; max-width: 460px;", @placeholder = "Twoja wiadomości ..." })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="Wyślij" style="width: 100px;" class="btn btn-primary btn-sm" />
+                            </td>
+                        </tr>
+                    </table>      
+                }
+            </fieldset>
         </div>
     </div>
 </div>
@@ -58,4 +55,4 @@
             alert('Mail has been sent successfully');
         }
     });
-</script> 
+</script>

@@ -4,14 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebMatrix.WebData;
 
 namespace WebApplicationManagementFootballLeague.Controllers
 {
     [RequireHttps]
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
+            if (!WebSecurity.Initialized)
+            {
+                WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+            }
             Session["ID_team"] = "1";
             return View();
         }
@@ -24,7 +30,11 @@ namespace WebApplicationManagementFootballLeague.Controllers
 
         public ActionResult ShowTeamNews()
         {
-            return PartialView("~/Views/Partial/Team/_TeamNewsPartial.cshtml");
+            return RedirectToAction("ShowTeamNews", "Team");
+        }
+        public ActionResult ShowTeamNewsByID()
+        {
+            return RedirectToAction("ShowTeamNewsByID", "Team");
         }
 
         public ActionResult ShowTeamStaff()
@@ -48,7 +58,7 @@ namespace WebApplicationManagementFootballLeague.Controllers
 
         public ActionResult ShowTeamContact()
         {
-            return PartialView("~/Views/Partial/Team/_TeamContactPartial.cshtml");
+            return RedirectToAction("ShowTeamContact", "Team");
         }
     }
 }

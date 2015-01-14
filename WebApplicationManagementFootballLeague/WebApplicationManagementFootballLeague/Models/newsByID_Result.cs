@@ -10,18 +10,14 @@
 namespace WebApplicationManagementFootballLeague.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class COMMENT
+    public partial class newsByID_Result
     {
-        public int ID_comment { get; set; }
-        public string userIP { get; set; }
-        public string text { get; set; }
+        public string title { get; set; }
         public string date { get; set; }
-        public Nullable<int> UserId { get; set; }
-        public Nullable<int> ID_news { get; set; }
+        public int numberOfComments { get; set; }
+        public string text { get; set; }
         public string UserName { get; set; }
-    
-        public virtual NEWS NEWS { get; set; }
+        public int ID_news { get; set; }
     }
 }

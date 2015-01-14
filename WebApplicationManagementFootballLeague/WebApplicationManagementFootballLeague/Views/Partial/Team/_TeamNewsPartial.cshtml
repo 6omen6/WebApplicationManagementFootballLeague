@@ -1,19 +1,58 @@
 ﻿@model WebApplicationManagementFootballLeague.Models.ModelsView.TeamModelView
+@{
+    var x = 0;
+}
 <div class="" style="background-color: rgba(255, 255, 255, 0.8)">
-    @foreach( var news in Model.listOfNews)
-    { 
+    @if (Model.numbersOfNews != 0)
+    {
+        foreach (var news in Model.listOfNews)
+        { 
         <div class="panel panel-primary">
             <div class="panel-heading">@news.title</div>
-            <div class="panel-body">
-                @news.text
-            </div>
+            @if (100 < news.text.Length)
+            {
+                <div class="panel-body">
+                    @Html.Raw(news.text.Remove(100))...        
+                    <button class="nobutton" data-toggle="modal" data-target="#myModal">
+                        @Ajax.ActionLink("Zobacz wiecej", "ShowTeamNewsByID", "Team", new { ID = news.ID_news }, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "myModal" }, new { @class = "btn-default" })
+                    </button>
+                </div>
+            }
+            else
+            {
+                <div class="panel-body">
+                    @news.text
+                    <button class="nobutton" data-toggle="modal" data-target="#myModal">
+                        @Ajax.ActionLink("Zobacz wiecej", "ShowTeamNewsByID", "Team", new { ID = news.ID_news }, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "myModal" }, new { @class = "btn-default" })
+                    </button>
+                </div>
+            }
+
             <div class="panel-footer">
                 <div class="row">
                     <div class="col-md-4" style="text-align: left; font-size: 11px;">Data: @news.date</div>
                     <div class="col-md-4" style="text-align: center; font-size: 11px;">Komentarze(@news.numberOfComments)</div>
-                    <div class="col-md-4" style="text-align: right; font-size: 11px;">@news.userName</div>
+                    <div class="col-md-4" style="text-align: right; font-size: 11px;">Autor: @news.userName</div>
                 </div>
             </div>
         </div>
+            x += 1;
+        }
+    }
+    else
+    {
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                Drużyna jest leniwa nie uzupełnia Aktualności.
+            </div>
+        </div>   
     }
 </div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').focus()
+    })
+</script>

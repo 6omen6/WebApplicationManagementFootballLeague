@@ -12,7 +12,7 @@ using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
 namespace WebApplicationManagementFootballLeague.Models
-{
+{    
     public partial class BaseSZLPEntities : DbContext
     {
         public BaseSZLPEntities()
@@ -86,6 +86,60 @@ namespace WebApplicationManagementFootballLeague.Models
         public virtual ObjectResult<hostsInMatches_Result> hostsInMatches()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<hostsInMatches_Result>("hostsInMatches");
+        }
+    
+        public virtual int insertCommentForNewsWithUserID(string userIP, string text, string date, Nullable<int> userId, Nullable<int> newsId, string userName)
+        {
+            var userIPParameter = userIP != null ?
+                new ObjectParameter("userIP", userIP) :
+                new ObjectParameter("userIP", typeof(string));
+    
+            var textParameter = text != null ?
+                new ObjectParameter("text", text) :
+                new ObjectParameter("text", typeof(string));
+    
+            var dateParameter = date != null ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(string));
+    
+            var userIdParameter = userId.HasValue ?
+                new ObjectParameter("UserId", userId) :
+                new ObjectParameter("UserId", typeof(int));
+    
+            var newsIdParameter = newsId.HasValue ?
+                new ObjectParameter("newsId", newsId) :
+                new ObjectParameter("newsId", typeof(int));
+    
+            var userNameParameter = userName != null ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insertCommentForNewsWithUserID", userIPParameter, textParameter, dateParameter, userIdParameter, newsIdParameter, userNameParameter);
+        }
+    
+        public virtual int insertCommentForNewsWithUserName(string userIP, string text, string date, string userName, Nullable<int> newsId)
+        {
+            var userIPParameter = userIP != null ?
+                new ObjectParameter("userIP", userIP) :
+                new ObjectParameter("userIP", typeof(string));
+    
+            var textParameter = text != null ?
+                new ObjectParameter("text", text) :
+                new ObjectParameter("text", typeof(string));
+    
+            var dateParameter = date != null ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(string));
+    
+            var userNameParameter = userName != null ?
+                new ObjectParameter("UserName", userName) :
+                new ObjectParameter("UserName", typeof(string));
+    
+            var newsIdParameter = newsId.HasValue ?
+                new ObjectParameter("newsId", newsId) :
+                new ObjectParameter("newsId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insertCommentForNewsWithUserName", userIPParameter, textParameter, dateParameter, userNameParameter, newsIdParameter);
         }
     
         public virtual ObjectResult<leagueMatches_Result> leagueMatches()
@@ -236,6 +290,15 @@ namespace WebApplicationManagementFootballLeague.Models
                 new ObjectParameter("teamID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<matchOpponent_Result>("matchOpponent", matchIDParameter, teamIDParameter);
+        }
+    
+        public virtual ObjectResult<newsByID_Result> newsByID(Nullable<int> newsID)
+        {
+            var newsIDParameter = newsID.HasValue ?
+                new ObjectParameter("newsID", newsID) :
+                new ObjectParameter("newsID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<newsByID_Result>("newsByID", newsIDParameter);
         }
     
         public virtual ObjectResult<newsForTheLeague_Result> newsForTheLeague()

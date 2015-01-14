@@ -92,40 +92,43 @@ namespace WebApplicationManagementFootballLeague.Controllers
 
         public PartialViewResult ShowTeamStaff(string ID)
         {
-            int id;
-            if (ID == null)
-            {
-                id = 1;
-                Session["ID_team"] = "1";
-            }
-            else
-            {
-                id = System.Convert.ToInt16(ID);
-                Session["ID_team"] = ID;
-            }
+            int id = Convert.ToInt16(Session["ID_team"]);
+
             teamModelView.listOfPresidents = teamRepository.StaffInTeamByRole(id, "Prezes zarządu");
             teamModelView.listOfVPresidents = teamRepository.StaffInTeamByRole(id, "Zastępca prezesa");
             teamModelView.listOfManagers = teamRepository.StaffInTeamByRole(id, "Manager");
             teamModelView.listOfCoaches = teamRepository.StaffInTeamByRole(id, "Trener");
             teamModelView.listOfPlayers = teamRepository.GetPlayersByID(id);
+            teamModelView.numberOfPlayers = teamRepository.GetPlayersByID(id).Count;
             teamModelView.team = db.TEAMs.Find(id);
             return PartialView("~/Views/Partial/Team/_TeamStaffPartial.cshtml", teamModelView);
         }
 
         public PartialViewResult ShowTeamNews(string ID)
         {
-            int id;
-            if (ID == null)
-            {
-                id = 1;
-            }
-            else
-            {
-                id = Convert.ToInt16(Session["ID_team"]);
-            }
+            int id = Convert.ToInt16(Session["ID_team"]);
+
             teamModelView.listOfNews = teamRepository.ListOfNews(id);
+            teamModelView.numbersOfNews = teamRepository.ListOfNews(id).Count;
             //teamModelView.listOfNews = db.newsForTheTeam(id).ToList();
             return PartialView("~/Views/Partial/Team/_TeamNewsPartial.cshtml", teamModelView);
+        }
+
+        public PartialViewResult ShowTeamNewsByID(int ID)
+        {
+            int id_team,id_news;
+
+            id_news = ID;
+            id_team = Convert.ToInt16(Session["ID_team"]);
+
+            teamModelView.listOfNews = teamRepository.ListOfNews(id_team);
+            teamModelView.listOfComments = teamRepository.ListOfComments(id_news);
+            teamModelView.numbersOfNews = teamRepository.ListOfNews(id_team).Count;
+            teamModelView.numberOfComments = teamRepository.ListOfComments(id_news).Count;
+            teamModelView.idNews = id_news;
+            teamModelView.news = teamRepository.NewsByID(id_news);
+            //teamModelView.listOfNews = db.newsForTheTeam(id).ToList();
+            return PartialView("~/Views/Partial/Team/_TeamNewsByIDPartial.cshtml", teamModelView);
         }
         public PartialViewResult ShowTeamMatches(string ID)
         {
@@ -153,20 +156,22 @@ namespace WebApplicationManagementFootballLeague.Controllers
             return PartialView("~/Views/Partial/Table/_TablePartial.cshtml", teamModelView);
         }
 
-        public ActionResult ShowTeamContact()
+        public PartialViewResult ShowTeamContact()
         {
-            return View();
+            teamModelView.team = db.TEAMs.Find(System.Convert.ToInt16(Session["ID_team"]));
+            return PartialView("~/Views/Partial/Team/_TeamContactPartial.cshtml", teamModelView);
         }
 
         [HttpPost]
         public ActionResult ShowTeamContact(MyMailModel objModelMail, HttpPostedFileBase fileUploader)
         {
+            teamModelView.team = db.TEAMs.Find(System.Convert.ToInt16(Session["ID_team"]));
             if (ModelState.IsValid)
             {
-                string from = "konrad.omen2@gmail.com"; //any valid GMail ID  
-                using (MailMessage mail = new MailMessage(from, objModelMail.To))
+                string from = "service.suport.szlp@gmail.com"; //any valid GMail ID  
+                using (MailMessage mail = new MailMessage(from, teamModelView.team.mail))
                 {
-                    mail.Subject = objModelMail.Subject;
+                    mail.Subject = "Wiadomość wysłana od użytkownika " + objModelMail.To + " " + objModelMail.Subject;
                     mail.Body = objModelMail.Body;
                     if (fileUploader != null)
                     {
@@ -177,15 +182,13 @@ namespace WebApplicationManagementFootballLeague.Controllers
                     SmtpClient smtp = new SmtpClient();
                     smtp.Host = "smtp.gmail.com";
                     smtp.EnableSsl = true;
-                    NetworkCredential networkCredential = new NetworkCredential(from, "BEsport500");
+                    NetworkCredential networkCredential = new NetworkCredential(from, "92122506016");
                     smtp.UseDefaultCredentials = true;
                     smtp.Credentials = networkCredential;
-                    smtp.Port = 587;
-                    smtp.Host = "localhost";
                     smtp.Send(mail);
                     ViewBag.Message = "Sent";
                     teamModelView.objModelMail = objModelMail;
-                    return PartialView("~/Views/Partial/Team/_TeamContactPartial.cshtml", teamModelView);
+                    return RedirectToAction("ShowTeamContact", "Team", teamModelView);
                 }
             }
             else
@@ -194,6 +197,40 @@ namespace WebApplicationManagementFootballLeague.Controllers
             }
         }
 
+        [HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult AddCommentsForNews(int ID, COMMENT comment)
+        {
+            int id_team = Convert.ToInt16(Session["ID_team"]);
+            if (ModelState.IsValid)
+            {
+                comment.UserName = User.Identity.Name;
+                comment.userIP = Request.UserHostAddress;
+                comment.date = System.Convert.ToString(System.DateTime.Now);
+                if (WebSecurity.GetUserId(User.Identity.Name) != null && WebSecurity.GetUserId(User.Identity.Name) != 0)
+                {
+                    db.insertCommentForNewsWithUserID(comment.userIP, comment.text, comment.date, WebSecurity.GetUserId(User.Identity.Name), ID, User.Identity.Name);
+                }
+                else
+                {
+                    db.insertCommentForNewsWithUserName(comment.userIP, comment.text, comment.date, User.Identity.Name, ID);
+                }
+                db.SaveChanges();
+                if (Request.IsAjaxRequest())
+                {
+                    teamModelView.listOfNews = teamRepository.ListOfNews(id_team);
+                    teamModelView.listOfComments = teamRepository.ListOfComments(ID);
+                    teamModelView.numbersOfNews = teamRepository.ListOfNews(id_team).Count;
+                    teamModelView.numberOfComments = teamRepository.ListOfComments(ID).Count;
+                    teamModelView.idNews = ID;
+                    teamModelView.news = teamRepository.NewsByID(ID);
+                    //teamModelView.listOfNews = db.newsForTheTeam(id).ToList();
+                    return PartialView("~/Views/Partial/Team/_TeamNewsByIDPartial.cshtml", teamModelView);
+                }
+            }
+
+            return RedirectToAction("ShowTeamNewsByID","Team", ID);
+        }
 
 
 

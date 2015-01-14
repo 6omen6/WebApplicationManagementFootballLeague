@@ -90,6 +90,7 @@
           <Property Name="date" Type="varchar" Nullable="false" MaxLength="20" />
           <Property Name="UserId" Type="int" />
           <Property Name="ID_news" Type="int" />
+          <Property Name="UserName" Type="varchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="EVENT">
           <Key>
@@ -470,6 +471,21 @@
         </Function>
         <Function Name="guestsInMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="hostsInMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="insertCommentForNewsWithUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userIP" Type="varchar" Mode="In" />
+          <Parameter Name="text" Type="varchar(max)" Mode="In" />
+          <Parameter Name="date" Type="varchar" Mode="In" />
+          <Parameter Name="UserId" Type="int" Mode="In" />
+          <Parameter Name="newsId" Type="int" Mode="In" />
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="insertCommentForNewsWithUserName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userIP" Type="varchar" Mode="In" />
+          <Parameter Name="text" Type="varchar(max)" Mode="In" />
+          <Parameter Name="date" Type="varchar" Mode="In" />
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="newsId" Type="int" Mode="In" />
+        </Function>
         <Function Name="leagueMatches" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="leagueStatistics" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="listOfMatchesOfGuests" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -510,6 +526,9 @@
         <Function Name="matchOpponent" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="matchID" Type="int" Mode="In" />
           <Parameter Name="teamID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="newsByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="newsID" Type="int" Mode="In" />
         </Function>
         <Function Name="newsForTheLeague" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="newsForTheTeam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -672,6 +691,21 @@
           </FunctionImport>
           <FunctionImport Name="guestsInMatches" ReturnType="Collection(BaseSZLPModel.guestsInMatches_Result)" />
           <FunctionImport Name="hostsInMatches" ReturnType="Collection(BaseSZLPModel.hostsInMatches_Result)" />
+          <FunctionImport Name="insertCommentForNewsWithUserID">
+            <Parameter Name="userIP" Mode="In" Type="String" />
+            <Parameter Name="text" Mode="In" Type="String" />
+            <Parameter Name="date" Mode="In" Type="String" />
+            <Parameter Name="UserId" Mode="In" Type="Int32" />
+            <Parameter Name="newsId" Mode="In" Type="Int32" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="insertCommentForNewsWithUserName">
+            <Parameter Name="userIP" Mode="In" Type="String" />
+            <Parameter Name="text" Mode="In" Type="String" />
+            <Parameter Name="date" Mode="In" Type="String" />
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="newsId" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="leagueMatches" ReturnType="Collection(BaseSZLPModel.leagueMatches_Result)" />
           <FunctionImport Name="leagueStatistics" ReturnType="Collection(BaseSZLPModel.leagueStatistics_Result)" />
           <FunctionImport Name="listOfMatchesOfGuests" ReturnType="Collection(BaseSZLPModel.listOfMatchesOfGuests_Result)" />
@@ -712,6 +746,9 @@
           <FunctionImport Name="matchOpponent" ReturnType="Collection(BaseSZLPModel.matchOpponent_Result)">
             <Parameter Name="matchID" Mode="In" Type="Int32" />
             <Parameter Name="teamID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="newsByID" ReturnType="Collection(BaseSZLPModel.newsByID_Result)">
+            <Parameter Name="newsID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="newsForTheLeague" ReturnType="Collection(BaseSZLPModel.newsForTheLeague_Result)" />
           <FunctionImport Name="newsForTheTeam" ReturnType="Collection(BaseSZLPModel.newsForTheTeam_Result)">
@@ -797,6 +834,7 @@
           <Property Name="date" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
           <Property Name="UserId" Type="Int32" />
           <Property Name="ID_news" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="NEWS" Relationship="BaseSZLPModel.FK_NEWS__COMMENTS" FromRole="COMMENTS" ToRole="NEWS" />
         </EntityType>
         <EntityType Name="EVENT">
@@ -1360,11 +1398,20 @@
           <Property Type="Int32" Name="ID_team" Nullable="false" />
           <Property Type="Boolean" Name="isHost" Nullable="true" />
         </ComplexType>
+        <ComplexType Name="newsByID_Result">
+          <Property Type="String" Name="title" Nullable="false" />
+          <Property Type="String" Name="date" Nullable="false" MaxLength="20" />
+          <Property Type="Int32" Name="numberOfComments" Nullable="false" />
+          <Property Type="String" Name="text" Nullable="true" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="56" />
+          <Property Type="Int32" Name="ID_news" Nullable="false" />
+        </ComplexType>
         <ComplexType Name="newsForTheLeague_Result">
           <Property Type="String" Name="title" Nullable="false" />
           <Property Type="String" Name="date" Nullable="false" MaxLength="20" />
           <Property Type="String" Name="text" Nullable="true" />
           <Property Type="String" Name="UserName" Nullable="false" MaxLength="56" />
+          <Property Type="Int32" Name="ID_news" Nullable="false" />
         </ComplexType>
         <ComplexType Name="newsForTheTeam_Result">
           <Property Type="String" Name="title" Nullable="false" />
@@ -1372,6 +1419,7 @@
           <Property Type="Int32" Name="numberOfComments" Nullable="false" />
           <Property Type="String" Name="text" Nullable="true" />
           <Property Type="String" Name="UserName" Nullable="false" MaxLength="56" />
+          <Property Type="Int32" Name="ID_news" Nullable="false" />
         </ComplexType>
         <ComplexType Name="playerWithLongestTimeOnThePitch_Result">
           <Property Type="String" Name="firstName" Nullable="false" />
@@ -1525,6 +1573,7 @@
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="ID_news" ColumnName="ID_news" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1791,6 +1840,8 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="insertCommentForNewsWithUserID" FunctionName="BaseSZLPModel.Store.insertCommentForNewsWithUserID" />
+          <FunctionImportMapping FunctionImportName="insertCommentForNewsWithUserName" FunctionName="BaseSZLPModel.Store.insertCommentForNewsWithUserName" />
           <FunctionImportMapping FunctionImportName="leagueMatches" FunctionName="BaseSZLPModel.Store.leagueMatches">
             <ResultMapping>
               <ComplexTypeMapping TypeName="BaseSZLPModel.leagueMatches_Result">
@@ -2043,6 +2094,18 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="newsByID" FunctionName="BaseSZLPModel.Store.newsByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BaseSZLPModel.newsByID_Result">
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="numberOfComments" ColumnName="numberOfComments" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID_news" ColumnName="ID_news" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="newsForTheLeague" FunctionName="BaseSZLPModel.Store.newsForTheLeague">
             <ResultMapping>
               <ComplexTypeMapping TypeName="BaseSZLPModel.newsForTheLeague_Result">
@@ -2050,6 +2113,7 @@
                 <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="text" ColumnName="text" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID_news" ColumnName="ID_news" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -2061,6 +2125,7 @@
                 <ScalarProperty Name="numberOfComments" ColumnName="numberOfComments" />
                 <ScalarProperty Name="text" ColumnName="text" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ID_news" ColumnName="ID_news" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -88,6 +88,7 @@ namespace WebApplicationManagementFootballLeague.Repository
             foreach (var element in result)
             {
                 var tmp = new NEWS();
+                tmp.ID_news = element.ID_news;
                 tmp.title = element.title;
                 tmp.text = element.text;
                 tmp.date = element.date;
@@ -97,6 +98,45 @@ namespace WebApplicationManagementFootballLeague.Repository
             }
             return listOfNews;
         }
+        public NEWS NewsByID(int id_team)
+        {
+            NEWS news = new NEWS();
+            var result = db.newsByID(id_team).ToList();
+            foreach (var element in result)
+            {
+                var tmp = new NEWS();
+                news.ID_news = element.ID_news;
+                news.title = element.title;
+                news.text = element.text;
+                news.date = element.date;
+                news.userName = element.UserName;
+                news.numberOfComments = element.numberOfComments;
+            }
+            return news;
+        }
+
+        /// <summary>
+        ///     Wyciaga z bazy komentarze dla danego NEWS'a
+        /// </summary>
+        public List<COMMENT> ListOfComments(int id_news)
+        {
+            List<COMMENT> listOfComments = new List<COMMENT>();
+            var result = db.commentsForTheNews(id_news).ToList();
+            foreach (var element in result)
+            {
+                var tmp = new COMMENT();
+                //tmp.ID_comment = element.
+                //tmp.ID_news = element.ID_comment;
+                //tmp.UserId = element.
+                //tmp.userIP = element.ID_comment;
+                tmp.UserName = element.UserName;
+                tmp.text = element.text;
+                tmp.date = element.date;
+                listOfComments.Add(tmp);
+            }
+            return listOfComments;
+        }
+
         public List<ScheduleofMatches> schleduleOfMatches()
         {
             var host = db.listOfMatchesOfHosts().ToList();

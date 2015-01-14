@@ -15,6 +15,7 @@ namespace WebApplicationManagementFootballLeague.Models.ModelsView
         public int ID = 1;
         public int ID_team { get; set; }
         public ICollection<TEAM> listOfTeams { get; set; }
+        public List<COMMENT> listOfComments { get; set; }
         public List<NEWS> listOfNews { get; set; }
         public List<STAFF> listOfPresidents { get; set; }
         public List<STAFF> listOfVPresidents { get; set; }
@@ -23,6 +24,12 @@ namespace WebApplicationManagementFootballLeague.Models.ModelsView
         public List<PLAYER> listOfPlayers { get; set; }
         public List<ScheduleofMatches> listOfScheduleofMatches { get; set; }
         public MyMailModel objModelMail { get; set; }
+        public int numbersOfNews { get; set; }
+        public int idNews { get; set; }
+        public int numberOfComments { get; set; }
+        public int numberOfPlayers { get; set; }
+        public COMMENT comment { get; set; }
+
 
 
 

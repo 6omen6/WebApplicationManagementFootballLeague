@@ -3,7 +3,6 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav" style="padding-top: 6px;">
-                <li><a href="#menu-toggle" class="header-menu-button glyph" id="header-menu-button"><span class="glyphicon glyphicon-th-list"></span></a></li>
                 <li>
                     @using (Ajax.BeginForm("Index", "Home",
                         new AjaxOptions { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "body-container", Url = Url.Action("Index", "Home"), OnSuccess = "onSuccess", },
@@ -16,17 +15,14 @@
                 </li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right navbar-top-right" style="padding-top: 5px; width: 250px;">
+            <ul class="nav navbar-nav navbar-right navbar-top-right" style="padding-top: 5px; width: 500px;">
                 @if (WebSecurity.IsAuthenticated)
                 {
                     <li>
-                        <img src="@Model.profile.avatar" alt="Alternate Text" class="img-responsive" style="height:40px;"/>
+                        <img src="~/Images/@Model.profile.avatar" alt="Alternate Text" class="img-responsive" style="height:40px;"/>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Zalogowany jako
-                            <br />
-                            @Model.profile.firstName @Model.profile.lastName
-                            <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Zalogowany jako: <br /> @User.Identity.Name <b class="caret"></b></a>
                         <ul class="dropdown-menu" style="margin-top: 20px;">
                             @if (WebSecurity.IsAuthenticated)
                             {
@@ -40,7 +36,7 @@
                                         <div class="divider">
                                         </div>
                                         <div class="col-md-6">
-                                            <a href="#" class="btn btn-primary btn-sm active">View Profile</a>
+                                          @*  <a href="#" class="btn btn-primary btn-sm active">View Profile</a>*@
                                         </div>
                                         <div class="col-md-6" style="padding-bottom: 15px;">
                                             @if (Request.IsAuthenticated)
@@ -55,9 +51,11 @@
                                         </div>
                                     </div>
                                 </li>
+
                             }
                         </ul>
                     </li>   
+                    <li><a href="#menu-toggle" class="header-menu-button glyph" id="header-menu-button"><span class="glyphicon glyphicon-th-list"></span></a></li>
                 }
 
                 else

@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div id="wrapper">
     <@Html.Partial("~/Views/Partial/Menu/_MenuPartial.cshtml")
     <div id="page-content-wrapper">
@@ -9,26 +10,64 @@
                 <div class="top-in-left-content" id="top-in-left-content">
                     @{Html.RenderAction("ShowTeamInfo", "Team");}
                 </div>
-                <div class="mid-in-left-content" id="mid-in-left-content" style="min-height: 500px; display: block;">
-                    @{Html.RenderAction("ShowTeamNews", "Team");}
+                <div class="mid-in-left-content" style="min-height: 500px; display: block;">
+                    <div class="panel with-nav-tabs panel-default">
+                        <div class="panel-heading">
+                            <ul class="menubar-nav">
+                                <li id="TeamNews" role="presentation" onclick="activeTeamNews()" class="active">@Ajax.ActionLink(" Aktualności", "ShowTeamNews", "Team",
+        new { ID = "1" },
+        new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" },
+        new { @class = "btn-default" })</li>
+
+                                <li id="TeamFootball" onclick="activeTeamFootball()" role="presentation">@Ajax.ActionLink("Kadra", "ShowTeamStaff", "Home",
+        new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" },
+        new { @class = "btn-default" })
+                                </li>
+
+                                <li id="TeamTimeFootball" onclick="activeTeamTimetable()" role="presentation">@Ajax.ActionLink("Terminarz", "ShowTeamTimetable", "Home",
+        new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" },
+        new { @class = "btn-default" })
+                                </li>
+                                <li id="TeamTable" onclick="activeTeamTable()" role="presentation">@Ajax.ActionLink("Tabela", "ShowTeamtable", "Home",
+        new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" },
+        new { @class = "btn-default" })
+                                </li>
+
+                                @*<li id="TeamAbout" onclick="activeTeamAbout()" role="presentation">@Ajax.ActionLink("O Nas", "ShowTeamAbout", "Home",
+        new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" },
+        new { @class = "btn-default" })
+        </li>*@
+
+                                <li id="TeamContact" onclick="activeTeamContact()" role="presentation">@Ajax.ActionLink("Kontakt", "ShowTeamContact", "Home",
+        new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "mid-in-left-content" },
+        new { @class = "btn-default" })
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="panel-body" id="mid-in-left-content">
+                            <div class="tab-content">
+                                @{Html.RenderAction("ShowTeamNews", "Team");}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="content-mid">
-                <div class="top-in-mid-content">
-                    @{Html.RenderAction("ShowTeamMatches", "Team");}
-                </div>
-            </div>
-            <div class="content-right">
-                <div class="top-in-right-content">
-                    @{Html.RenderAction("ShowTableMini", "Team");}
-                </div>
-                @Html.Partial("~/Views/Partial/Statistic/_StatisticPartial.cshtml")
+        </div>
+        <div class="content-mid">
+            <div class="top-in-mid-content">
+                @{Html.RenderAction("ShowTeamMatches", "Team");}
             </div>
         </div>
+        <div class="content-right">
+            <div class="top-in-right-content">
+                @{Html.RenderAction("ShowTableMini", "Team");}
+            </div>
+            @Html.Partial("~/Views/Partial/Statistic/_StatisticPartial.cshtml")
+        </div>
     </div>
-    <div class="footer">
-        @Html.Partial("~/Views/Partial/Footer/_FooterPartial.cshtml")
-    </div>
+</div>
+<div class="footer">
+    @Html.Partial("~/Views/Partial/Footer/_FooterPartial.cshtml")
+</div>
 </div>
 
 <script type="text/javascript">
@@ -43,4 +82,52 @@
             });
         });
     });
+    function activeTeamNews() {
+        $('#TeamNews').addClass('active');
+        $('#TeamFootball').removeClass('active');
+        $('#TeamTimeFootball').removeClass('active');
+        $('#TeamTable').removeClass('active');
+        $('#TeamAbout').removeClass('active');
+        $('#TeamContact').removeClass('active');
+    }
+    function activeTeamFootball() {
+        $('#TeamNews').removeClass('active');
+        $('#TeamFootball').addClass('active');
+        $('#TeamTimeFootball').removeClass('active');
+        $('#TeamTable').removeClass('active');
+        $('#TeamAbout').removeClass('active');
+        $('#TeamContact').removeClass('active');
+    }
+    function activeTeamTimetable() {
+        $('#TeamNews').removeClass('active');
+        $('#TeamFootball').removeClass('active');
+        $('#TeamTimeFootball').addClass('active');
+        $('#TeamTable').removeClass('active');
+        $('#TeamAbout').removeClass('active');
+        $('#TeamContact').removeClass('active');
+    }
+    function activeTeamTable() {
+        $('#TeamNews').removeClass('active');
+        $('#TeamFootball').removeClass('active');
+        $('#TeamTimeFootball').removeClass('active');
+        $('#TeamTable').addClass('active');
+        $('#TeamAbout').removeClass('active');
+        $('#TeamContact').removeClass('active');
+    }
+    function activeTeamAbout() {
+        $('#TeamNews').removeClass('active');
+        $('#TeamFootball').removeClass('active');
+        $('#TeamTimeFootball').removeClass('active');
+        $('#TeamTable').removeClass('active');
+        $('#TeamAbout').addClass('active');
+        $('#TeamContact').removeClass('active');
+    }
+    function activeTeamContact() {
+        $('#TeamNews').removeClass('active');
+        $('#TeamFootball').removeClass('active');
+        $('#TeamTimeFootball').removeClass('active');
+        $('#TeamTable').removeClass('active');
+        $('#TeamAbout').removeClass('active');
+        $('#TeamContact').addClass('active');
+    }
 </script>

@@ -2,12 +2,13 @@
 
 <div style="background-color: rgba(255, 255, 255, 0.8); height: 100%; overflow: auto;">
     <div class="panel panel-primary">
-        <div class="panel-heading panell">Tabela</div>
+@*        <div class="panel-heading panell">Tabela</div>*@
         <div class="panel-body">
             <table class="table  table-hover">
                 <thead>
                     <tr>
                         <th class="Lp" style="width: 5%">ID</th>
+                        <th class="Lp" style="width: 5%">Logo</th>
                         <th style="width: 30%">Nazwa</th>
                         <th style="width: 10%">M.</th>
                         <th style="width: 10%">Pkt.</th>
@@ -42,6 +43,7 @@
                     {
                     <tr style="background-color: rgb(66, 139, 202); color: white">
                         <td class="Lp" style="width: 5%">@team.ID_team</td>
+                        <td class="Lp" style="width: 5%;"><img style="width: 20px; height: 20px;" src="~/Images/herby/@team.logo" /></td>
                         <td style="width: 35%">@team.name</td>
                         <td style="width: 10%">@team.numberOfMatches</td>
                         <td style="width: 10%">@team.points</td>
@@ -56,6 +58,7 @@
                     {
                     <tr>
                         <td class="Lp" style="width: 5%">@team.ID_team</td>
+                        <td class="Lp" style="width: 5%;"><img style="width: 20px; height: 20px;" src="~/Images/herby/@team.logo" /></td>
                         <td style="width: 35%">@team.name</td>
                         <td style="width: 10%">@team.numberOfMatches</td>
                         <td style="width: 10%">@team.points</td>

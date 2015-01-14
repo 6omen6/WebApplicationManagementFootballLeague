@@ -1,41 +1,50 @@
 ﻿@model WebApplicationManagementFootballLeague.Models.ModelsView.TeamModelView
 <div class="panel panel-primary" style="display: block;">
-    <div class="panel-heading">Kadra</div>
-    <div class="panel-body">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Lp.</th>
-                    <th>Imię i Nazwisko</th>
-                    <th>Pozycja</th>
-                    <th>Me.</th>
-                    <th>Br.</th>
-                    <th>As.</th>
-                    <th>Ż</th>
-                    <th>C</th>
-                    <th style="width: 45px;">Czas gry</th>
-                    <th style="width: 35px;">Czas gry \mecz</th>
-                </tr>
-            </thead>
-            <tbody>
-                @{int x = 0;}
-                @foreach (var player in Model.listOfPlayers)
-                {
-                    x = x + 1;
+    @*    <div class="panel-heading">Kadra</div>*@
+    @if (Model.numberOfPlayers != 0)
+    {
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
                     <tr>
-                        <td>@x</td>
-                        <td>@player.firstName @player.lastName</td>
-                        <td>@player.position</td>
-                        <td>2 </td>
-                        <td>@player.numberOfGoals</td>
-                        <td>@player.numberOfAssists</td>
-                        <td>@player.numberOfYellowCards</td>
-                        <td>@player.numberOfRedCards</td>
-                        <td>@player.timeOnThePitch</td>
-                        <td>@player.timeOnThePitch</td>
+                        <th>Lp.</th>
+                        <th>Imię i Nazwisko</th>
+                        <th>Pozycja</th>
+                        <th>Me.</th>
+                        <th>Br.</th>
+                        <th>As.</th>
+                        <th>Ż</th>
+                        <th>C</th>
+                        <th style="width: 45px;">Czas gry</th>
+                        <th style="width: 35px;">Czas gry \mecz</th>
                     </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                    @{int x = 0;}
+                    @foreach (var player in Model.listOfPlayers)
+                    {
+                        x = x + 1;
+                        <tr>
+                            <td>@x</td>
+                            <td>@player.firstName @player.lastName</td>
+                            <td>@player.position</td>
+                            <td>2 </td>
+                            <td>@player.numberOfGoals</td>
+                            <td>@player.numberOfAssists</td>
+                            <td>@player.numberOfYellowCards</td>
+                            <td>@player.numberOfRedCards</td>
+                            <td>@player.timeOnThePitch</td>
+                            <td>@player.timeOnThePitch</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="panel-body">
+            Drużyna jest leniwa nie uzupełnia Kadry.
+        </div>
+    }
 </div>
