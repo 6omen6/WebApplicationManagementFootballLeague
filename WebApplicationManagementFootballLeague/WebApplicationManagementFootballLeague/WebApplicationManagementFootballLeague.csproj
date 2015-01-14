@@ -518,6 +518,8 @@
     <Content Include="Scripts\i18n\defaults-zh_TW.js" />
     <Content Include="Scripts\i18n\defaults-zh_TW.min.js" />
     <Content Include="Scripts\imagesloaded.pkg.min.js" />
+    <Content Include="Scripts\jquery.bootstrap-growl.js" />
+    <Content Include="Scripts\jquery.bootstrap-growl.min.js" />
     <Content Include="Scripts\jquery.qtip.js" />
     <Content Include="Scripts\jquery.qtip.min.js" />
     <Content Include="Scripts\jquery.qtip.validation.js" />
@@ -622,6 +624,7 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\jquery.bootstrap-growl.coffee" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
