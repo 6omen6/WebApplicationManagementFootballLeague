@@ -44,13 +44,13 @@
                 }
                 <fieldset>
                     <legend />
-                    @using (@Ajax.BeginForm("AddCommentsForNews", "Team", new { ID = Model.idNews }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "myModal", InsertionMode = InsertionMode.Replace }))
+                    @using (@Ajax.BeginForm("AddCommentsForNews", "Team", new { ID = Model.idNews }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "myModal", InsertionMode = InsertionMode.Replace, OnSuccess = "AddCommentOnSuccess", OnFailure = "AddCommentOnFailure" }))
                     {  
                         @Html.ValidationSummary()  
                         <table style="width: 100%; max-width: 568px;">
                             <tr>
                                 <td>
-                                    @Html.TextAreaFor(m => m.comment.text, new { id = "text",  @class = "form-control Lewa", style = "height:70px; max-width: 568px;", @placeholder = "Twoja wiadomości ..." })
+                                    @Html.TextAreaFor(m => m.comment.text, new { id = "text", @class = "form-control Lewa", style = "height:70px; max-width: 568px;", @placeholder = "Twój komentarz ..." })
                                 </td>
                             </tr>
                             <tr>
@@ -72,9 +72,21 @@
         </div>
     </div>
 </div>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 <script>
     $(document).ready(function () {
         document.getElementById('text').value = "";
     });
+    function AddCommentOnSuccess() {
+        $(document).ready(function () {
+            $.bootstrapGrowl("Komentarz został dodany poprawnie...", { type: 'success', offset: { from: 'bottom', amount: 20 } });
+        });
+    }
+    $(document).ready(function () {
+        $.growl({
+            title: "Welcome: ",
+            message: "This plugin has been provided to you by Robert McIntosh aka mouse0270"
+        })});
 </script>
